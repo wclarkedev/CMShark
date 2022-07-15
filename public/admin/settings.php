@@ -13,10 +13,6 @@ redirectForNotLoggedIn();
         <div class="form-container">
             <form method="POST" class="form">
                 <section class="form-section">
-                    <h3>Page Configurations</h3>
-                    <label>Font Awesome Kit</label>
-                    <input>
-                    <span class="disclaimer">Your kit code is not saved in a global database and will only be used by this page unless specified otherwise.</span>
                 </section>
             </form>
         </div>
