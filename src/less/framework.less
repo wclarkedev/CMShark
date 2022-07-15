@@ -1,3 +1,9 @@
+html {
+    font-family:sans-serif;
+    .admin-body {
+        background:#f5f5f5
+    }
+}
 .form {
     display:flex;
     flex-direction:column;
@@ -6,6 +12,24 @@
     .form-section {
         display:flex;
         flex-direction:column;
-        
+        background-color:#fff;
+        padding:15px;
+        width:600px;
+        margin:1em 0;
+        .disclaimer {
+            font-style:italic;
+        }
+        .disclaimer::before {
+            content:'* ';
+        }
+        h3 {
+            letter-spacing:1.1px;
+            font-weight:400;
+            text-decoration:underline;
+        }
+        .text-input {
+            max-width:350px !important;
+            padding:5px;
+        }
     }
 }

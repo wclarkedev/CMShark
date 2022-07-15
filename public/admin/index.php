@@ -10,12 +10,13 @@ require '../../config/config.php';
         <title>Admin</title>
         <link href="../../src/css/framework.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="admin-body">
         <div class="form-container">
             <form method="POST" class="form">
                 <section class="form-section">
+                    <h3>Page Header</h3>
                     <label>Display Name</label>
-                    <input>
+                    <input class="text-input">
                 </section>
                 <section class="form-section">
                     <h3>Page Appearance</h3>

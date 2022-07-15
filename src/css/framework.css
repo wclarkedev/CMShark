@@ -1,3 +1,9 @@
+html {
+  font-family: sans-serif;
+}
+html .admin-body {
+  background: #f5f5f5;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -7,4 +13,23 @@
 .form .form-section {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  width: 600px;
+  margin: 1em 0;
+}
+.form .form-section .disclaimer {
+  font-style: italic;
+}
+.form .form-section .disclaimer::before {
+  content: '* ';
+}
+.form .form-section h3 {
+  letter-spacing: 1.1px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.form .form-section .text-input {
+  max-width: 350px !important;
+  padding: 5px;
 }
