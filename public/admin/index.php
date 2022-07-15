@@ -1,7 +1,7 @@
 <?php
 require '../../src/functions.php';
 require '../../config/config.php';
-redirectForNotLoggedIn();
+//redirectForNotLoggedIn();
 ?>
 <!DOCTYPE html><html lang="en">
     <head>
