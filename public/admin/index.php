@@ -1,5 +1,6 @@
 <?php
 require '../../src/functions.php';
+require '../../config/config.php';
 redirectForNotLoggedIn();
 ?>
 <!DOCTYPE html><html lang="en">
@@ -12,7 +13,19 @@ redirectForNotLoggedIn();
     <body>
         <div class="form-container">
             <form method="POST" class="form">
-
+                <section class="form-section">
+                    <label>Display Name</label>
+                    <input>
+                </section>
+                <section class="form-section">
+                    <h3>Page Appearance</h3>
+                    <label>Theme</label>
+                    <input>
+                    <label>Primary Colour</label>
+                    <input>
+                    <label>Font</label>
+                    <input>
+                </section>
             </form>
         </div>
     </body>
