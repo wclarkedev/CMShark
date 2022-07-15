@@ -22,7 +22,10 @@ require '../../config/config.php';
                     <input class="text-input" type="text" name="userPronouns" placeholder="He/Him" maxlength="45">
                     <span class="disclaimer">Read more about pronouns <a href="https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter" target="_blank">here</a>.</span>
                     <label>Picture</label>
-                    <input type="file" value="Upload Image" name="userProfilePicture"> <!-- https://www.w3schools.com/php/php_file_upload.asp -->
+                    <label class="file-upload">
+                        Upload Image
+                        <input type="file" value="Upload Image" name="userProfilePicture"> 
+                    </label><!-- https://www.w3schools.com/php/php_file_upload.asp -->
                     <input type="submit" class="submit-button" value="Save">
                 </section>
                 <section class="form-section">

@@ -1,7 +1,7 @@
 html {
     font-family:sans-serif;
     .admin-body {
-        background:#f5f5f5
+        background:#f5f5f5;
     }
 }
 .form {
@@ -10,7 +10,7 @@ html {
     align-items:center;
     justify-content:center;
     .heading {
-        text-decoration:underline
+        text-decoration:underline;
     }
     .form-section {
         display:flex;
@@ -19,6 +19,32 @@ html {
         padding:15px;
         width:600px;
         margin:1em 0;
+        .file-upload {
+            margin:10px 0;
+            font-weight:500;
+            background:#f5f5f5;
+            display: inline-block;
+            color:rgb(114, 114, 114);
+            padding:8px;
+            max-width:350px !important;
+            cursor: pointer;
+            input[type="file"] {
+                display:none;
+            }
+        }
+        .submit-button {
+            display:flex;
+            margin:auto;
+            width:75px;
+            padding:10px 0;
+            cursor:pointer;
+            color:#fff;
+            background-color:#493cfc;
+            border:none;
+        }
+        .submit-button:hover {
+            background-color:#5c51fd;
+        }
         .disclaimer {
             font-style:italic;
             font-size:0.85rem;

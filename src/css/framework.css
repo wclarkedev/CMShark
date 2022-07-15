@@ -21,6 +21,32 @@ html .admin-body {
   width: 600px;
   margin: 1em 0;
 }
+.form .form-section .file-upload {
+  margin: 10px 0;
+  font-weight: 500;
+  background: #f5f5f5;
+  display: inline-block;
+  color: #727272;
+  padding: 8px;
+  max-width: 350px !important;
+  cursor: pointer;
+}
+.form .form-section .file-upload input[type="file"] {
+  display: none;
+}
+.form .form-section .submit-button {
+  display: flex;
+  margin: auto;
+  width: 75px;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #493cfc;
+  border: none;
+}
+.form .form-section .submit-button:hover {
+  background-color: #5c51fd;
+}
 .form .form-section .disclaimer {
   font-style: italic;
   font-size: 0.85rem;
