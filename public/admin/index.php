@@ -16,16 +16,22 @@ require '../../config/config.php';
                 <h2 class="heading">Edit page</h2>
                 <section class="form-section">
                     <h3>Page Header</h3>
+                    
                     <label>Display Name</label>
                     <input class="text-input" type="text" name="userDisplayName" placeholder="John Doe" maxlength="45">
+
                     <label>Pronouns</label>
                     <input class="text-input" type="text" name="userPronouns" placeholder="He/Him" maxlength="45">
-                    <span class="disclaimer">Read more about pronouns <a href="https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter" target="_blank">here</a>.</span>
+                    <span class="disclaimer">Read more about pronouns 
+                        <a href="https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter" target="_blank">here</a>.
+                    </span>
+
                     <label>Picture</label>
                     <label class="file-upload">
                         Upload Image
                         <input type="file" value="Upload Image" name="userProfilePicture"> 
                     </label><!-- https://www.w3schools.com/php/php_file_upload.asp -->
+
                     <input type="submit" class="submit-button" value="Save">
                 </section>
                 <section class="form-section">
