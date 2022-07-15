@@ -1,5 +1,7 @@
 # [Name Goes Here]
 A simple self-hosted CMS for bio links. 
+- [Working Example]()
+- [Demo]()
 
 ## Requirements 
 - A hosting server or platform.
