@@ -16,7 +16,7 @@ require '../../config/config.php';
                 <h2 class="heading">Edit page</h2>
                 <section class="form-section">
                     <h3>Page Header</h3>
-                    
+
                     <label>Display Name</label>
                     <input class="text-input" type="text" name="userDisplayName" placeholder="John Doe" maxlength="45">
 
@@ -25,6 +25,9 @@ require '../../config/config.php';
                     <span class="disclaimer">Read more about pronouns 
                         <a href="https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter" target="_blank">here</a>.
                     </span>
+
+                    <label>Location</label>
+                    <input class="text-input" type="text" name="userLocation" placeholder="Britain" maxlength="55">
 
                     <label>Picture</label>
                     <label class="file-upload">
@@ -36,12 +39,32 @@ require '../../config/config.php';
                 </section>
                 <section class="form-section">
                     <h3>Page Appearance</h3>
+
                     <label>Theme</label>
-                    <input>
-                    <label>Primary Colour</label>
-                    <input>
+                    <div class="radio-row">
+                        <label id="dark-theme">
+                            <input type="radio" value="Dark" id="dark-theme-input" name="userPageTheme">
+                            <span>Dark</span>
+                        </label>
+                        <label id="light-theme">
+                            <input type="radio" value="Light" id="light-theme-input" name="userPageTheme">
+                            <span>Light</span>
+                        </label>
+                    </div>
+
                     <label>Font</label>
-                    <input>
+                    <div class="radio-row">
+                        <label>
+                            <input type="radio" value="Sans-Serif" name="userPageFont">
+                            <span>Sans-Serif</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="Monospace" name="userPageFont">
+                            <span>Monospace</span>
+                        </label>
+                    </div>
+
+                    <input type="submit" class="submit-button" value="Save">
                 </section>
             </form>
         </div>
