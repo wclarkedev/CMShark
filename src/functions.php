@@ -7,4 +7,4 @@ function redirectForNotLoggedIn(){
 function validateEmail($email){}
 function validatePassword($password){}
 function validateUsername($username){}
-function validateInput($input){}
+function validateInput($input,$type){}
