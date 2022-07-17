@@ -72,7 +72,7 @@ require '../../config/config.php';
                         <label>
                             Add new link
                             
-                            <a href="links.php?action=createNew">AA</a>
+                            <a href="admin/links.php?action=createNew">AA</a>
                         </label>
                         
                     </div>
