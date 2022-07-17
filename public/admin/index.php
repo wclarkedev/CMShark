@@ -71,7 +71,8 @@ require '../../config/config.php';
                     <div class="links-row">
                         <label>
                             Add new link
-                            <input type="button" name="addLinkBtn">
+                            
+                            <a href="links.php?action=createNew">AA</a>
                         </label>
                         
                     </div>
