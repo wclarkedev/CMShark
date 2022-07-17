@@ -37,6 +37,7 @@ require '../../config/config.php';
 
                     <input type="submit" class="submit-button" value="Save">
                 </section>
+                <section class="form-section" id="socialIcons-section"></section>
                 <section class="form-section" id="pageAppearance-section">
                     <h3>Page Appearance</h3>
 
