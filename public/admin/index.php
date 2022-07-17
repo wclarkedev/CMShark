@@ -14,7 +14,7 @@ require '../../config/config.php';
         <div class="form-container">
             <form method="POST" class="form">
                 <h2 class="heading">Edit page</h2>
-                <section class="form-section">
+                <section class="form-section" id="header-section">
                     <h3>Page Header</h3>
 
                     <label>Display Name</label>
@@ -32,12 +32,12 @@ require '../../config/config.php';
                     <label>Picture</label>
                     <label class="file-upload">
                         Upload Image
-                        <input type="file" value="Upload Image" name="userProfilePicture"> 
+                        <input type="file" value="Upload-Image" name="userProfilePicture"> 
                     </label><!-- https://www.w3schools.com/php/php_file_upload.asp -->
 
                     <input type="submit" class="submit-button" value="Save">
                 </section>
-                <section class="form-section">
+                <section class="form-section" id="pageAppearance-section">
                     <h3>Page Appearance</h3>
 
                     <label>Theme</label>
@@ -65,6 +65,17 @@ require '../../config/config.php';
                     </div>
 
                     <input type="submit" class="submit-button" value="Save">
+                </section>
+                <section class="form-section" id="links-section">
+                    <h3>Links</h3>
+                    <div class="links-row">
+                        <label>
+                            Add new link
+                            <input type="button" name="addLinkBtn">
+                        </label>
+                        
+                    </div>
+                    <div class="links-container"></div>
                 </section>
             </form>
         </div>

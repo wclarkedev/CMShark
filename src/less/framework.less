@@ -20,11 +20,29 @@ html {
         padding:15px;
         width:600px;
         margin:1em 0;
+        .links-row {
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            label{
+                cursor:pointer;
+                background:#f5f5f5;
+                width:350px;
+                text-align:center;
+                padding:8px;
+                margin:10px 0;
+            }
+            input[type="button"]{
+                display:none;
+            }
+        }
         .radio-row {
             display:flex;
             flex-direction:row; // !!!!!!!
         }
         .file-upload {
+            font-style:italic;
             margin:10px 0;
             font-weight:500;
             background:#f5f5f5;

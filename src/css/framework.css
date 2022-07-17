@@ -21,7 +21,32 @@ html .admin-body {
   width: 600px;
   margin: 1em 0;
 }
+.form .form-section .links-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form .form-section .links-row label {
+  cursor: pointer;
+  background: #f5f5f5;
+  width: 350px;
+  text-align: center;
+  padding: 8px;
+  margin: 10px 0;
+}
+.form .form-section .links-row label::hover {
+  background: #ff0000;
+}
+.form .form-section .links-row input[type="button"] {
+  display: none;
+}
+.form .form-section .radio-row {
+  display: flex;
+  flex-direction: row;
+}
 .form .form-section .file-upload {
+  font-style: italic;
   margin: 10px 0;
   font-weight: 500;
   background: #f5f5f5;
