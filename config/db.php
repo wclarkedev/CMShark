@@ -18,6 +18,6 @@ function dbConnect(){
     }
 }
 function dbDisconnect($connection){
-    $connection = null;
+    return $connection = null;
 }
 function dbQuery(){}
