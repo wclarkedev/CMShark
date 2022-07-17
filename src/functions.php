@@ -9,7 +9,7 @@ function validateEmail($badEmail){
     if (empty(trim($email))) return false;
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
-function validatePassword($password) {
+function validatePassword($password){
     if (empty(trim($password))) return false;
     if (strlen($password) <= 8 ) return 'Password must be at least 8 characters long.';
     if (!preg_match("#[a-z]+#",$password)) return 'Password must contain 1 lower-case letter.';
@@ -19,3 +19,4 @@ function validatePassword($password) {
 }
 /*function validateUsername($username){}
 function validateInput($input,$type){}*/
+// TODO: Encryption functions 
