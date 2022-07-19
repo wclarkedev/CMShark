@@ -75,7 +75,20 @@ require '../../src/functions.php';
                         </label>
                         
                     </div>
-                    <div class="links-container"></div>
+                    <div class="links-container">
+                        <link-container>
+                            <span class="header">
+                                Link name
+                            </span>
+                            <a href="#" class="link">Link</a>
+                            <div class="link-actions">
+                                <ul>
+                                    <li><a class="action-link edit" href="admin/links.php?action=edit&linkID=1243">Edit</a></li>
+                                    <li><a class="action-link delete" href="admin/links.php?action=delete&linkID=1234">Delete</a></li>
+                                </ul>
+                            </div>
+                        </link-container>
+                    </div>
                 </section>
             </form>
         </div>

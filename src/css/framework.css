@@ -101,3 +101,27 @@ html .admin-body {
   background: #f5f5f5;
   border: none;
 }
+.links-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.links-container link-container {
+  background: #dfdfdf;
+  width: 450px;
+  display: flex;
+  margin: auto;
+}
+.links-container link-container .link-actions ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.links-container link-container .link-actions ul .action-link {
+  text-decoration: none;
+  color: #5c51fd !important;
+  padding: 0 5px;
+}
+.links-container link-container .link-actions ul .action-link:hover {
+  text-decoration: underline;
+}

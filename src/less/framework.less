@@ -28,7 +28,7 @@ html {
             .add-new-link {
                 text-decoration:none;
                 color:#000;
-                
+
             }
             label{
                 cursor:pointer;
@@ -102,4 +102,31 @@ html {
             border:none;
         }
     }
+}
+.links-container {
+    display:flex;
+    flex-direction:column;
+    margin: 20px;
+    link-container {
+        background:#dfdfdf;
+        width:450px;
+        display:flex;
+        margin:auto;
+        .link-actions {
+            ul {
+                list-style-type:none;
+                display:flex;
+                flex-direction:row;
+                .action-link {
+                    text-decoration:none;
+                    color:#5c51fd!important;
+                    padding: 0 5px;
+                }
+                .action-link:hover {
+                    text-decoration:underline;
+                }
+            }
+        }
+    }
+    
 }
