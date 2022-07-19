@@ -1,6 +1,6 @@
 <?php
 require '../../src/functions.php';
-require '../../config/config.php';
+//require '../../config/config.php';
 //redirectForNotLoggedIn();
 ?>
 <!DOCTYPE html><html lang="en">
@@ -71,9 +71,7 @@ require '../../config/config.php';
                     <h3>Links</h3>
                     <div class="links-row">
                         <label>
-                            Add new link
-                            
-                            <a href="admin/links.php?action=createNew">AA</a>
+                            <a href="admin/links.php?action=createNew" class="add-new-link">Add new link</a>
                         </label>
                         
                     </div>
