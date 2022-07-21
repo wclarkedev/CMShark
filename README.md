@@ -1,7 +1,7 @@
 # CMShark
 A simple self-hosted CMS for bio links. **This is still in development.**
-- [Working Example]()
-- [Demo]()
+- [Working Example](https://bio.wclarke.dev)
+- [Demo](https://CMShark.wclarke.dev/demo)
 
 ## Requirements 
 - A hosting server or platform.
