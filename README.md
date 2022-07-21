@@ -1,5 +1,5 @@
-# [Name Goes Here]
-A simple self-hosted CMS for bio links. 
+# CMShark
+A simple self-hosted CMS for bio links. **This is still in development.**
 - [Working Example]()
 - [Demo]()
 
