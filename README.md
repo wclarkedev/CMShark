@@ -18,3 +18,9 @@ A simple self-hosted CMS for bio links. **This is still in development.**
 - [Full white label](https://www.thatcompany.com/white-label-marketing/what-is-white-label) and rebrand abilities. 
 - Open source, you can easily view the code and make sure that everything is safe before you decide to use it. 
 - Font Awesome implementation. 
+
+
+Future features - 
+- Better page editing 
+- Page insights 
+- Better performance 
