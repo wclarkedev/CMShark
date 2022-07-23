@@ -37,8 +37,8 @@ require '../../src/functions.php';
 
                     <input type="submit" class="submit-button" value="Save">
                 </section>
-                <section class="form-section" id="socialIcons-section"></section>
-                <section class="form-section" id="pageAppearance-section">
+                <!--<section class="form-section" id="socialIcons-section"></section>-->
+                <!--<section class="form-section" id="pageAppearance-section">
                     <h3>Page Appearance</h3>
 
                     <label>Theme</label>
@@ -66,28 +66,21 @@ require '../../src/functions.php';
                     </div>
 
                     <input type="submit" class="submit-button" value="Save">
-                </section>
+                </section>-->
                 <section class="form-section" id="links-section">
                     <h3>Links</h3>
                     <div class="links-row">
                         <label>
                             <a href="admin/links.php?action=createNew" class="add-new-link">Add new link</a>
                         </label>
-                        
                     </div>
                     <div class="links-container">
-                        <link-container>
-                            <span class="header">
-                                Link name
-                            </span>
-                            <a href="#" class="link">Link</a>
-                            <div class="link-actions">
-                                <ul>
-                                    <li><a class="action-link edit" href="admin/links.php?action=edit&linkID=1243">Edit</a></li>
-                                    <li><a class="action-link delete" href="admin/links.php?action=delete&linkID=1234">Delete</a></li>
-                                </ul>
-                            </div>
-                        </link-container>
+                        <div class="link-container" id="*link-type*">
+                            <details>
+                                <summary></summary>
+                                
+                            </details>
+                        </div>
                     </div>
                 </section>
             </form>
