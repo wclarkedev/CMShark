@@ -37,37 +37,14 @@ require '../../src/functions.php';
 
                     <input type="submit" class="submit-button" value="Save">
                 </section>
-                <!--<section class="form-section" id="socialIcons-section"></section>-->
-                <!--<section class="form-section" id="pageAppearance-section">
-                    <h3>Page Appearance</h3>
-
-                    <label>Theme</label>
-                    <div class="radio-row">
-                        <label id="dark-theme">
-                            <input type="radio" value="Dark" id="dark-theme-input" name="userPageTheme">
-                            <span>Dark</span>
-                        </label>
-                        <label id="light-theme">
-                            <input type="radio" value="Light" id="light-theme-input" name="userPageTheme">
-                            <span>Light</span>
-                        </label>
-                    </div>
-
-                    <label>Font</label>
-                    <div class="radio-row">
-                        <label>
-                            <input type="radio" value="Sans-Serif" name="userPageFont">
-                            <span>Sans-Serif</span>
-                        </label>
-                        <label>
-                            <input type="radio" value="Monospace" name="userPageFont">
-                            <span>Monospace</span>
-                        </label>
-                    </div>
-
-                    <input type="submit" class="submit-button" value="Save">
-                </section>-->
-                <section class="form-section" id="links-section">
+                <!--Removed 
+            Social buttons 
+            Theme/appearance-->
+                
+            
+            
+            
+                <!--<section class="form-section" id="links-section">
                     <h3>Links</h3>
                     <div class="links-row">
                         <label>
@@ -77,12 +54,12 @@ require '../../src/functions.php';
                     <div class="links-container">
                         <div class="link-container" id="*link-type*">
                             <details>
-                                <summary></summary>
-                                
+                                <summary>test</summary>
+                                testestest
                             </details>
                         </div>
                     </div>
-                </section>
+                </section>-->
             </form>
         </div>
     </body>
