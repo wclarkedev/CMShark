@@ -1,5 +1,5 @@
 # CMShark
-A simple self-hosted CMS for bio links. **This is still in development.**
+A simple self-hosted CMS for bio links. **This is still in development and doesn't have anything online.**
 - [Working Example](https://bio.wclarke.dev)
 - [Demo](https://CMShark.wclarke.dev/demo)
 
