@@ -11,10 +11,12 @@
     <body class="main-body">
         <section class="header-container">
             <!-- Shows the header based on user configuration in settings -->
+            <?php echo getContent('pageHeader');?>
         </section>
         <section class="body-container">
             <div class="link-collection">
                 <!-- Has all link code inside and links should be displayed -->
+                <?php echo getContent('pageLinks');?>
             </div>
         </section>
         <section class="footer-container">
