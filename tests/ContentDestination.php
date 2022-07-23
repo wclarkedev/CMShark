@@ -1,7 +1,11 @@
 <?php
-require 'ContentDelivery.php';
+require 'ContentFunctions.php';
 ?>
 <html>
     <head></head>
-    <body></body>
+    <body class="page:TestingContent">
+        <div class="page-header"></div>
+        <div class="page-body"></div>
+        <div class="page-footer"></div>
+    </body>
 </html>
