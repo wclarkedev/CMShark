@@ -1,4 +1,4 @@
 <?php
 function getContent($type){
-
+    
 }
