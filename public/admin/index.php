@@ -11,6 +11,14 @@ require '../../src/functions.php';
         <link href="../../src/css/framework.css" rel="stylesheet">
     </head>
     <body class="admin-body">
+        <nav id="sidebar" class="nav">
+            <ul class="nav-list">
+                <li class="list-item"><a href="index.php" class="list-link">Home</a></li>
+                <li class="list-item"><a href="settings.php" class="list-link">Settings</a></li>
+
+                <li class="list-btn"><a href="../login/logout.php" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
         <div class="form-container">
             <form method="POST" class="form">
                 <h2 class="heading">Edit page</h2>
