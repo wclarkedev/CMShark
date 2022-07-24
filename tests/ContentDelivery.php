@@ -1,6 +1,18 @@
 <?php
 require 'db.php';
 // Data enters db
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+    $linkTitle = $_POST['Link-title'];
+    $linkDesc = $_POST['Link-description'];
+    $linkHref = $_POST['Link'];
+
+    // Check data is not empty 
+    if (empty(trim($linkTitle)) && empty(trim($linkDesc)) && empty(trim($linkHref))){
+        exit("One or more form inputs were empty");
+    } else {
+        $connection = dbConnect();
+    }
+}
 ?>
 <html>
     <body>
