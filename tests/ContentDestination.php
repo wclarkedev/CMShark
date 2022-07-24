@@ -1,5 +1,6 @@
 <?php
 require 'ContentFunctions.php';
+// Data taken from functions (that take the data from db)
 ?>
 <html>
     <head></head>

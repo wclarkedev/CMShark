@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+// Data taken from db
 function getLinkContent($type){
     $con = dbConnect();
     switch($type) {

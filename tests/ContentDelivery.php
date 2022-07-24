@@ -1,5 +1,6 @@
 <?php
-
+require 'db.php';
+// Data enters db
 ?>
 <html>
     <body>
