@@ -1,5 +1,5 @@
 <?php
-require '../../src/functions.php';
+require './src/functions.php';
 //require '../../config/config.php';
 //redirectForNotLoggedIn();
 ?>
@@ -8,7 +8,7 @@ require '../../src/functions.php';
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="/public/tailwind-config.js"></script>
+        <script src="./public/tailwind-config.js"></script>
     </head>
     <body class="bg-backgroundtest">
         <nav class="" id="navigation-bar">
