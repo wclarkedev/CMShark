@@ -9,8 +9,8 @@ require '../../src/functions.php';
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <link href="../../src/css/tw-output.css" rel="stylesheet">
     </head>
-    <body class="shark-admin">
-        <nav class="">
+    <body class="page:shark-admin">
+        <nav class="" id="navigation-bar">
             <ul>
                 <li><a href="#" class="">Home</a></li>
                 <li><a href="page-settings.php?ref=dash" class="">Page Settings</a></li>
