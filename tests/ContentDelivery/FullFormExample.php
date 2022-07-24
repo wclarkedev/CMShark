@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         $description = $_POST['description'];
         $href = $_POST['href'];
         $connection = new mysqli($host,$user,$password,$db);
-        $query = "INSERT INTO tests (linkTitle,linkDescription,link) VALUES (".$title.",".$description.",".$href.")";
+        $query = "INSERT INTO tests(linkTitle,linkDescription,link) VALUES (".$title.",".$description.",".$href.")";
         if ($connection->query($query) == true) echo "Records created";
         else echo "Record creation failed: ".$connection->error;
         $connection->close();
