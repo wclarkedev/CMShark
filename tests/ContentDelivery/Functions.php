@@ -2,7 +2,10 @@
 require 'db.php';
 // Data taken from db
 function getLinkContent($type=null){
-    $con = dbConnect();
+    global $host;
+    global $user;
+    global $password;
+    $con = new mysqli($host,$user,$password,"nocvtscg_cmshark");
     $sql = 'SELECT linkID,linkTitle,linkDescription,link FROM tests';
     $result = $con->query($sql);
     if ($result->num_rows > 0 ){
