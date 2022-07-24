@@ -1,3 +1,9 @@
 html {
   font-family: sans-serif;
 }
+.shark-admin {
+  background: #f5f5f5;
+}
+.shark-admin .shark-nav-bar {
+  background: black;
+}
