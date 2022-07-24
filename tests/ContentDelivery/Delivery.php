@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         exit("One or more form inputs were empty");
     } else {
         $connection = dbConnect();
+        $query = "INSERT INTO tests (linkTitle,linkDescription,link) VALUES (".$linkTitle.",".$linkDesc.",".$linkHref.")";
+        $connection->query($query);
+        dbClose($connection);
     }
 }
 ?>
