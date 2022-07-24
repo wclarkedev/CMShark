@@ -7,10 +7,10 @@ require '../../src/functions.php';
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
-        <link href="/src/css/tw-output.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/public/tailwind-config.js"></script>
     </head>
-    <body class="bg-stone-800">
-        <
+    <body class="bg-backgroundtest">
         <nav class="" id="navigation-bar">
             <ul>
                 <li><a href="#" class="">Home</a></li>
