@@ -3,7 +3,7 @@ require '../../src/functions.php';
 //require '../../config/config.php';
 //redirectForNotLoggedIn();
 ?>
-<!DOCTYPE html><html lang="en">
+<!--<!DOCTYPE html><html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -41,7 +41,7 @@ require '../../src/functions.php';
                     <label class="file-upload">
                         Upload Image
                         <input type="file" value="Upload-Image" name="userProfilePicture"> 
-                    </label><!-- https://www.w3schools.com/php/php_file_upload.asp -->
+                    </label><!-- https://www.w3schools.com/php/php_file_upload.asp 
 
                     <input type="submit" class="submit-button" value="Save">
                 </section>
@@ -67,8 +67,8 @@ require '../../src/functions.php';
                             </details>
                         </div>
                     </div>
-                </section>-->
+                </section>
             </form>
         </div>
     </body>
-</html>
+</html>-->
