@@ -1,6 +1,7 @@
 <?php
 require 'db.php';
 function getLinkContent($type){
+    $con = dbConnect();
     switch($type) {
         case "linkId":
             break;
