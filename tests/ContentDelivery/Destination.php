@@ -4,7 +4,7 @@ require 'Functions.php';
 ?>
 <html>
     <head></head>
-    <body class="page:TestingContent">
+    <body class="page:TestingContent" style="font-family:sans-serif;">
         <div class="page-header"></div>
         <div class="page-body">
             <div style="display:flex;
