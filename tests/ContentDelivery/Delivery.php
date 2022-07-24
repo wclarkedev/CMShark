@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <label>Link:</label>
                 <input name="Link">
             </div>
-            <input type="submit">
+            <input type="submit" style="width:200px; margin:auto; display:flex; margin-top:20px;">
         </form>
     </body>
 </html>
