@@ -1,5 +1,5 @@
 <?php
-require 'ContentFunctions.php';
+require 'Functions.php';
 // Data taken from functions (that take the data from db)
 ?>
 <html>
