@@ -5,6 +5,7 @@ require '../../src/functions.php';
 ?>
 <!doctype html><html lang="en">
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <link href="../../src/css/tw-output.css" rel="stylesheet">
     </head>
