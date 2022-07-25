@@ -3,7 +3,7 @@
         <meta name="charset" content="utf-8">
         <meta name="viewport" content="width=device-width,intitial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="../public/tailwind-config.js"></script>
+        <script src="../public/tailwind.config.js"></script>
     </head>
     <body id="page:landing" class="bg-backgroundColor">
         <section id="header" class="w-4/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
