@@ -8,9 +8,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./public/tailwind-config.js"></script>
+        <script src="../tailwind.config.js"></script>
     </head>
-    <body class="bg-backgroundtest">
+    <body class="bg-backgroundColor">
         <nav class="" id="navigation-bar">
             <ul>
                 <li><a href="#" class="">Home</a></li>
