@@ -53,7 +53,7 @@
         kofiWidgetOverlay.draw('wclarkedev', {
             'type': 'floating-chat',
             'floating-chat.donateButton.text': 'Support devs',
-            'floating-chat.donateButton.background-color': '#ff5f5f',
+            'floating-chat.donateButton.background-color': '#FF715B',
             'floating-chat.donateButton.text-color': '#fff'
         });
         </script>
