@@ -23,7 +23,7 @@
         <main class="">
             <form method="POST" class="w-4/12 flex flex-col mx-auto">
                 <section class="flex flex-col bg-backgroundAccent rounded-md mt-12">
-                    <h3 class="text-primaryText text-center mt-4 text-2xl font-bold">Edit Header</h3>
+                    <h3 class="text-primaryText text-center mt-5 text-2xl font-bold">Edit Header</h3>
                     <div class="mx-8 my-5 flex flex-col">
                         <label class="mb-1 text-primaryText text-lg">Name</label>
                         <input class="placeholder:text-secondaryText w-5/12 bg-backgroundColor rounded p-2 text-primaryText" type="text" placeholder="John Doe">
@@ -39,6 +39,9 @@
                             Upload Image
                             <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
                         </label>
+                    </div>
+                    <div class="mx-8 mt-2 mb-5">
+                        <input class="w-2/12 bg-accent hover:bg-accentLighter cursor-pointer p-2 rounded" type="submit" value="Save">
                     </div>
                 </section>
             </form>
