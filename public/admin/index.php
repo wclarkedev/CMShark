@@ -41,7 +41,7 @@
                         </label>
                     </div>
                     <div class="mx-8 mt-2 mb-5">
-                        <input class="w-2/12 bg-accent hover:bg-accentLighter cursor-pointer p-2 rounded" type="submit" value="Save">
+                        <input class="w-2/12 bg-accent hover:bg-accentLighter cursor-pointer p-2 rounded text-primaryText font-semibold" type="submit" value="Save">
                     </div>
                 </section>
             </form>
