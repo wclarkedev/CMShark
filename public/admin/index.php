@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="../tailwind.config.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
     </head>
     <body class="bg-backgroundColor">
         <!--<nav class="" id="navigation-bar">
@@ -21,31 +22,24 @@
         </nav>-->
         <main class="">
             <form method="POST" class="w-4/12 flex flex-col mx-auto">
-                <section class="flex flex-col bg-backgroundAccent rounded-md">
+                <section class="flex flex-col bg-backgroundAccent rounded-md mt-12">
                     <h3 class="text-primaryText text-center mt-4 text-2xl font-bold">Edit Header</h3>
                     <div class="mx-8 my-5 flex flex-col">
                         <label class="mb-1 text-primaryText text-lg">Name</label>
                         <input class="placeholder:text-secondaryText w-5/12 bg-backgroundColor rounded p-2 text-primaryText" type="text" placeholder="John Doe">
                     </div>
-                    <div class="mx-8 my-5 flex flex-col">
+                    <div class="mx-8 my-2 flex flex-col">
                         <label class="mb-1 text-primaryText text-lg">Bio</label>
                         <input class="placeholder:text-secondaryText w-5/12 bg-backgroundColor rounded p-2 text-primaryText" type="text" placeholder="I am John Doe!">
                     </div>
                     <div class="mx-8 my-5 flex flex-col">
                         <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
-                        <label class="">
+                        <label class="cursor-pointer w-5/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
+                            <i class="fa-solid fa-upload mr-2"></i>
                             Upload Image
-                            <input type="file" value="Upload-Image" name="userProfilePicture"> 
+                            <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
                         </label>
                     </div>
-                    <!--
-
-                    <label>Picture</label>
-                    <label class="file-upload">
-                        Upload Image
-                        <input type="file" value="Upload-Image" name="userProfilePicture"> 
-                    </label>
-                    -->
                 </section>
             </form>
         </main>
