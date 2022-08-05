@@ -32,6 +32,7 @@
                     </div>
                     <div class="mx-8 my-2 flex flex-col">
                         <label class="mb-1 text-primaryText text-lg">Bio</label>
+                        <!-- Needs to be different input type for longer text -->
                         <input class="placeholder:text-secondaryText w-5/12 bg-backgroundColor rounded p-2 text-primaryText" type="text" placeholder="I am John Doe!">
                     </div>
                     <div class="mx-8 my-5 flex flex-col">
@@ -49,7 +50,7 @@
             </form>
         </main>
         <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-        <script>
+        <script defer>
         kofiWidgetOverlay.draw('wclarkedev', {
             'type': 'floating-chat',
             'floating-chat.donateButton.text': 'Support devs',
