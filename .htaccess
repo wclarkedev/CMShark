@@ -12,5 +12,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . public/index.php [L]
 
-ErrorDocument 404 /public/not-found.html
-ErrorDocument 500 /public/internal-error.html
+ErrorDocument 404 /public/404.html
+ErrorDocument 500 /public/500.html
