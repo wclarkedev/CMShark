@@ -3,7 +3,7 @@
         <meta name="charset" content="utf-8">
         <meta name="viewport" content="width=device-width,intitial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="../public/tailwind.config.js"></script>
+        <script src="tailwind.config.js"></script>
         <title></title>
         <meta name="title" content="">
         <meta name="description" content="">
@@ -16,7 +16,7 @@
             </div>
             <div class="flex flex-col mx-auto mb-6">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2">Placeholder Name</h1>
-                <span class="text-base text-secondaryText text-center max-w-xs">Fullstack website developer focusing on website security, maintainence and performance within bespoke web applications and WordPress websites.</span>
+                <span class="text-base text-secondaryText text-center max-w-xs">Placeholder bio</span>
             </div>
         </section>
         <section id="links" class="w-4/12 flex flex-col mx-auto mb-10 mt-1">
@@ -31,10 +31,11 @@
                 </div>
             </a>
             <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
-                    <div class="py-2 px-2">
-                        <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                        src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
-                    </div>                <div class="flex flex-col py-4 px-6">
+                <div class="py-2 px-2">
+                    <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
+                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                </div>                
+                <div class="flex flex-col py-4 px-6">
                     <h3 class="text-xl text-primaryText">Placeholder Title</h3>
                     <span class="text-base text-secondaryText pt-1">Placeholder Description</span>
                 </div>
