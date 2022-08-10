@@ -1,3 +1,7 @@
+<?php
+require './functions.php';
+
+?>
 <!doctype html><html lang="en">
     <head>
         <meta name="charset" content="utf-8">
