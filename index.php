@@ -21,24 +21,24 @@
             </div>
             <div class="w-6/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-github"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-bitbucket"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-gitlab"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-behance"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-linkedin"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-medium"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-patreon"></i></a>
-                <!--<a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-solid fa-envelope"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-solid fa-phone"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-discord"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-quora"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-reddit"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-twitter"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-twitch"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-instagram"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-facebook"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-discourse"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent" href=""><i class="fa-brands fa-whatsapp"></i></a>-->
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-github"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-bitbucket"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-gitlab"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-behance"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-medium"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-patreon"></i></a>
+                <!--<a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-solid fa-envelope"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-solid fa-phone"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-discord"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-quora"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-reddit"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-twitter"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-twitch"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-instagram"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-facebook"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-discourse"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-whatsapp"></i></a>-->
             </div>
         </section>
         <section id="links" class="w-4/12 flex flex-col mx-auto mb-10 mt-1">
