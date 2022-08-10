@@ -4,7 +4,8 @@ Disallow: /config/*
 Disallow: /login/*
 Disallow: /setup/*
 Disallow: /functions.php
-Disallow: /tests/
+Disallow: /tests/*
+Disallow: /.github/*
 Allow: index.php
 Allow: /uploads/*
 Sitemap: sitemap.php
