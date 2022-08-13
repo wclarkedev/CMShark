@@ -16,18 +16,18 @@ session_start();
             <h1 class="text-3xl text-primaryText text-center my-5">Login</h1>
             <form method="POST" class="flex flex-col mx-auto">
                 <div class="flex flex-col my-2">
-                    <label class="">Username or email</label>
-                    <input class="" type="text" autocomplete="off">
+                    <label class="text-primaryText text-lg">Username or email</label>
+                    <input class="" type="text" autocomplete="off" placeholder="will@cmshark.com">
                 </div>
                 <div class="flex flex-col my-2">
-                    <label class="">Password</label> 
-                    <input class="" type="password" autocomplete="off">
+                    <label class="text-primaryText text-lg">Password</label> 
+                    <input class="" type="password" autocomplete="off" placeholder="**********">
                 </div>
-                <div class="place-self-center my-2">
-                    <input class="" type="submit" value="Login">
+                <div class="place-self-center my-2 mt-3">
+                    <input class="bg-backgroundColor cursor-pointer text-primaryText ring px-5 py-1 hover:ring-accent focus:ring-accent ring-gray-600 rounded" type="submit" value="Login">
                 </div>
             </form>
-            <a class="" href="">Return to site</a>
+            <a class="mb-5 pl-4 text-accent font-semibold hover:underline focus:underline" href="/">Return to site</a>
         </main>
     </body>
 </html>
