@@ -15,15 +15,15 @@ session_start();
         <main class="bg-backgroundAccent w-4/12 flex flex-col mx-auto rounded-md mt-10">
             <h1 class="text-3xl text-primaryText text-center my-5">Login</h1>
             <form method="POST" class="flex flex-col mx-auto">
-                <div class="flex flex-col">
+                <div class="flex flex-col my-2">
                     <label class="">Username or email</label>
-                    <input class="" type="text">
+                    <input class="" type="text" autocomplete="off">
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col my-2">
                     <label class="">Password</label> 
-                    <input class="" type="password">
+                    <input class="" type="password" autocomplete="off">
                 </div>
-                <div class="">
+                <div class="place-self-center my-2">
                     <input class="" type="submit" value="Login">
                 </div>
             </form>
