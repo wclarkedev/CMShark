@@ -35,9 +35,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         <meta name="title" content="Login">
     </head>
     <body class="bg-backgroundColor">
-        <main class="bg-backgroundAccent w-4/12 flex flex-col mx-auto rounded-md mt-10">
+        <main class="bg-backgroundAccent w-4/12 flex flex-col mx-auto rounded-md mt-16">
             <h1 class="text-3xl text-primaryText text-center my-5">Login</h1>
-            <form method="POST" class="flex flex-col mx-auto w-7/12">
+            <form method="POST" class="flex flex-col mx-auto w-7/12 mb-5">
                 <div class="flex flex-col my-2 ">
                     <label class="text-primaryText text-lg mb-1">Username or email</label>
                     <input class="placeholder:text-secondaryText w-12/12 bg-backgroundColor rounded p-2 text-primaryText" type="text" autocomplete="off" name="usernameEmail" placeholder="will@cmshark.com">
