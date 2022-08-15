@@ -25,9 +25,9 @@ require './functions.php';
             </div>
             <div class="w-6/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://github.com/username"><i class="fa-brands fa-github"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://bitbucket.org/username"><i class="fa-brands fa-bitbucket"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://gitlab.com/username"><i class="fa-brands fa-gitlab"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://gitlab.com/'.$username;?>"><i class="fa-brands fa-gitlab"></i></a>
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://www.behance.net/username"><i class="fa-brands fa-behance"></i></a>
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://www.linkedin.com/in/username"><i class="fa-brands fa-linkedin"></i></a>
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="https://username.medium.com/"><i class="fa-brands fa-medium"></i></a>
