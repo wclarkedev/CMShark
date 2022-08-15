@@ -25,30 +25,54 @@ require './functions.php';
             </div>
             <div class="w-6/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://gitlab.com/'.$username;?>"><i class="fa-brands fa-gitlab"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.behance.net/'.$username;?>"><i class="fa-brands fa-behance"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.linkedin.com/in/'.$username;?>"><i class="fa-brands fa-linkedin"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://'.$username.'.medium.com/';?>"><i class="fa-brands fa-medium"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.patreon.com/'.$username;?>"><i class="fa-brands fa-patreon"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'mailto:'.$usernameEmail;?>"><i class="fa-solid fa-envelope"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'tel:'.$usernamePhoneNum;?>"><i class="fa-solid fa-phone"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://discord.gg/'.$usernameServer;?>"><i class="fa-brands fa-discord"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.quora.com/profile/'.$username;?>"><i class="fa-brands fa-quora"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.reddit.com/user/'.$username;?>"><i class="fa-brands fa-reddit"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://twitter.com/'.$username;?>"><i class="fa-brands fa-twitter"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.twitch.tv/'.$username;?>"><i class="fa-brands fa-twitch"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.instagram.com/'.$username;?>"><i class="fa-brands fa-instagram"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.facebook.com/'.$username;?>"><i class="fa-brands fa-facebook"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo $link;?>"><i class="fa-brands fa-discourse"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.youtube.com/'.$username;?>"><i class="fa-brands fa-youtube"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://bandcamp.com/'.$username;?>"><i class="fa-brands fa-bandcamp"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.pinterest.com/'.$username;?>"><i class="fa-brands fa-pinterest"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://telegram.me/joinchat/'.$username;?>"><i class="fa-brands fa-telegram"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.tiktok.com/@'.$username;?>"><i class="fa-brands fa-tiktok"></i></a>
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://gitlab.com/'.$username;?>"><i class="fa-brands fa-gitlab"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.behance.net/'.$username;?>"><i class="fa-brands fa-behance"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.linkedin.com/in/'.$username;?>"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://'.$username.'.medium.com/';?>"><i class="fa-brands fa-medium"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.patreon.com/'.$username;?>"><i class="fa-brands fa-patreon"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'mailto:'.$usernameEmail;?>"><i class="fa-solid fa-envelope"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'tel:'.$usernamePhoneNum;?>"><i class="fa-solid fa-phone"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://discord.gg/'.$usernameServer;?>"><i class="fa-brands fa-discord"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.quora.com/profile/'.$username;?>"><i class="fa-brands fa-quora"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.reddit.com/user/'.$username;?>"><i class="fa-brands fa-reddit"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://twitter.com/'.$username;?>"><i class="fa-brands fa-twitter"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.twitch.tv/'.$username;?>"><i class="fa-brands fa-twitch"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.instagram.com/'.$username;?>"><i class="fa-brands fa-instagram"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.facebook.com/'.$username;?>"><i class="fa-brands fa-facebook"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo $link;?>"><i class="fa-brands fa-discourse"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.youtube.com/'.$username;?>"><i class="fa-brands fa-youtube"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://bandcamp.com/'.$username;?>"><i class="fa-brands fa-bandcamp"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.pinterest.com/'.$username;?>"><i class="fa-brands fa-pinterest"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://telegram.me/joinchat/'.$username;?>"><i class="fa-brands fa-telegram"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.tiktok.com/@'.$username;?>"><i class="fa-brands fa-tiktok"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
             </div>
         </section>
         <section id="links" class="w-4/12 flex flex-col mx-auto mb-10 mt-1">
