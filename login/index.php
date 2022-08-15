@@ -1,8 +1,21 @@
 <?php
-if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
+require './config/db.php';
+require './functions.php';
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     header("Location: /admin/");
 }
 session_start();
+if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $usernameEmail = $_POST['usernameEmail'];
+    $password = $_POST['password'];
+
+    // Email / Username checks 
+    if (isset($usernameEmail) && !empty(trim($usernameEmail))) {
+         if (emailMatch($usernameEmail)) $email = validateEmail($usernameEmail);
+         else $username = $usernameEmail;
+    }
+
+}
 ?>
 <!doctype html><html lang="en">
     <head>
@@ -20,11 +33,11 @@ session_start();
             <form method="POST" class="flex flex-col mx-auto">
                 <div class="flex flex-col my-2">
                     <label class="text-primaryText text-lg">Username or email</label>
-                    <input class="" type="text" autocomplete="off" placeholder="will@cmshark.com">
+                    <input class="" type="text" autocomplete="off" name="usernameEmail" placeholder="will@cmshark.com">
                 </div>
                 <div class="flex flex-col my-2">
                     <label class="text-primaryText text-lg">Password</label> 
-                    <input class="" type="password" autocomplete="off" placeholder="**********">
+                    <input class="" type="password" autocomplete="off" name="password" placeholder="**********">
                 </div>
                 <div class="place-self-center my-2 mt-5">
                     <input class="bg-backgroundColor cursor-pointer text-primaryText ring px-8 py-2 hover:ring-accent focus:ring-accent ring-gray-600 rounded" type="submit" value="Login">

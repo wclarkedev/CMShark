@@ -20,3 +20,6 @@ function validatePassword($password){
 /*function validateUsername($username){}
 function validateInput($input,$type){}*/
 // TODO: Encryption functions 
+function emailMatch($email) {
+    return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
+}
