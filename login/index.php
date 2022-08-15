@@ -14,7 +14,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
          if (emailMatch($usernameEmail)) $email = validateEmail($usernameEmail);
          else $username = $usernameEmail;
     }
-
+    if (isset($username)) {
+        // Check DB for username
+    }
+    if (isset($email)) {
+        // Check DB for email 
+    }
 }
 ?>
 <!doctype html><html lang="en">
