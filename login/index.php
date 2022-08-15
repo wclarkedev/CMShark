@@ -1,4 +1,7 @@
 <?php
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
+    header("Location: /admin/");
+}
 session_start();
 ?>
 <!doctype html><html lang="en">
