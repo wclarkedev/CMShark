@@ -46,6 +46,8 @@ require './functions.php';
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-whatsapp"></i></a>
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-youtube"></i></a>
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-bandcamp"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-pinterest"></i></a>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" href=""><i class="fa-brands fa-telegram"></i></a>
                 -->
             </div>
         </section>
