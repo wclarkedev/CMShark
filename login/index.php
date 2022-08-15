@@ -4,8 +4,8 @@ require './functions.php';
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     header("Location: /admin/");
 }
-session_start();
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    session_start();
     $usernameEmail = $_POST['usernameEmail'];
     $password = $_POST['password'];
 
