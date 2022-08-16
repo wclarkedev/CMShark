@@ -22,7 +22,7 @@
             </ul>
             <a href="../logout.php" class="text-xl">Logout</a>
         </nav>-->
-        <main class="">
+        <main>
             <form method="POST" class="w-4/12 flex flex-col mx-auto">
                 <section class="flex flex-col bg-backgroundAccent rounded-md mt-12">
                     <h3 class="text-primaryText text-center mt-5 text-2xl font-bold">Edit Header</h3>
