@@ -42,6 +42,7 @@
                             Upload Image
                             <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
                         </label>
+                        <a class="text-accent font-semibold hover:underline" href="admin.php?action=current_pfp">Current profile picture</a>
                     </div>
                     <div class="mx-8 mt-2 mb-5">
                         <input class="w-2/12 bg-accent hover:bg-accentLighter cursor-pointer p-2 rounded text-primaryText font-semibold" type="submit" value="Save">
