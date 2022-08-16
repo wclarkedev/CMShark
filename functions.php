@@ -21,3 +21,18 @@ function validatePassword($password){
 function emailMatch($email) {
     return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
 }
+function getPageMeta($content_requested) {
+    if (isset($content_requested) && !empty(trim($content_requested))) {
+        switch ($content_requested) {
+            case "title":
+                // Get page title from configuration
+                break;
+            case "description":
+                // Get page description from configuration
+                break;
+            case "favicon":
+                // Get favicon from uploads
+                break;
+        }
+    }
+}

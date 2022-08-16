@@ -9,9 +9,10 @@ require './functions.php';
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title></title>
-        <meta name="title" content="">
-        <meta name="description" content="">
+        <title><?php echo getPageMeta('title');?></title>
+        <meta name="title" content="<?php echo getPageMeta('title');?>">
+        <meta name="description" content="<?php echo getPageMeta('description');?>">
+        <link rel="icon" type="image/x-icon" href="<?php echo getPageMeta('favicon');?>">
     </head>
     <body class="bg-backgroundColor">
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
