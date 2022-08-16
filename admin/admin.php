@@ -19,7 +19,9 @@
                         <section class="w-4/12 flex flex-col mx-auto bg-backgroundAccent text-primaryText rounded mt-12">
                             <a class="text-accent font-semibold hover:underline p-2" href="index.php">Return to dashboard</a>
                             <span class="text-primaryText text-xl px-5 pt-4">Current Profile Picture</span>
-                            <img class="h-6/12 w-6/12 mx-auto mt-4 mb-5 rounded" src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80" alt="profile picture">
+                            <img class="h-6/12 w-6/12 mx-auto mt-4 mb-5 rounded" 
+                            src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80" 
+                            alt="profile picture">
                         </section>
                     <?php
                 break;
