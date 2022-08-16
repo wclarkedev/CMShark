@@ -21,9 +21,9 @@ function validatePassword($password){
 function emailMatch($email) {
     return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
 }
-function getPageMeta($content_requested) {
-    if (isset($content_requested) && !empty(trim($content_requested))) {
-        switch ($content_requested) {
+function getPageMeta($content) {
+    if (isset($content) && !empty(trim($content))) {
+        switch ($content) {
             case "title":
                 // Get page title from configuration
                 break;
@@ -36,3 +36,4 @@ function getPageMeta($content_requested) {
         }
     }
 }
+function getPageContent($content){}
