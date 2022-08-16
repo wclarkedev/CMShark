@@ -9,10 +9,22 @@ require './functions.php';
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
-        <title><?php echo getPageMeta('title');?></title>
-        <meta name="title" content="<?php echo getPageMeta('title');?>">
-        <meta name="description" content="<?php echo getPageMeta('description');?>">
-        <link rel="icon" type="image/x-icon" href="<?php echo getPageMeta('favicon');?>">
+        <title><?php
+            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
+            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
+        ?></title>
+        <meta name="title" content="<?php
+            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
+            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
+        ?>">
+        <meta name="description" content="<?php
+            if (!empty(getPageMeta('description'))) echo getPageMeta('description');
+            else echo 'CMShark - A customisable, flexible and open source lightweight CMS for bio link lists. You choose how you present your links with full control.';
+        ?>">
+        <link rel="icon" type="image/x-icon" href="<?php
+            if (!empty(getPageMeta('favicon'))) echo getPageMeta('favicon');
+            else echo '/uploads/cmshark-favicon.ico';
+        ?>">
     </head>
     <body class="bg-backgroundColor">
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
