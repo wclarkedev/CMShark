@@ -1,3 +1,7 @@
 <?php
-session_destroy();
-header("Location: /");
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    session_destroy();
+    header("Location: /");
+} else {
+    header("Location: /");
+}
