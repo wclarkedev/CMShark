@@ -21,8 +21,14 @@ require './functions.php';
                 src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
             </div>
             <div class="flex flex-col mx-auto mb-4">
-                <h1 class="text-primaryText text-3xl font-bold text-center mb-2">Placeholder Name</h1>
-                <span class="text-base text-secondaryText text-center max-w-xs">Placeholder bio</span>
+                <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php 
+                    if (!empty(getPageContent('pageTitle'))) echo getPageContent('pageTitle');
+                    else echo 'CMShark';
+                ?></h1>
+                <span class="text-base text-secondaryText text-center max-w-xs"><?php
+                    if (!empty(getPageContent('pageDescription'))) echo getPageContent('pageDescription');
+                    else echo 'Customisable & open source CMS for bio link lists.'
+                ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->
