@@ -36,5 +36,21 @@ function getPageMeta($content) {
         }
     }
 }
-function getPageContent($content){}
+function getPageContent($content){
+    if(isset($content) && !empty(trim($content))) {
+        switch ($content) {
+            case "pageTitle":
+                // page title from database
+                break;
+            case "pageDescription":
+                // page description from database
+                break;
+            case "pfp":
+                // profile picture from uploads dir
+                break;
+            default:
+                return "";
+        }
+    }
+}
 function getLinks(){}
