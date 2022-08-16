@@ -17,8 +17,6 @@ function validatePassword($password){
     if (!preg_match("#[0-9]+#",$password)) return 'Password must contain 1 number.';
     if (!preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/',$password)) return 'Password must contain 1 spacial character';   
 }
-/*function validateUsername($username){}
-function validateInput($input,$type){}*/
 // TODO: Encryption functions 
 function emailMatch($email) {
     return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
