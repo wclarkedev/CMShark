@@ -6,6 +6,7 @@ Disallow: /setup/*
 Disallow: /functions.php
 Disallow: /tests/*
 Disallow: /.github/*
+Disallow: /logout.php
 Allow: index.php
 Allow: /uploads/*
 Sitemap: sitemap.php
