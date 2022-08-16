@@ -53,7 +53,7 @@ require './functions.php';
                 href="<?php echo 'tel:'.$usernamePhoneNum;?>"><i class="fa-solid fa-phone"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://discord.gg/'.$usernameServer;?>"><i class="fa-brands fa-discord"></i></a>
+                href="<?php echo 'https://discord.com/users/'.$username/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://www.quora.com/profile/'.$username;?>"><i class="fa-brands fa-quora"></i></a>
