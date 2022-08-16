@@ -37,3 +37,4 @@ function getPageMeta($content) {
     }
 }
 function getPageContent($content){}
+function getLinks(){}

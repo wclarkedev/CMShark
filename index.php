@@ -122,16 +122,34 @@ require './functions.php';
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
-            <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+            <?php /*
+            $links = getLinks();
+            foreach ($links as $link) {?>
+                <a href="<?php
+                    if (!empty($link['url'])) echo $link['url'];
+                    else echo '#';
+                ?>" 
+                class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+
                 <div class="py-2 px-2">
                     <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                    src="<?php
+                        echo $link['image'];
+                    ?>">
                 </div>
                 <div class="flex flex-col py-4 px-6">
-                    <h3 class="text-xl text-primaryText md:p-0 py-5">Placeholder Title</h3>
-                    <span class="text-base text-secondaryText hidden md:flex">Placeholder Description</span>
+                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php
+                        if (!empty($link['title'])) echo $link['title'];
+                        else echo $link['urlTitle'];
+                    ?></h3>
+                    <span class="text-base text-secondaryText hidden md:flex"><?php 
+                        if (!empty($link['description'])) echo $link['description'];
+                        else echo $link['urlDescription'];
+                    ?></span>
                 </div>
             </a>
+            <?php }
+            */?>
             <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                 <div class="py-2 px-2">
                     <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
