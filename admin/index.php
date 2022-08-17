@@ -9,7 +9,6 @@
         <meta name="title" content="Admin">
     </head>
     <body class="bg-backgroundColor">
-</html>
 <?php
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     if (php_sapi_name() === 'cli-server' && is_file($filename)) {
@@ -29,8 +28,20 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin home page
     $router->get('/',function () {
         ?>
-            <div class="mt-12">
-                <h1 class="text-primaryText text-3xl text-center">Edit Page</h1>
+            <div class="mt-12" id="edit-page">
+                <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
+                <section class="flex flex-col mx-auto w-8/12" id="edit-page-form-container">
+                    
+                    <form action="POST" class="flex flex-col mt-5">
+                        <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto">
+                            <h2 class="text-2xl text-primaryText place-self-center my-2">Page Header</h2>
+                            <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                                <label class="text-primaryText text-lg mb-1">Name</label>
+                                <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="John Doe">
+                            </div>
+                        </div>
+                    </form>
+                </section>
             </div>
         <?php
     });
@@ -46,3 +57,5 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     $router->run();
 ?>
+    </body>
+</html>
