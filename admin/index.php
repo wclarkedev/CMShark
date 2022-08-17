@@ -39,6 +39,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                                 <label class="text-primaryText text-lg mb-1">Name</label>
                                 <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="John Doe">
                             </div>
+                            <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                                <label class="text-primaryText text-lg mb-1">Bio</label>
+                                <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-bio-input" name="pageContentHeaderBio" placeholder="I work as a security analyist.">
+                            </div>
                         </div>
                     </form>
                 </section>
