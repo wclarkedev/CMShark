@@ -8,6 +8,7 @@
         <title>Admin</title>
         <meta name="title" content="Admin">
     </head>
+    <body class="bg-backgroundColor">
 </html>
 <?php
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
@@ -35,3 +36,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     });
     $router->run();
+?>
+<html lang="en">
+    </body>
+</html>
