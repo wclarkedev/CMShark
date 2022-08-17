@@ -8,6 +8,7 @@
         <title>Admin</title>
         <meta name="title" content="Admin">
     </head>
+    <body class="bg-backgroundColor">
 </html>
 <?php
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
@@ -28,7 +29,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin home page
     $router->get('/',function () {
         ?>
-
+            <div class="mt-12">
+                <h1 class="text-primaryText text-3xl text-center">Edit Page</h1>
+            </div>
         <?php
     });
 
@@ -37,19 +40,5 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     });
 
-    // Page edit
-    $router->get('/edit_page/',function () {
-        echo "hello world";
-        ?>
-        <html>
-            <main>
-                <h1>Edit Page</h1>
-                <form method="POST">
-                    
-                </form>
-            </main>
-        </html>
-        <?php
-    });
     $router->run();
 ?>
