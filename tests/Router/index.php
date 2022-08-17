@@ -18,6 +18,20 @@
     });
 
     $router->get('/', function () {
-        echo 'Hello World';
+        echo '<h1 style="color:pink;">hello</h1>';
     });
+    // Admin router model test
+    $router->get('/admin',function(){
+        echo '<h1>Admin</h1>';
+    });
+    $router->get('/admin/links',function(){
+        echo '<h1>Links admin</h1>';
+        ?>
+        <span>Links are cool</span>
+        <?php
+    });
+    $router->get('/admin/settings',function(){
+        echo "<h4>Settings</h4>";
+    });
+
     $router->run();
