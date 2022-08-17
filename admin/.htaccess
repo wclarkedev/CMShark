@@ -12,9 +12,3 @@ php_value  upload_max_filesize 5M
 php_value  error_reporting     -1
 php_flag   display_errors      on
 php_flag   log_errors          on
-
-ErrorDocument 500 /errors/500.html
-ErrorDocument 400 /errors/400.html
-ErrorDocument 401 /errors/401.html
-ErrorDocument 403 /errors/403.html
-ErrorDocument 404 /errors/404.html
