@@ -43,6 +43,14 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                                 <label class="text-primaryText text-lg mb-1">Bio</label>
                                 <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-bio-input" name="pageContentHeaderBio" placeholder="I work as a security analyist.">
                             </div>
+                            <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                                <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
+                                <label class="cursor-pointer w-12/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
+                                    <i class="fa-solid fa-upload mr-2"></i>
+                                    Upload Image
+                                    <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
+                                </label>
+                            </div>
                         </div>
                     </form>
                 </section>
