@@ -54,8 +54,36 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
                         </div>
                         <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
-                            <h2 class="text-2xl text-primaryText place-self-center my-2">Social Media</h2>
+                            <h2 class="text-2xl text-primaryText place-self-center my-2">Social Icons</h2>
                             <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12"></div>
+                            <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12" id="SocialMeida">
+                                <ul>
+                                    <li>Github</li>
+                                    <li>Bitbucket</li>
+                                    <li>Gitlab</li>
+                                    <li>Behance</li>
+                                    <li>LinkedIn</li>
+                                    <li>Medium</li>
+                                    <li>Patreon</li>
+                                    <li>Email</li>
+                                    <li>Phone</li>
+                                    <li>Discord</li>
+                                    <li>Quora</li>
+                                    <li>Reddit</li>
+                                    <li>Twitter</li>
+                                    <li>Instagram</li>
+                                    <li>Facebook</li>
+                                    <li>Discourse</li>
+                                    <li>WhatsApp</li>
+                                    <li>YouTube</li>
+                                    <li>Bandcamp</li>
+                                    <li>Pinterest</li>
+                                    <li>Telegram</li>
+                                    <li>Tiktok</li>
+                                    <li>Snapchat</li>
+                                    <li>Stack-overflow</li>
+                                </ul>
+                            </div>
                         </div>
                     </form>
                 </section>
