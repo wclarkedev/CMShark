@@ -60,11 +60,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             </div>
                             <!--<div class="flex flex-col mx-5 mb-5 place-self-center w-6/12" id="SocialMeida">
                                 <ul>
-                                    <li>Github</li>
+                                    <li>GitHub</li>
                                     <li>Bitbucket</li>
-                                    <li>Gitlab</li>
+                                    <li>GitLab</li>
                                     <li>Behance</li>
-                                    <li>LinkedIn</li>
+                                    <li>Linkedin</li>
                                     <li>Medium</li>
                                     <li>Patreon</li>
                                     <li>Email</li>
@@ -81,9 +81,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                                     <li>Bandcamp</li>
                                     <li>Pinterest</li>
                                     <li>Telegram</li>
-                                    <li>Tiktok</li>
+                                    <li>TikTok</li>
                                     <li>Snapchat</li>
-                                    <li>Stack-overflow</li>
+                                    <li>StackOverflow</li>
                                 </ul>
                             </div>-->
                         </div>
