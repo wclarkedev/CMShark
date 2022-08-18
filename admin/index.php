@@ -27,8 +27,18 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     // Admin home page
     $router->get('/',function () {
-            echo file_get_contents('admin_nav.html');
         ?>
+        <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+            <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+            <div class="flex flex-col my-4 place-self-center">
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent ring ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+            </div>
+            <div class="flex flex-col my-4">
+                <a class="" href="/logout.php">Logout</a>
+            </div>
+        </div>
         <div class="mt-12" id="edit-page">
             <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
             <section class="flex flex-col mx-auto w-8/12" id="edit-page-form-container">
@@ -74,8 +84,18 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     // Admin settings page
     $router->get('/settings',function () {
-        echo file_get_contents('admin_nav.html');
         ?>
+        <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+            <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+            <div class="flex flex-col my-4 place-self-center">
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent ring ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+            </div>
+            <div class="flex flex-col my-4">
+                <a class="" href="/logout.php">Logout</a>
+            </div>
+        </div>
         <div class="mt-12">
             <h1 class="text-primaryText text-3xl text-center">Settings</h1>
         </div>
@@ -84,8 +104,18 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     // User settings page
     $router->get('/settings/user',function () {
-        echo file_get_contents('admin_nav.html');
         ?>
+        <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+            <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+            <div class="flex flex-col my-4 place-self-center">
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent ring ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+            </div>
+            <div class="flex flex-col my-4">
+                <a class="" href="/logout.php">Logout</a>
+            </div>
+        </div>
         <div class="mt-12">
             <h1 class="text-primaryText text-3xl text-center">User Settings</h1>
         </div>
