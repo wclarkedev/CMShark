@@ -28,7 +28,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin home page
     $router->get('/',function () {
         ?>
-            <div class="mt-12" id="edit-page">
+            <!--<div class="mt-12" id="edit-page">
                 <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
                 <section class="flex flex-col mx-auto w-8/12" id="edit-page-form-container">
                     
@@ -58,34 +58,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
                                 
                             </div>
-<!--<div class="flex flex-col mx-5 mb-5 place-self-center w-6/12" id="SocialMeida">
-<ul>
-<li>Bandcamp</li>
-<li>Behance</li>
-<li>Bitbucket</li>
-<li>Discord</li>
-<li>Discourse</li>
-<li>Email</li>
-<li>Facebook</li>
-<li>GitHub</li>
-<li>GitLab</li>
-<li>Instagram</li>
-<li>Linkedin</li>
-<li>Medium</li>
-<li>Patreon</li>
-<li>Phone</li>
-<li>Pinterest</li>
-<li>Quora</li>
-<li>Reddit</li>
-<li>Snapchat</li>
-<li>Stack Overflow</li>
-<li>Telegram</li>
-<li>TikTok</li>
-<li>Twitter</li>
-<li>WhatsApp</li>
-<li>YouTube</li>
-</ul>
-</div>-->
                         </div>
                         <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                             <h2 class="text-2xl text-primaryText place-self-center my-2">Links</h2>
@@ -95,7 +67,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                         </div>
                     </form>
                 </section>
-            </div>
+            </div>-->
         <?php
     });
 
