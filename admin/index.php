@@ -58,34 +58,34 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
                                 
                             </div>
-                            <!--<div class="flex flex-col mx-5 mb-5 place-self-center w-6/12" id="SocialMeida">
-                                <ul>
-                                    <li>Bandcamp</li>
-                                    <li>Behance</li>
-                                    <li>Bitbucket</li>
-                                    <li>Discord</li>
-                                    <li>Discourse</li>
-                                    <li>Email</li>
-                                    <li>Facebook</li>
-                                    <li>GitHub</li>
-                                    <li>GitLab</li>
-                                    <li>Instagram</li>
-                                    <li>Linkedin</li>
-                                    <li>Medium</li>
-                                    <li>Patreon</li>
-                                    <li>Phone</li>
-                                    <li>Pinterest</li>
-                                    <li>Quora</li>
-                                    <li>Reddit</li>
-                                    <li>Snapchat</li>
-                                    <li>Stack Overflow</li>
-                                    <li>Telegram</li>
-                                    <li>TikTok</li>
-                                    <li>Twitter</li>
-                                    <li>WhatsApp</li>
-                                    <li>YouTube</li>
-                                </ul>
-                            </div>-->
+<!--<div class="flex flex-col mx-5 mb-5 place-self-center w-6/12" id="SocialMeida">
+<ul>
+<li>Bandcamp</li>
+<li>Behance</li>
+<li>Bitbucket</li>
+<li>Discord</li>
+<li>Discourse</li>
+<li>Email</li>
+<li>Facebook</li>
+<li>GitHub</li>
+<li>GitLab</li>
+<li>Instagram</li>
+<li>Linkedin</li>
+<li>Medium</li>
+<li>Patreon</li>
+<li>Phone</li>
+<li>Pinterest</li>
+<li>Quora</li>
+<li>Reddit</li>
+<li>Snapchat</li>
+<li>Stack Overflow</li>
+<li>Telegram</li>
+<li>TikTok</li>
+<li>Twitter</li>
+<li>WhatsApp</li>
+<li>YouTube</li>
+</ul>
+</div>-->
                         </div>
                     </form>
                 </section>
