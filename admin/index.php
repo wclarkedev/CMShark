@@ -28,11 +28,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin home page
     $router->get('/',function () {
         ?>
-            <div class="bg-backgroundAccent rounded w-1/12 m-2 h-3/6 fixed top-1 left-1" id="navigation">
-                <h1 class="text-primaryText text-center text-2xl font-semibold">CMShark</h1>
+            <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+                <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+                <div class="flex flex-col my-4 place-self-center">
+                    <a class="text-primaryText my-2 ring ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                    <a class="text-primaryText my-2 p-2 hover:ring hover:ring-accent mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                    <a class="text-primaryText my-2 p-2 hover:ring hover:ring-accent mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+                </div>
                 <div class="flex flex-col my-4">
-                    <a class="text-lg text-primaryText my-1 ring ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house"></i> Home</a>
-                    <a class="text-lg text-primaryText my-1 p-2 hover:ring hover:ring-accent mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear"></i> Settings</a>
+                    <a class="" href="/logout.php">Logout</a>
                 </div>
             </div>
             <div class="mt-12" id="edit-page">
@@ -81,10 +85,41 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin settings page
     $router->get('/settings',function () {
         ?>
+        <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+            <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+            <div class="flex flex-col my-4 place-self-center">
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                <a class="text-primaryText my-2 p-2 ring ring-accent mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                <a class="text-primaryText my-2 p-2 hover:ring hover:ring-accent mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+            </div>
+            <div class="flex flex-col my-4">
+                <a class="" href="/logout.php">Logout</a>
+            </div>
+        </div>
         <div class="mt-12">
             <h1 class="text-primaryText text-3xl text-center">Settings</h1>
         </div>
-    <?php
+        <?php
+    });
+
+    // User settings page
+    $router->get('/settings/user',function () {
+        ?>
+        <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
+            <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
+            <div class="flex flex-col my-4 place-self-center">
+                <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin"><i class="fa-solid fa-house mr-1"></i> Home</a>
+                <a class="text-primaryText my-2 p-2 hover:ring hover:ring-accent mx-3 rounded-sm" href="/admin/settings/"><i class="fa-solid fa-gear mr-1"></i> Settings</a>
+                <a class="text-primaryText my-2 p-2 ring ring-accent mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
+            </div>
+            <div class="flex flex-col my-4">
+                <a class="" href="/logout.php">Logout</a>
+            </div>
+        </div>
+        <div class="mt-12">
+            <h1 class="text-primaryText text-3xl text-center">User Settings</h1>
+        </div>
+        <?php
     });
 
     $router->run();
