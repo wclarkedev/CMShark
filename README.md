@@ -11,7 +11,7 @@ A simple self-hosted CMS for bio links. **This is still in development and doesn
 - A small amount of knownledge in configuration and PHP (to edit config file).
 
 ## Features 
-- Responsive layout.
+<!--- Responsive layout.
 - Flexibility:
     - You can edit the source code and change the front end as much as you want. 
     - The admin area can be changed, themed and much more. (Not recommended)
@@ -23,4 +23,4 @@ A simple self-hosted CMS for bio links. **This is still in development and doesn
 Future features - 
 - Better page editing 
 - Page insights 
-- Better performance 
+- Better performance -->
