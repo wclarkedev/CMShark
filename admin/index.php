@@ -87,6 +87,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 </ul>
 </div>-->
                         </div>
+                        <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
+                            <h2 class="text-2xl text-primaryText place-self-center my-2">Links</h2>
+                            <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                                
+                            </div>  
+                        </div>
                     </form>
                 </section>
             </div>
