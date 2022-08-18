@@ -42,7 +42,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="mt-12" id="edit-page">
             <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
             <section class="flex flex-col mx-auto w-8/12" id="edit-page-form-container">
-                
                 <form action="POST" class="flex flex-col mt-2">
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Page Header</h2>
@@ -96,8 +95,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <a class="" href="/logout.php">Logout</a>
             </div>
         </div>
-        <div class="mt-12">
-            <h1 class="text-primaryText text-3xl text-center">Settings</h1>
+        <div class="mt-12" id="settings">
+            <h1 class="text-primaryText text-3xl text-center font-semibold">Settings</h1>
         </div>
         <?php
     });
@@ -116,8 +115,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <a class="" href="/logout.php">Logout</a>
             </div>
         </div>
-        <div class="mt-12">
-            <h1 class="text-primaryText text-3xl text-center">User Settings</h1>
+        <div class="mt-12" id="user_settings">
+            <h1 class="text-primaryText text-3xl text-center font-semibold">User Settings</h1>
         </div>
         <?php
     });
