@@ -28,6 +28,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Admin home page
     $router->get('/',function () {
         ?>
+            <div class="bg-backgroundAccent rounded w-1/12 m-2 h-3/6" id="navigation">
+                <h1 class="text-primaryText text-center text-2xl font-semibold">CMShark</h1>
+            </div>
             <!--<div class="mt-12" id="edit-page">
                 <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
                 <section class="flex flex-col mx-auto w-8/12" id="edit-page-form-container">
