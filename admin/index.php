@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
@@ -8,6 +9,7 @@
         <title>Admin | CMShark</title>
         <meta name="title" content="Admin">
     </head>
+
     <body class="bg-backgroundColor">
 <?php
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
@@ -20,12 +22,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
-        header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+        header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
         echo '404, route not found!';
     });
 
 
-    // Admin home page
+    // Admin Homepage
     $router->get('/',function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
