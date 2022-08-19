@@ -1,19 +1,19 @@
 <?php
-require 'db.php';
+require "db.php";
 // Data enters db
-if ($_SERVER['REQUEST_METHOD']=='POST') {
-    $linkTitle = $_POST['Link-title'];
-    $linkDesc = $_POST['Link-description'];
-    $linkHref = $_POST['Link'];
-    $id = $_POST['Link-id'];
+if($_SERVER["REQUEST_METHOD"]=="POST") {
+    $linkTitle = $_POST["Link-title"];
+    $linkDesc = $_POST["Link-description"];
+    $linkHref = $_POST["Link"];
+    $id = $_POST["Link-id"];
 
     // Check data is not empty 
-    if (empty(trim($linkTitle)) && empty(trim($linkDesc)) && empty(trim($linkHref))){
+    if(empty(trim($linkTitle)) && empty(trim($linkDesc)) && empty(trim($linkHref))){
         exit("One or more form inputs were empty");
     } else {
         $connection = new mysqli($host,$user,$password,$db);
         $query = "INSERT INTO tests (linkID,linkTitle,linkDescription,link) VALUES (".$id.",".$linkTitle.",".$linkDesc.",".$linkHref.")";
-        if ($connection->query($query) == 'TRUE') echo "records created";
+        if($connection->query($query) == "TRUE") echo "records created";
         else echo "creation failed:".$connection->error;
         $connection->close();
     }

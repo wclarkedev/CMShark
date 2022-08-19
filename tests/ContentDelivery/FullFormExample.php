@@ -1,15 +1,15 @@
 <?php
-require 'db.php';
-if ($_SERVER['REQUEST_METHOD']=='POST'){
-    $error = '';
-    if (empty(trim($_POST['title'])) && empty(trim($_POST['description']))&& empty(trim($_POST['href']))) $error = 'One or more fields are empty';
+require "db.php";
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $error = "";
+    if(empty(trim($_POST["title"])) && empty(trim($_POST["description"]))&& empty(trim($_POST["href"]))) $error = "One or more fields are empty";
     else {
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $href = $_POST['href'];
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $href = $_POST["href"];
         $connection = new mysqli($host,$user,$password,$db);
         $query = "INSERT INTO tests(linkTitle,linkDescription,link) VALUES (".$title.",".$description.",".$href.")";
-        if ($connection->query($query) == true) echo "Records created";
+        if($connection->query($query) == true) echo "Records created";
         else echo "Record creation failed: ".$connection->error;
         $connection->close();
     }

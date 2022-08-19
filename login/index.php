@@ -1,23 +1,23 @@
 <?php
-require '../config/db.php';
-require '../functions.php';
-if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+require "../config/db.php";
+require "../functions.php";
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
     header("Location: /admin/");
 }
-if($_SERVER['REQUEST_METHOD'] == 'GET') {
+if($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
-    $usernameEmail = $_POST['usernameEmail'];
-    $password = $_POST['password'];
+    $usernameEmail = $_POST["usernameEmail"];
+    $password = $_POST["password"];
 
 // Email / Username checks 
-    if (isset($usernameEmail) && !empty(trim($usernameEmail))) {
-         if (emailMatch($usernameEmail)) $email = validateEmail($usernameEmail);
+    if(isset($usernameEmail) && !empty(trim($usernameEmail))) {
+         if(emailMatch($usernameEmail)) $email = validateEmail($usernameEmail);
          else $username = $usernameEmail;
     }
-    if (isset($username)) {
+    if(isset($username)) {
         // Check DB for username
     }
-    if (isset($email)) {
+    if(isset($email)) {
         // Check DB for email 
     }
 

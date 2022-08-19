@@ -12,23 +12,23 @@
 
     <body class="bg-backgroundColor">
 <?php
-$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-    if (php_sapi_name() === 'cli-server' && is_file($filename)) {
+$filename = __DIR__ . preg_replace("#(\?.*)$#", "", $_SERVER["REQUEST_URI"]);
+    if(php_sapi_name() === "cli-server" && is_file($filename)) {
         return false;
     }
 
-    require '../vendor/autoload.php';
+    require "../vendor/autoload.php";
 
     // Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
-        header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
-        echo '404, route not found!';
+        header($_SERVER["SERVER_PROTOCOL"] . "404 Not Found");
+        echo "404, route not found!";
     });
 
 
     // Admin Homepage
-    $router->get('/',function () {
+    $router->get("/",function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
             <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
@@ -84,7 +84,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
     // Admin settings page
-    $router->get('/settings',function () {
+    $router->get("/settings",function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
             <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
@@ -104,7 +104,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
     // User settings page
-    $router->get('/settings/user',function () {
+    $router->get("/settings/user",function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
             <h1 class="text-primaryText text-center text-2xl font-semibold py-3">CMShark</h1>
