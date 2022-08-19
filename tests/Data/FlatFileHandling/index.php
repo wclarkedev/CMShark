@@ -20,7 +20,7 @@ $router->get('/form/login',function (){
     <?php
 });
 // Different data types tests
-$router->get('/form/different_datatypes',function (){
+$router->get('/form/datatypes',function (){
 
 });
 
