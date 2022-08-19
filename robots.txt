@@ -7,5 +7,6 @@ Disallow: /functions.php
 Disallow: /tests/*
 Disallow: /.github/*
 Disallow: /logout.php
+Disallow: /data/*
 Allow: /
 Allow: /uploads/*
