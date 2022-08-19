@@ -4,27 +4,26 @@ require './functions.php';
 ?>
 <!doctype html><html lang="en">
     <head>
+        <!-- Meta -->
         <meta name="charset" content="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="copyright" content="cmshark">
+
+        <!-- Imports -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
-        <title><?php
-            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
-            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
-        ?></title>
-        <meta name="title" content="<?php
-            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
-            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
-        ?>">
-        <meta name="description" content="<?php
-            if (!empty(getPageMeta('description'))) echo getPageMeta('description');
-            else echo 'CMShark - A customisable, flexible and open source lightweight CMS for bio link lists. You choose how you present your links with full control.';
-        ?>">
-        <link rel="icon" type="image/x-icon" href="<?php
-            if (!empty(getPageMeta('favicon'))) echo getPageMeta('favicon');
-            else echo '/uploads/cmshark-favicon.ico';
-        ?>">
+        
+        <!-- Configurable Meta -->
+        <title></title>
+        <meta name="title" content="">
+        <meta name="description" content="">
+        <link rel="icon" type="image/x-icon" href="">
+        <meta name="url" content="">
+        <meta name="language" content="">
+        <meta name="og:url" content="">
+        <meta name="owner" content="">
     </head>
     <body class="bg-backgroundColor">
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
