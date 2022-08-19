@@ -1,0 +1,10 @@
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+Options -Indexes
+IndexIgnore *
+<FilesMatch *>
+    Order allow,deny
+    Deny from all
+ </FilesMatch>
