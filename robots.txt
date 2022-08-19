@@ -6,7 +6,7 @@ Disallow: /functions.php
 Disallow: /tests/*
 Disallow: /.github/*
 Disallow: /logout.php
-Disallow: /data/*
+Disallow: /json/*
 Disallow: /*.json
 Disallow: /.htaccess
 Disallow: /tailwind.config.js
