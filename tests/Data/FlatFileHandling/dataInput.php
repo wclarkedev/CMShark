@@ -11,9 +11,17 @@ $router->get('/',function (){
 });
 // Login form test
 $router->get('/form/login',function (){
-
+    ?>
+    <form method="POST">
+        <input type="text" name="testInput-loginUsername">
+        <input type="password" name="testInput-loginPassword">
+    </form>
+    <?php
 });
 // Different data types tests
 $router->get('/form/different_datatypes',function (){
 
 });
+
+// Run router
+$router->run();
