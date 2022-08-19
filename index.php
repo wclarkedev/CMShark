@@ -12,6 +12,7 @@ require "./functions.php";
         <script src="tailwind.config.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
+
         <title><?php
             if(!empty(getPageMeta("title"))) echo getPageMeta("title");
             else echo "CMShark ~ Customisable, flexible and open source lightweight CMS for bio links";

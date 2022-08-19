@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
+
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="/tailwind.config.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+
         <title>Admin | CMShark</title>
-        <meta name="title" content="Admin">
+        <meta name="title" content="Admin - CMShark">
     </head>
 
     <body class="bg-backgroundColor">
@@ -26,7 +28,6 @@ $filename = __DIR__ . preg_replace("#(\?.*)$#", "", $_SERVER["REQUEST_URI"]);
         echo "404, route not found!";
     });
 
-
     // Admin Homepage
     $router->get("/",function () {
         ?>
@@ -41,6 +42,7 @@ $filename = __DIR__ . preg_replace("#(\?.*)$#", "", $_SERVER["REQUEST_URI"]);
                 <a class="" href="/logout.php">Logout</a>
             </div>
         </div>
+
         <div class="mt-12" id="edit-page">
             <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
             <div class="flex flex-col mx-auto w-8/12">
@@ -63,14 +65,15 @@ $filename = __DIR__ . preg_replace("#(\?.*)$#", "", $_SERVER["REQUEST_URI"]);
                                 <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
                             </label>
                         </div>
-
                     </div>
+
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Social Icons</h2>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
                             
                         </div>
                     </div>
+
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Links</h2>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
