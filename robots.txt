@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /admin/*
-Disallow: /config/*
 Disallow: /login/*
 Disallow: /setup/*
 Disallow: /functions.php
