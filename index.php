@@ -26,8 +26,9 @@ require './functions.php';
         <meta name="owner" content="">
     </head>
     <body class="bg-backgroundColor">
-    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col-reverse md:flex-row items-center justify-center" id="cookie-consent">
-        We use cookies <i class="fa-solid fa-cookie-bite mx-1"></i>. By using this site, you agree to this site's use of cookies.
+    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
+        <i class="fa-solid fa-cookie-bite mx-1"></i> We are using cookies to enhance your experience on this site. By using this site, you agree to our use of cookies.
+        
         <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
             <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
         </div>
