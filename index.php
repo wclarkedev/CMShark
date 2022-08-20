@@ -26,6 +26,12 @@ require './functions.php';
         <meta name="owner" content="">
     </head>
     <body class="bg-backgroundColor">
+    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col-reverse md:flex-row items-center justify-center" id="cookie-consent">
+        We use cookies <i class="fa-solid fa-cookie-bite mx-1"></i>. By using this site, you agree to this site's use of cookies.
+        <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
+            <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
+        </div>
+    </div>
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
@@ -165,5 +171,17 @@ require './functions.php';
                 </div>
             </a>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
+                element.addEventListener('click', () => {
+                    const expirationDate = new Date();
+                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+                    document.cookie = 'cookie_consent_accepted=true; path=/; expires=' + expirationDate.toUTCString();
+                    document.getElementById('cookie-consent').classList.add('hidden');
+                });
+                });
+            });
+        </script>
     </body>
 </html>
