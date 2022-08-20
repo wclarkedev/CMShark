@@ -27,5 +27,11 @@
         "Whatsapp":"",
         "Youtube":""
     },
-    "links": []
+    "links": [
+        {
+            "link":"",
+            "title":"",
+            "description":""
+        }
+    ]
 }
