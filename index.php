@@ -8,7 +8,7 @@ require './functions.php';
         <meta name="charset" content="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="index, follow">
-        <meta name="copyright" content="cmshark">
+        <meta name="copyright" content="cmshark.com">
 
         <!-- Imports -->
         <script src="https://cdn.tailwindcss.com"></script>
