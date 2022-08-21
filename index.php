@@ -16,8 +16,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
         
         <!-- Configurable Meta -->
-        <?php 
+        <?php
+        $defaultHeader = defaultContent('page_header'); 
         $defaultMeta = defaultContent('page_meta');
+        $page_content = getPageContent('page_header');
         ?>
         <title><?php 
                 if (!true) echo 'meta content here';
@@ -67,13 +69,22 @@
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2">
-                    <?php echo getPageContent('name');?>
+                    <?php
+                        if (isset($page_content['name']) && !empty(trim($page_content['name']))) echo getPageContent('name');
+                        else echo $defaultHeader['name'];
+                    ?>
                 </h1>
                 <span class="text-base text-secondaryText text-center max-w-xs">
-                    <?php echo getPageContent('bio');?>
+                    <?php
+                        if (isset($page_content['bio']) && !empty(trim($page_content['bio']))) echo getPageContent('bio');
+                        else echo $defaultHeader['bio'];
+                    ?>
                 </span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i> 
-                    <?php echo getPageContent('location');?>
+                    <?php
+                        if (isset($page_content['location']) && !empty(trim($page_content['location']))) echo getPageContent('location');
+                        else echo $defaultHeader['location'];
+                    ?>
                 </span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
