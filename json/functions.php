@@ -20,7 +20,7 @@ function defaultContent ($requestedContent) {
         break;
         case 'links':
             $links = [];
-            $link = ['href'=>'https://cmshark','title'=>'Website','desc'=>'CMShark website.'];
+            $link = ['href'=>'https://cmshark.com','title'=>'Website','desc'=>'CMShark website.'];
             array_push($links, $link);
             $link = ['href'=>'https://github.com/wclarkey/cmshark','title'=>'GitHub','desc'=>'Github repository.'];
             array_push($links, $link);
