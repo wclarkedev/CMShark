@@ -16,14 +16,38 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
         
         <!-- Configurable Meta -->
-        <title></title>
-        <meta name="title" content="">
-        <meta name="description" content="">
+        <?php 
+        $defaultMeta = defaultContent('page_meta');
+        ?>
+        <title><?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['title'];
+        ?></title>
+        <meta name="title" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['title'];
+        ?>">
+        <meta name="description" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['description'];
+        ?>">
         <link rel="icon" type="image/x-icon" href="">
-        <meta name="url" content="">
-        <meta name="language" content="">
-        <meta name="og:url" content="">
-        <meta name="owner" content="">
+        <meta name="url" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['url'];
+        ?>">
+        <meta name="language" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['lang'];
+        ?>">
+        <meta name="og:url" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['url'];
+        ?>">
+        <meta name="owner" content="<?php 
+                if (!true) echo 'meta content here';
+                echo $defaultMeta['owner'];
+        ?>">
     </head>
     <body class="bg-backgroundColor">
     <!--<div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
