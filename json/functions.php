@@ -74,6 +74,5 @@ function socialIcons ($icon) {}
 function checkLinks () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $link = $json->{'links'}[0]->{'link'};
-    if (!empty(trim($link))) return true;
-    else return false;
+    if (empty(trim($link))) return true;
 }
