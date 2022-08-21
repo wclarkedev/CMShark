@@ -18,6 +18,18 @@ function defaultContent ($requestedContent) {
             $meta['owner'] = 'William Clarke';
             return $meta;
         break;
+        case 'links':
+            $links = [];
+            $link = ['href'=>'https://cmshark','title'=>'Website','desc'=>'CMShark website.'];
+            array_push($links, $link);
+            $link = ['href'=>'https://github.com/wclarkey/cmshark','title'=>'GitHub','desc'=>'Github repository.'];
+            array_push($links, $link);
+            $link = ['href'=>'https://docs.cmshark.com','title'=>'Documentation','desc'=>'Documentation to help you get started.'];
+            array_push($links, $link);
+            $link = ['href'=>'https://discord.gg/FMmJnz6rmD','title'=>'Discord','desc'=>'CMShark community Discord server.'];
+            array_push($links, $link);
+            return $links;
+        break;
     }
     
 }
