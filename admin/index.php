@@ -46,6 +46,14 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Page Header</h2>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                            <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
+                            <label class="cursor-pointer w-12/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
+                                <i class="fa-solid fa-upload mr-2"></i>
+                                Upload Image
+                                <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
+                            </label>
+                        </div>
+                        <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
                             <label class="text-primaryText text-lg mb-1">Name</label>
                             <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="John Doe">
                         </div>
@@ -54,12 +62,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-bio-input" name="pageContentHeaderBio" placeholder="I work as a security analyist.">
                         </div>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
-                            <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
-                            <label class="cursor-pointer w-12/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
-                                <i class="fa-solid fa-upload mr-2"></i>
-                                Upload Image
-                                <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
-                            </label>
+                            <label class="text-primaryText text-lg mb-1">Location</label>
+                            <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="England">
                         </div>
 
                     </div>
