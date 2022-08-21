@@ -8,7 +8,7 @@ function defaultContent ($requestedContent) {
             $header['bio'] = 'CMShark is a flexible, customisable and, open source CMS for bio link lists.';
             $header['location'] = 'UK';
             return $header;
-            break;
+        break;
         case 'page_meta': 
             $meta = [];
             $meta['title'] = 'CMShark - A flexible, customisable and, opensource CMS.';
@@ -17,7 +17,7 @@ function defaultContent ($requestedContent) {
             $meta['lang'] = 'en_GB';
             $meta['owner'] = 'William Clarke';
             return $meta;
-            break;
+        break;
     }
     
 }
