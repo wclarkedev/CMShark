@@ -53,7 +53,7 @@
                 </span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
-                <!-- Icons for social media -->
+                <!-- Icons for social media 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
 
@@ -127,7 +127,7 @@
                 href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
+                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>-->
 
             </div>
         </section>

@@ -25,6 +25,3 @@ function getPageContent ($contentType) {
     }
 }
 function socialIcons ($icon) {}
-$header_data = getPageContent('name');
-//var_dump($header_data);
-echo $header_data;
