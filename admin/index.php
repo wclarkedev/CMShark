@@ -42,7 +42,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="mt-12" id="edit-page">
             <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
             <div class="flex flex-col mx-auto w-8/12">
-                <form action="POST" class="flex flex-col mt-2">
+                <form method="post" class="flex flex-col mt-2">
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Page Header</h2>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
@@ -65,7 +65,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             <label class="text-primaryText text-lg mb-1">Location</label>
                             <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="England">
                         </div>
-
+                        <div class="place-self-center my-2 mt-5">
+                            <button class="bg-backgroundColor cursor-pointer text-primaryText ring px-8 py-2 hover:ring-accent focus:ring-accent ring-gray-600 rounded" name="headerSave">Save</button>
+                        </div>
                     </div>
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Social Icons</h2>
