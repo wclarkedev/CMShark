@@ -21,36 +21,3 @@ function validatePassword($password){
 function emailMatch($email) {
     return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
 }
-function getPageMeta($content) {
-    if (isset($content) && !empty(trim($content))) {
-        switch ($content) {
-            case "title":
-                // Get page title from configuration
-                break;
-            case "description":
-                // Get page description from configuration
-                break;
-            case "favicon":
-                // Get favicon from uploads
-                break;
-        }
-    }
-}
-function getPageContent($content){
-    if(isset($content) && !empty(trim($content))) {
-        switch ($content) {
-            case "pageTitle":
-                // page title from database
-                break;
-            case "pageDescription":
-                // page description from database
-                break;
-            case "pfp":
-                // profile picture from uploads dir
-                break;
-            default:
-                return "";
-        }
-    }
-}
-function getLinks(){}
