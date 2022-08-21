@@ -1,5 +1,5 @@
 <?php
-//require './functions.php';
+ require 'json/functions.php';
 
 ?>
 <!doctype html><html lang="en">
@@ -42,13 +42,15 @@
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">
-                <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php 
-                     echo 'CMShark';
-                ?></h1>
-                <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                 echo 'Customisable & open source CMS for bio link lists.'
-                ?></span>
-                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i> England</span>
+                <h1 class="text-primaryText text-3xl font-bold text-center mb-2">
+                    <?php echo getPageContent('name');?>
+                </h1>
+                <span class="text-base text-secondaryText text-center max-w-xs">
+                    <?php echo getPageContent('bio');?>
+                </span>
+                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i> 
+                    <?php echo getPageContent('location');?>
+                </span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->

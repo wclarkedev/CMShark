@@ -1,7 +1,7 @@
 <?php
 function getPageContent ($contentType) {
     if (!isset($contentType)) exit();
-    $data = json_decode(file_get_contents('page.json'));
+    $data = json_decode(file_get_contents('./json/page.json'));
     switch ($contentType) {
         case 'page_header':
             $header_data = array();
