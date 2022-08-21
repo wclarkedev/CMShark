@@ -52,6 +52,7 @@ require './functions.php';
                     if (!empty(getPageContent('pageDescription'))) echo getPageContent('pageDescription');
                     else echo 'Customisable & open source CMS for bio link lists.'
                 ?></span>
+                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i> England</span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <!-- Icons for social media -->
