@@ -1,5 +1,5 @@
 <?php
-require './functions.php';
+//require './functions.php';
 
 ?>
 <!doctype html><html lang="en">
@@ -26,31 +26,27 @@ require './functions.php';
         <meta name="owner" content="">
     </head>
     <body class="bg-backgroundColor">
-    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
+    <!--<div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
         <i class="fa-solid fa-cookie-bite mx-1"></i> We are using cookies to enhance your experience on this site. By using this site, you agree to our use of cookies.
         
         <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
             <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
         </div>
-    </div>
+    </div>-->
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
                 src="<?php
-                    $pfp = getPageContent('pfp');
-                    if (!empty($pfp)) echo $pfp;
-                    else echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
+     echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
                         // will be placeholder image
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php 
-                    if (!empty(getPageContent('pageTitle'))) echo getPageContent('pageTitle');
-                    else echo 'CMShark';
+                     echo 'CMShark';
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                    if (!empty(getPageContent('pageDescription'))) echo getPageContent('pageDescription');
-                    else echo 'Customisable & open source CMS for bio link lists.'
+                 echo 'Customisable & open source CMS for bio link lists.'
                 ?></span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i> England</span>
             </div>
@@ -173,7 +169,7 @@ require './functions.php';
                 </div>
             </a>
         </section>
-        <script>
+        <!--<script>
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
                 element.addEventListener('click', () => {
@@ -184,6 +180,6 @@ require './functions.php';
                 });
                 });
             });
-        </script>
+        </script>-->
     </body>
 </html>
