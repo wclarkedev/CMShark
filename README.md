@@ -1,14 +1,12 @@
 # CMShark
-A simple self-hosted CMS for bio links. **This is still in development and doesn't have anything online.**
+A customisable, flexible and, self hostable flat file CMS for bio link lists. **This is still in development and doesn't have anything online.**
 - [Working Example](http://will.clarke.ml)
 - [Demo](http://cmshark.com/demo)
 - [Website](http://cmshark.com)
 - [Documentation](http://docs.cmshark.com)
 
 ## Requirements 
-- A hosting server or platform.
-- A database.
-- A small amount of knownledge in configuration and PHP (to edit config file).
+- A hosting server or platform that supports PHP hosting. 
 
 ## Features 
 <!--- Responsive layout.
