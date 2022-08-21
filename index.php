@@ -2,7 +2,8 @@
  require 'json/functions.php';
  $defaultHeader = defaultContent('page_header'); 
  $defaultMeta = defaultContent('page_meta');
- $page_content = getPageContent('page_header');
+ $pageContent = getPageContent('page_header');
+ $pageMeta = getPageContent('page_meta');
 
 ?>
 <!doctype html><html lang="en">
@@ -20,33 +21,33 @@
         
         <!-- Configurable Meta -->
         <title><?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['title'];
+                if (isset($pageMeta['title']) && !empty(trim($pageMeta['title']))) echo $pageMeta['title'];
+                else echo $defaultMeta['title'];
         ?></title>
         <meta name="title" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['title'];
+                if (isset($pageMeta['title']) && !empty(trim($pageMeta['title']))) echo $pageMeta['title'];
+                else echo $defaultMeta['title'];
         ?>">
         <meta name="description" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['description'];
+                if (isset($pageMeta['description']) && !empty(trim($pageMeta['description']))) echo $pageMeta['description'];
+                else echo $defaultMeta['description'];
         ?>">
         <link rel="icon" type="image/x-icon" href="">
         <meta name="url" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['url'];
+                if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
+                else echo $defaultMeta['url'];
         ?>">
         <meta name="language" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['lang'];
+                if (isset($pageMeta['lang']) && !empty(trim($pageMeta['lang']))) echo $pageMeta['lang'];
+                else echo $defaultMeta['lang'];
         ?>">
         <meta name="og:url" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['url'];
+                if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
+                else echo $defaultMeta['url'];
         ?>">
         <meta name="owner" content="<?php 
-                if (!true) echo 'meta content here';
-                echo $defaultMeta['owner'];
+                if (isset($pageMeta['owner']) && !empty(trim($pageMeta['owner']))) echo $pageMeta['owner'];
+                else echo $defaultMeta['owner'];
         ?>">
     </head>
     <body class="bg-backgroundColor">
@@ -67,15 +68,15 @@
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php
-                        if (isset($page_content['name']) && !empty(trim($page_content['name']))) echo getPageContent('name');
+                        if (isset($pageContent['name']) && !empty(trim($pageContent['name']))) echo getPageContent('name');
                         else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                        if (isset($page_content['bio']) && !empty(trim($page_content['bio']))) echo getPageContent('bio');
+                        if (isset($pageContent['bio']) && !empty(trim($pageContent['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i><?php
-                        if (isset($page_content['location']) && !empty(trim($page_content['location']))) echo getPageContent('location');
+                        if (isset($pageContent['location']) && !empty(trim($pageContent['location']))) echo getPageContent('location');
                         else echo $defaultHeader['location'];
                 ?></span>
             </div>
