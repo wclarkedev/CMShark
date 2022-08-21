@@ -1,5 +1,7 @@
 # CMShark
-A customisable, flexible and, self hostable flat file CMS for bio link lists. **This is still in development and doesn't have anything online.**
+A customisable, flexible and, self hostable flat file CMS for bio link lists.
+
+**This is still in development and doesn't have anything online.**
 - [Working Example](http://will.clarke.ml)
 - [Demo](http://cmshark.com/demo)
 - [Website](http://cmshark.com)
