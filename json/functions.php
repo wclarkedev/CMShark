@@ -25,6 +25,7 @@ function defaultContent ($requestedContent) {
 function getPageContent ($contentType) {
     if (!isset($contentType)) exit();
     $data = json_decode(file_get_contents('./json/page.json'));
+    $config = json_decode(file_get_contents('./json/config.json'));
     switch ($contentType) {
         case 'page_header':
             $header_data = array();
@@ -44,6 +45,15 @@ function getPageContent ($contentType) {
         break;
         case 'links':
             // return array of all links
+        break;
+        case 'page_meta':
+            $meta_data = array();
+            $meta_data['title'] = $config->{'title'};
+            $meta_data['description'] = $config->{'description'};
+            $meta_data['url'] = $config->{'url'};
+            $meta_data['lang'] = $config->{'url'};
+            $meta_data['owner'] = $config->{'owner'};
+            return $meta_data;
         break;
     }
 }
