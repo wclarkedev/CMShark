@@ -2,6 +2,7 @@
  require 'json/functions.php';
  $defaultHeader = defaultContent('page_header'); 
  $defaultMeta = defaultContent('page_meta');
+ $defaultLinks = defaultContent('links');
  $pageContent = getPageContent('page_header');
  $pageMeta = getPageContent('page_meta');
 
