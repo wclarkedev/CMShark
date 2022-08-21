@@ -4,29 +4,35 @@ require './functions.php';
 ?>
 <!doctype html><html lang="en">
     <head>
+        <!-- Meta -->
         <meta name="charset" content="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="copyright" content="cmshark.com">
+
+        <!-- Imports -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
-        <title><?php
-            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
-            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
-        ?></title>
-        <meta name="title" content="<?php
-            if (!empty(getPageMeta('title'))) echo getPageMeta('title');
-            else echo 'CMShark ~ Customisable, flexible and open source lightweight CMS for bio links';
-        ?>">
-        <meta name="description" content="<?php
-            if (!empty(getPageMeta('description'))) echo getPageMeta('description');
-            else echo 'CMShark - A customisable, flexible and open source lightweight CMS for bio link lists. You choose how you present your links with full control.';
-        ?>">
-        <link rel="icon" type="image/x-icon" href="<?php
-            if (!empty(getPageMeta('favicon'))) echo getPageMeta('favicon');
-            else echo '/uploads/cmshark-favicon.ico';
-        ?>">
+        
+        <!-- Configurable Meta -->
+        <title></title>
+        <meta name="title" content="">
+        <meta name="description" content="">
+        <link rel="icon" type="image/x-icon" href="">
+        <meta name="url" content="">
+        <meta name="language" content="">
+        <meta name="og:url" content="">
+        <meta name="owner" content="">
     </head>
     <body class="bg-backgroundColor">
+    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
+        <i class="fa-solid fa-cookie-bite mx-1"></i> We are using cookies to enhance your experience on this site. By using this site, you agree to our use of cookies.
+        
+        <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
+            <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
+        </div>
+    </div>
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
@@ -166,5 +172,17 @@ require './functions.php';
                 </div>
             </a>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
+                element.addEventListener('click', () => {
+                    const expirationDate = new Date();
+                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+                    document.cookie = 'cookie_consent_accepted=true; path=/; expires=' + expirationDate.toUTCString();
+                    document.getElementById('cookie-consent').classList.add('hidden');
+                });
+                });
+            });
+        </script>
     </body>
 </html>

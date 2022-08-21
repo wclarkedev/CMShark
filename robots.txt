@@ -1,11 +1,15 @@
 User-agent: *
 Disallow: /admin/*
-Disallow: /config/*
 Disallow: /login/*
 Disallow: /setup/*
 Disallow: /functions.php
 Disallow: /tests/*
 Disallow: /.github/*
 Disallow: /logout.php
+Disallow: /json/*
+Disallow: /*.json
+Disallow: /.htaccess
+Disallow: /tailwind.config.js
+Disallow: /README.md
 Allow: /
 Allow: /uploads/*

@@ -1,0 +1,37 @@
+{
+    "name":"",
+    "bio":"",
+    "social-icons": {
+        "Bandcamp":"",
+        "Behance":"",
+        "Bitbucket":"",
+        "Discord":"",
+        "Discourse":"",
+        "Email":"",
+        "Facebook":"",
+        "Github":"",
+        "Gitlab":"",
+        "Instagram":"",
+        "Linkedin":"",
+        "Medium":"",
+        "Patreon":"",
+        "Phone":"",
+        "Pinterest":"",
+        "Quora":"",
+        "Reddit":"",
+        "Snapchat":"",
+        "Stackoverflow":"",
+        "Telegram":"",
+        "Tiktok":"",
+        "Twitter":"",
+        "Whatsapp":"",
+        "Youtube":""
+    },
+    "links": [
+        {
+            "link":"",
+            "title":"",
+            "description":""
+        }
+    ]
+}

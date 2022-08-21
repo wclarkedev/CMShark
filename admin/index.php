@@ -36,7 +36,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
             </div>
             <div class="flex flex-col my-4">
-                <a class="" href="/logout.php">Logout</a>
+                <a class="text-primaryText my-2 p-2 mx-3 rounded-sm bg-red-600 ring ring-red-600" href="/logout.php"><i class="fa-solid fa-person-walking-arrow-right mr-1"></i> Logout</a>
             </div>
         </div>
         <div class="mt-12" id="edit-page">
@@ -92,7 +92,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <a class="text-primaryText my-2 hover:ring hover:ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
             </div>
             <div class="flex flex-col my-4">
-                <a class="" href="/logout.php">Logout</a>
+                <a class="text-primaryText my-2 p-2 mx-3 rounded-sm bg-red-600 ring ring-red-600" href="/logout.php"><i class="fa-solid fa-person-walking-arrow-right mr-1"></i> Logout</a>
             </div>
         </div>
         <div class="mt-12" id="settings">
@@ -112,7 +112,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <a class="text-primaryText my-2 hover:ring hover:ring-accent ring ring-accent p-2 mx-3 rounded-sm" href="/admin/settings/user"><i class="fa-solid fa-user-gear mr-1"></i> User Settings</a>
             </div>
             <div class="flex flex-col my-4">
-                <a class="" href="/logout.php">Logout</a>
+                <a class="text-primaryText my-2 p-2 mx-3 rounded-sm bg-red-600 ring ring-red-600" href="/logout.php"><i class="fa-solid fa-person-walking-arrow-right mr-1"></i> Logout</a>
             </div>
         </div>
         <div class="mt-12" id="user_settings">
