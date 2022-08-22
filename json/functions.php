@@ -93,8 +93,8 @@ function getImages ($type,$link=null) {
         break;
         case "default":
             $image = [];
-            $image['pfp'] = ''; // cmshark link for default pfp
-            $image['favicon'] = ''; // cmshark link for default favicon
+            $image['pfp'] = './uploads/logo.png'; // cmshark link for default pfp
+            $image['favicon'] = './uploads/logo.png'; // cmshark link for default favicon
             return $image;
         break;
     }
