@@ -13,6 +13,15 @@ $router->set404(function () {
 $router->get('/', function () {
 
 });
+$router->get('/1', function (){ 
+
+});
+$router->get('/2', function () {
+
+});
+$router->get('/complete', function () {
+
+});
 $router->get('/repair', function () {
 
 });
