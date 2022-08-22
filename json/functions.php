@@ -70,10 +70,11 @@ function getPageContent ($contentType) {
         break;
     }
 }
-function socialIcons ($icon) {}
 
 function checkLinks () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $link = $json->{'links'}[0]->{'link'};
     if (empty(trim($link))) return true;
 }
+
+function socialIcons ($icon) {}
