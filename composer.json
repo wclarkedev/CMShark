@@ -1,5 +1,6 @@
 {
     "require": {
-        "bramus/router": "~1.6"
+        "bramus/router": "~1.6",
+        "jeremykendall/php-domain-parser": "^1.4"
     }
 }
