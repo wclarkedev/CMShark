@@ -83,11 +83,19 @@ function getImages ($type,$link=null) {
     if (!isset($type) && empty(trim($type))) exit();
     switch ($type) {
         case "pfp":
+            return './uploads/pfp.webp';
         break;
         case "favicon":
+            return './uploads/fav.ico';
         break;
         case "link_icon":
             if (!isset($link) && empty(trim($link))) exit();
+        break;
+        case "default":
+            $image = [];
+            $image['pfp'] = ''; // cmshark link for default pfp
+            $image['favicon'] = ''; // cmshark link for default favicon
+            return $image;
         break;
     }
 }
