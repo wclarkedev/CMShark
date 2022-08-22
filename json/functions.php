@@ -78,3 +78,5 @@ function checkLinks () {
 }
 
 function socialIcons ($icon) {}
+
+function getImages ($type,$link=null) {}
