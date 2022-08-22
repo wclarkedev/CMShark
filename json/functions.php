@@ -93,6 +93,7 @@ function getImages ($type,$link=null) {
         break;
         case "link_icon":
             if (!isset($link) && empty(trim($link))) exit();
+            $default = './images/default.png';
         break;
         case "default":
             $image = [];
