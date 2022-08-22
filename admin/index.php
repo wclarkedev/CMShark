@@ -42,9 +42,17 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="mt-12" id="edit-page">
             <h1 class="text-primaryText text-3xl text-center font-semibold">Edit Page</h1>
             <div class="flex flex-col mx-auto w-8/12">
-                <form action="POST" class="flex flex-col mt-2">
+                <form method="post" class="flex flex-col mt-2">
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Page Header</h2>
+                        <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
+                            <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
+                            <label class="cursor-pointer w-12/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
+                                <i class="fa-solid fa-upload mr-2"></i>
+                                Upload Image
+                                <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
+                            </label>
+                        </div>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
                             <label class="text-primaryText text-lg mb-1">Name</label>
                             <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="John Doe">
@@ -54,14 +62,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                             <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-bio-input" name="pageContentHeaderBio" placeholder="I work as a security analyist.">
                         </div>
                         <div class="flex flex-col mx-5 mb-5 place-self-center w-6/12">
-                            <label class="mb-1 text-primaryText text-lg">Profile Picture</label>
-                            <label class="cursor-pointer w-12/12 bg-backgroundColor rounded p-2 text-primaryText text-secondaryText">
-                                <i class="fa-solid fa-upload mr-2"></i>
-                                Upload Image
-                                <input type="file" class="hidden" value="Upload-Image" name="userProfilePicture"> 
-                            </label>
+                            <label class="text-primaryText text-lg mb-1">Location</label>
+                            <input class="bg-backgroundColor rounded p-2 text-primaryText placeholder:text-secondaryText" type="text" id="header-name-input" name="pageContentHeaderName" placeholder="England">
                         </div>
-
+                        <div class="place-self-center my-2 mt-5">
+                            <button class="bg-backgroundColor cursor-pointer text-primaryText ring px-8 py-2 hover:ring-accent focus:ring-accent ring-gray-600 rounded" name="headerSave">Save</button>
+                        </div>
                     </div>
                     <div class="bg-backgroundAccent rounded w-6/12 flex flex-col mx-auto py-2 my-3">
                         <h2 class="text-2xl text-primaryText place-self-center my-2">Social Icons</h2>

@@ -1,5 +1,10 @@
 <?php
-require './functions.php';
+ require 'json/functions.php';
+ $defaultHeader = defaultContent('page_header'); 
+ $defaultMeta = defaultContent('page_meta');
+ $defaultLinks = defaultContent('links');
+ $pageContent = getPageContent('page_header');
+ $pageMeta = getPageContent('page_meta');
 
 ?>
 <!doctype html><html lang="en">
@@ -16,45 +21,68 @@ require './functions.php';
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
         
         <!-- Configurable Meta -->
-        <title></title>
-        <meta name="title" content="">
-        <meta name="description" content="">
+        <title><?php 
+                if (isset($pageMeta['title']) && !empty(trim($pageMeta['title']))) echo $pageMeta['title'];
+                else echo $defaultMeta['title'];
+        ?></title>
+        <meta name="title" content="<?php 
+                if (isset($pageMeta['title']) && !empty(trim($pageMeta['title']))) echo $pageMeta['title'];
+                else echo $defaultMeta['title'];
+        ?>">
+        <meta name="description" content="<?php 
+                if (isset($pageMeta['description']) && !empty(trim($pageMeta['description']))) echo $pageMeta['description'];
+                else echo $defaultMeta['description'];
+        ?>">
         <link rel="icon" type="image/x-icon" href="">
-        <meta name="url" content="">
-        <meta name="language" content="">
-        <meta name="og:url" content="">
-        <meta name="owner" content="">
+        <meta name="url" content="<?php 
+                if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
+                else echo $defaultMeta['url'];
+        ?>">
+        <meta name="language" content="<?php 
+                if (isset($pageMeta['lang']) && !empty(trim($pageMeta['lang']))) echo $pageMeta['lang'];
+                else echo $defaultMeta['lang'];
+        ?>">
+        <meta name="og:url" content="<?php 
+                if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
+                else echo $defaultMeta['url'];
+        ?>">
+        <meta name="owner" content="<?php 
+                if (isset($pageMeta['owner']) && !empty(trim($pageMeta['owner']))) echo $pageMeta['owner'];
+                else echo $defaultMeta['owner'];
+        ?>">
     </head>
     <body class="bg-backgroundColor">
-    <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
+    <!--<div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
         <i class="fa-solid fa-cookie-bite mx-1"></i> We are using cookies to enhance your experience on this site. By using this site, you agree to our use of cookies.
         
         <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
             <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
         </div>
-    </div>
+    </div>-->
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
                 src="<?php
-                    $pfp = getPageContent('pfp');
-                    if (!empty($pfp)) echo $pfp;
-                    else echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
+     echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
                         // will be placeholder image
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">
-                <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php 
-                    if (!empty(getPageContent('pageTitle'))) echo getPageContent('pageTitle');
-                    else echo 'CMShark';
+                <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php
+                        if (isset($pageContent['name']) && !empty(trim($pageContent['name']))) echo getPageContent('name');
+                        else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                    if (!empty(getPageContent('pageDescription'))) echo getPageContent('pageDescription');
-                    else echo 'Customisable & open source CMS for bio link lists.'
+                        if (isset($pageContent['bio']) && !empty(trim($pageContent['bio']))) echo getPageContent('bio');
+                        else echo $defaultHeader['bio'];
+                ?></span>
+                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i><?php
+                        if (isset($pageContent['location']) && !empty(trim($pageContent['location']))) echo getPageContent('location');
+                        else echo $defaultHeader['location'];
                 ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
-                <!-- Icons for social media -->
+                <!-- Icons for social media 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
 
@@ -128,7 +156,7 @@ require './functions.php';
                 href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
+                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>-->
 
             </div>
         </section>
@@ -161,18 +189,42 @@ require './functions.php';
             </a>
             <?php }
             */?>
-            <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
-                <div class="py-2 px-2">
-                    <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
-                </div>                
-                <div class="flex flex-col py-4 px-6">
-                    <h3 class="text-xl text-primaryText md:p-0 py-5">Placeholder Title</h3>
-                    <span class="text-base text-secondaryText hidden md:flex">Placeholder Description</span>
-                </div>
-            </a>
+            <?php
+                if (checkLinks()) {
+                    // Default links
+                    for ($i = 0; $i < count($defaultLinks); $i++) {
+                        ?>
+                            <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                                <div class="py-2 px-2">
+                                    <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
+                                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                                </div>                
+                                <div class="flex flex-col py-4 px-6">
+                                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
+                                    <span class="text-base text-secondaryText hidden md:flex"><?php echo $defaultLinks[$i]['desc']?></span>
+                                </div>
+                            </a>
+                        <?php
+                    }
+                }
+                if (!checkLinks()) {
+                    // User links
+                    ?>
+                    <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                        <div class="py-2 px-2">
+                            <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
+                            src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                        </div>                
+                        <div class="flex flex-col py-4 px-6">
+                            <h3 class="text-xl text-primaryText md:p-0 py-5">tes Title</h3>
+                            <span class="text-base text-secondaryText hidden md:flex">Placeholder Description</span>
+                        </div>
+                    </a>
+                    <?php
+                }
+            ?>
         </section>
-        <script>
+        <!--<script>
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
                 element.addEventListener('click', () => {
@@ -183,6 +235,6 @@ require './functions.php';
                 });
                 });
             });
-        </script>
+        </script>-->
     </body>
 </html>

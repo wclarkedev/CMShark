@@ -1,6 +1,6 @@
 <?php
-require '../config/db.php';
-require '../functions.php';
+//require '../config/db.php';
+//require '../functions.php';
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     header("Location: /admin/");
 }
