@@ -86,7 +86,7 @@ function getImages ($type,$link=null) {
         break;
         case "favicon":
         break;
-        case "link_image":
+        case "link_icon":
             if (!isset($link) && empty(trim($link))) exit();
         break;
     }
