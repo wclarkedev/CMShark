@@ -56,7 +56,8 @@ function getPageContent ($contentType) {
             return $data->{'location'};
         break;
         case 'links':
-            // return array of all links
+            $links = $data->{'links'};
+            return $links;
         break;
         case 'page_meta':
             $meta_data = array();
