@@ -197,7 +197,7 @@
                             <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                                 <div class="py-2 px-2">
                                     <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                                    src="<?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>">
                                 </div>                
                                 <div class="flex flex-col py-4 px-6">
                                     <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
