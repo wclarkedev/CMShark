@@ -79,4 +79,15 @@ function checkLinks () {
 
 function socialIcons ($icon) {}
 
-function getImages ($type,$link=null) {}
+function getImages ($type,$link=null) {
+    if (!isset($type) && empty(trim($type))) exit();
+    switch ($type) {
+        case "pfp":
+        break;
+        case "favicon":
+        break;
+        case "link_image":
+            if (!isset($link) && empty(trim($link))) exit();
+        break;
+    }
+}
