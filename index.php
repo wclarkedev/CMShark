@@ -5,6 +5,9 @@
  $defaultLinks = defaultContent('links');
  $pageContent = getPageContent('page_header');
  $pageMeta = getPageContent('page_meta');
+ $pfp = getImages('pfp');
+ $favicon = getImages('favicon');
+ $defaultImages = getImages('default');
 
 ?>
 <!doctype html><html lang="en">
@@ -33,7 +36,10 @@
                 if (isset($pageMeta['description']) && !empty(trim($pageMeta['description']))) echo $pageMeta['description'];
                 else echo $defaultMeta['description'];
         ?>">
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="<?php
+                if (isset($favicon) && !empty(trim($favicon))) echo $favicon;
+                else echo $defaultImages['favicon'];
+        ?>">
         <meta name="url" content="<?php 
                 if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
                 else echo $defaultMeta['url'];
@@ -63,8 +69,8 @@
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
                 src="<?php
-     echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
-                        // will be placeholder image
+                    if (isset($pfp) && !empty(trim($pfp))) echo $pfp;
+                    else echo $defaultImages['pfp'];
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">
