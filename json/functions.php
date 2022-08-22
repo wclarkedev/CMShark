@@ -95,11 +95,6 @@ function getImages ($type,$link=null) {
             if (!isset($link) && empty(trim($link))) exit();
             $default = './images/default.png';
             
-            require_once './vendor/autoload.php';
-
-            $pslManager = new Pdp\PublicSuffixListManager();
-            $parser = new Pdp\Parser($pslManager->getList());
-            $domain = $parser->getRegistrableDomain($link);
 
         break;
         case "default":
