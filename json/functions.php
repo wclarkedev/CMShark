@@ -77,7 +77,10 @@ function checkLinks () {
     if (empty(trim($link))) return true;
 }
 
-function socialIcons ($icon) {}
+function socialIcons ($icon) {
+    $social = json_decode(file_get_contents('./json/page.json'));
+    $social = $social['social-icons'];
+}
 
 function getImages ($type,$link=null) {
     if (!isset($type) && empty(trim($type))) exit();
