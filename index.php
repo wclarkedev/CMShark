@@ -69,8 +69,8 @@
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
                 src="<?php
-                    if (isset($pfp) && !empty(trim($pfp))) echo $pfp;
-                    else echo $defaultImages['pfp'];
+                    //if (isset($pfp) && !empty(trim($pfp))) echo $pfp;
+                    /*else*/ echo 'https://cdn.discordapp.com/attachments/1001586892199960636/1011372204870602833/Screenshot_20220617-224430_Instagram.jpg';
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">

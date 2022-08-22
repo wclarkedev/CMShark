@@ -94,7 +94,9 @@ function getImages ($type,$link=null) {
         case "link_icon":
             if (!isset($link) && empty(trim($link))) exit();
             $default = './images/default.png';
-            
+            $domain = explode('/', $link);
+            $domain = $domain[2]; //assuming that the url starts with http:// or https://
+            return $default;
 
         break;
         case "default":
