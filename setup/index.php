@@ -52,6 +52,10 @@ $router->get('/', function () {
         <section class="" id="setup-nextpage"></section>
     <?php
 });
+$router->post('/', function () {
+
+});
+
 $router->get('/account', function (){ 
     ?>
         <section class="" id="setup-page-header"></section>
@@ -82,9 +86,20 @@ $router->get('/account', function (){
         <section class="" id="setup-nextpage"></section>
     <?php
 });
+$router->post('/account', function () {
+
+});
+$router->get('/account/success', function (){
+
+});
+
 $router->get('/page', function () {
 
 });
+$router->post('/page', function () {
+
+});
+
 $router->get('/complete', function () {
 
 });
@@ -92,16 +107,6 @@ $router->get('/repair', function () {
 
 });
 $router->get('/repair/recreate', function () {
-
-});
-
-$router->post('/', function () {
-
-});
-$router->post('/account', function () {
-
-});
-$router->post('/page', function () {
 
 });
 $router->run();
