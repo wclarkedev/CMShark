@@ -3,11 +3,12 @@
  $defaultHeader = defaultContent('page_header'); 
  $defaultMeta = defaultContent('page_meta');
  $defaultLinks = defaultContent('links');
- $pageContent = getPageContent('page_header');
+ $pageHeader = getPageContent('page_header');
  $pageMeta = getPageContent('page_meta');
  $pfp = getImages('pfp');
  $favicon = getImages('favicon');
  $defaultImages = getImages('default');
+ $links = getPageContent('links');
 
 ?>
 <!doctype html><html lang="en">
@@ -76,15 +77,15 @@
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php
-                        if (isset($pageContent['name']) && !empty(trim($pageContent['name']))) echo getPageContent('name');
+                        if (isset($pageHeader['name']) && !empty(trim($pageHeader['name']))) echo getPageContent('name');
                         else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                        if (isset($pageContent['bio']) && !empty(trim($pageContent['bio']))) echo getPageContent('bio');
+                        if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i><?php
-                        if (isset($pageContent['location']) && !empty(trim($pageContent['location']))) echo getPageContent('location');
+                        if (isset($pageHeader['location']) && !empty(trim($pageHeader['location']))) echo getPageContent('location');
                         else echo $defaultHeader['location'];
                 ?></span>
             </div>
