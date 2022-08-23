@@ -53,7 +53,34 @@ $router->get('/', function () {
     <?php
 });
 $router->get('/account', function (){ 
-
+    ?>
+        <section class="" id="setup-page-header"></section>
+        <section class="" id="setup-basic-info-form">
+            <form method="POST" class="flex flex-col">
+                <div class="flex flex-col">
+                    <label class="">Username</label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Email</label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Password</label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Confirm Password</label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+            </form>
+        </section>
+        <section class="" id="setup-nextpage"></section>
+    <?php
 });
 $router->get('/page', function () {
 
