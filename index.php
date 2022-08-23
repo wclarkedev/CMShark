@@ -5,6 +5,9 @@
  $defaultLinks = defaultContent('links');
  $pageContent = getPageContent('page_header');
  $pageMeta = getPageContent('page_meta');
+ $pfp = getImages('pfp');
+ $favicon = getImages('favicon');
+ $defaultImages = getImages('default');
 
 ?>
 <!doctype html><html lang="en">
@@ -33,7 +36,10 @@
                 if (isset($pageMeta['description']) && !empty(trim($pageMeta['description']))) echo $pageMeta['description'];
                 else echo $defaultMeta['description'];
         ?>">
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="<?php
+                if (isset($favicon) && !empty(trim($favicon))) echo $favicon;
+                else echo $defaultImages['favicon'];
+        ?>">
         <meta name="url" content="<?php 
                 if (isset($pageMeta['url']) && !empty(trim($pageMeta['url']))) echo $pageMeta['url'];
                 else echo $defaultMeta['url'];
@@ -63,8 +69,8 @@
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
                 src="<?php
-     echo 'https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80';
-                        // will be placeholder image
+                    //if (isset($pfp) && !empty(trim($pfp))) echo $pfp;
+                    /*else*/ echo 'https://cdn.discordapp.com/attachments/1001586892199960636/1011372204870602833/Screenshot_20220617-224430_Instagram.jpg';
                 ?>">
             </div>
             <div class="flex flex-col mx-auto mb-4">
@@ -161,34 +167,6 @@
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
-            <?php /*
-            $links = getLinks();
-            foreach ($links as $link) {?>
-                <a href="<?php
-                    if (!empty($link['url'])) echo $link['url'];
-                    else echo '#';
-                ?>" 
-                class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
-
-                <div class="py-2 px-2">
-                    <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                    src="<?php
-                        echo $link['image'];
-                    ?>">
-                </div>
-                <div class="flex flex-col py-4 px-6">
-                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php
-                        if (!empty($link['title'])) echo $link['title'];
-                        else echo $link['urlTitle'];
-                    ?></h3>
-                    <span class="text-base text-secondaryText hidden md:flex"><?php 
-                        if (!empty($link['description'])) echo $link['description'];
-                        else echo $link['urlDescription'];
-                    ?></span>
-                </div>
-            </a>
-            <?php }
-            */?>
             <?php
                 if (checkLinks()) {
                     // Default links
@@ -197,7 +175,7 @@
                             <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                                 <div class="py-2 px-2">
                                     <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                                    src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
+                                    src="<?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>">
                                 </div>                
                                 <div class="flex flex-col py-4 px-6">
                                     <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
