@@ -52,10 +52,10 @@ $router->get('/', function () {
     <?php
 
 });
-$router->get('/1', function (){ 
+$router->get('/account', function (){ 
 
 });
-$router->get('/2', function () {
+$router->get('/page', function () {
 
 });
 $router->get('/complete', function () {
