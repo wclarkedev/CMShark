@@ -24,6 +24,7 @@ $router->set404(function () {
 $router->get('/', function () {
     ?>
         <section class="" id="setup-welcome"></section>
+        <section class="" id="setup-page-header"></section>
         <section class="" id="setup-basic-info-form">
             <form method="POST" class="flex flex-col">
                 <div class="flex flex-col">
@@ -50,7 +51,6 @@ $router->get('/', function () {
         </section>
         <section class="" id="setup-nextpage"></section>
     <?php
-
 });
 $router->get('/account', function (){ 
 
