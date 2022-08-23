@@ -8,7 +8,7 @@
         <title>Setup CMShark</title>
         <meta name="title" content="Setup CMShark">
     </head>
-    <body class="bg-backgroundColor">
+    <body class="">
 <?php
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 if (php_sapi_name() === 'cli-server' && is_file($filename)) {
@@ -23,10 +23,32 @@ $router->set404(function () {
 });
 $router->get('/', function () {
     ?>
-    <section class="flex flex-col mx-auto bg-backgroundAccent rounded-md w-7/12" id="setup-welcome">
-        <h1 class="text-3xl text-primaryText text-center my-5" >CMShark Setup</h1>
-        <span class="text-lg text-primaryText">Welcome to the CMShark setup process. This process is designed to help you setup CMShark site configuration without the hasstle of editing complex configuration files or code.</span>
-    </section>
+        <section class="" id="setup-welcome"></section>
+        <section class="" id="setup-basic-info-form">
+            <form method="POST" class="flex flex-col">
+                <div class="flex flex-col">
+                    <label class="">Page Title - A title for your page </label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Page Description - A short description about your page </label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Name - Your first and last name, separated with a space </label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
+                </div>
+                <div class="flex flex-col">
+                    <label class="">Language - The language the content of this site will be written in </label>
+                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
+                    <!-- Diff input <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">-->
+                </div>
+            </form>
+        </section>
+        <section class="" id="setup-nextpage"></section>
     <?php
 
 });
