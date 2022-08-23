@@ -200,7 +200,7 @@
                             </div>                
                             <div class="flex flex-col py-4 px-6">
                                 <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $links[$i]['title'];?></h3>
-                                <span class="text-base text-secondaryText hidden md:flex"><?php echo $links[$i]['title'];?></span>
+                                <span class="text-base text-secondaryText hidden md:flex"><?php echo $links[$i]['description'];?></span>
                             </div>
                         </a>
                         <?php
