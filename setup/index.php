@@ -22,6 +22,12 @@ $router->set404(function () {
     echo '404, route not found!';
 });
 $router->get('/', function () {
+    ?>
+    <section class="flex flex-col mx-auto bg-backgroundAccent rounded-md w-7/12" id="setup-welcome">
+        <h1 class="text-3xl text-primaryText text-center my-5" >CMShark Setup</h1>
+        <span class="text-lg text-primaryText">Welcome to the CMShark setup process. This process is designed to help you setup CMShark site configuration without the hasstle of editing complex configuration files or code.</span>
+    </section>
+    <?php
 
 });
 $router->get('/1', function (){ 
