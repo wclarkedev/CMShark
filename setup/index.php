@@ -71,6 +71,12 @@ $router->get('/repair/recreate', function () {
 $router->post('/', function () {
 
 });
+$router->post('/account', function () {
+
+});
+$router->post('/page', function () {
+
+});
 $router->run();
 ?>
     </body>
