@@ -192,15 +192,13 @@
                     // User links
                     for ($i = 0; $i < count($links); $i++) {
                         ?>
-                        <a href="<?php echo $links[$i]['link'];?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                        <a href="<?php echo $links[$i]->{'link'};?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                             <div class="py-2 px-2">
-                                <img class="rounded-sm h-20 w-20" alt="Link Logo" src="
-                                    <?php echo getImages('link_icon', $links[$i]['link']);?>
-                                ">
+                                <img class="rounded-sm h-20 w-20" alt="Link Logo" src="/images/default.png">
                             </div>                
                             <div class="flex flex-col py-4 px-6">
-                                <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $links[$i]['title'];?></h3>
-                                <span class="text-base text-secondaryText hidden md:flex"><?php echo $links[$i]['description'];?></span>
+                                <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $links[$i]->{'title'};?></h3>
+                                <span class="text-base text-secondaryText hidden md:flex"><?php echo $links[$i]->{'description'};?></span>
                             </div>
                         </a>
                         <?php
