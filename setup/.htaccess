@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+php_value  default_charset     "utf-8"
+php_value  max_execution_time  30
+php_value  memory_limit        20M
+php_flag   file_uploads        on
+php_value  post_max_size       5M
+php_value  upload_max_filesize 5M
+php_value  error_reporting     0
+php_flag   display_errors      off
+php_flag   log_errors          off

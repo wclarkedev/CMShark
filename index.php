@@ -3,11 +3,12 @@
  $defaultHeader = defaultContent('page_header'); 
  $defaultMeta = defaultContent('page_meta');
  $defaultLinks = defaultContent('links');
- $pageContent = getPageContent('page_header');
+ $pageHeader = getPageContent('page_header');
  $pageMeta = getPageContent('page_meta');
  $pfp = getImages('pfp');
  $favicon = getImages('favicon');
  $defaultImages = getImages('default');
+ $links = getPageContent('links');
 
 ?>
 <!doctype html><html lang="en">
@@ -17,6 +18,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="index, follow">
         <meta name="copyright" content="cmshark.com">
+        <meta name="robots" content="index, follow">
 
         <!-- Imports -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -75,15 +77,15 @@
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2"><?php
-                        if (isset($pageContent['name']) && !empty(trim($pageContent['name']))) echo getPageContent('name');
+                        if (isset($pageHeader['name']) && !empty(trim($pageHeader['name']))) echo getPageContent('name');
                         else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
-                        if (isset($pageContent['bio']) && !empty(trim($pageContent['bio']))) echo getPageContent('bio');
+                        if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i><?php
-                        if (isset($pageContent['location']) && !empty(trim($pageContent['location']))) echo getPageContent('location');
+                        if (isset($pageHeader['location']) && !empty(trim($pageHeader['location']))) echo getPageContent('location');
                         else echo $defaultHeader['location'];
                 ?></span>
             </div>
@@ -174,8 +176,9 @@
                         ?>
                             <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                                 <div class="py-2 px-2">
-                                    <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                                    src="<?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>">
+                                    <img class="rounded-sm h-20 w-20" alt="Link Logo" src="
+                                        <?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>
+                                    ">
                                 </div>                
                                 <div class="flex flex-col py-4 px-6">
                                     <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
@@ -187,18 +190,19 @@
                 }
                 if (!checkLinks()) {
                     // User links
-                    ?>
-                    <a href="" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
-                        <div class="py-2 px-2">
-                            <img class="rounded-sm h-20 w-20" alt="placeholder Logo"
-                            src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80">
-                        </div>                
-                        <div class="flex flex-col py-4 px-6">
-                            <h3 class="text-xl text-primaryText md:p-0 py-5">tes Title</h3>
-                            <span class="text-base text-secondaryText hidden md:flex">Placeholder Description</span>
-                        </div>
-                    </a>
-                    <?php
+                    for ($i = 0; $i < count($links); $i++) {
+                        ?>
+                        <a href="<?php echo $links[$i]->{'link'};?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                            <div class="py-2 px-2">
+                                <img class="rounded-sm h-20 w-20" alt="Link Logo" src="/images/default.png">
+                            </div>                
+                            <div class="flex flex-col py-4 px-6">
+                                <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $links[$i]->{'title'};?></h3>
+                                <span class="text-base text-secondaryText hidden md:flex"><?php echo $links[$i]->{'description'};?></span>
+                            </div>
+                        </a>
+                        <?php
+                    }
                 }
             ?>
         </section>
