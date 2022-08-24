@@ -7,10 +7,7 @@ A customisable, flexible and, self hostable flat file CMS for bio link lists.
 - [Website](https://cmshark.com)
 - [Documentation](https://docs.cmshark.com)
 - [Demo](https://cmshark.com/demo)
-
-### Working Examples
-- [Working Example 1](https://will.clarke.ml)
-- [Working Example 2](https://williamharrison.me)
+- [Working Example](https://will.clarke.ml)
 
 ## Requirements
 - A hosting server or platform that supports PHP hosting.
