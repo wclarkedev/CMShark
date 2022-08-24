@@ -7,7 +7,10 @@ A customisable, flexible and, self hostable flat file CMS for bio link lists.
 - [Website](https://cmshark.com)
 - [Documentation](https://docs.cmshark.com)
 - [Demo](https://cmshark.com/demo)
-- [Working Example](https://will.clarke.ml)
+
+### Working Examples
+- [Working Example 1](https://will.clarke.ml)
+- [Working Example 2](https://williamharrison.me)
 
 ## Requirements
 - A hosting server or platform that supports PHP hosting.
@@ -25,3 +28,8 @@ Upcoming features:
 - Better page editing
 - Page insights
 - Better performance -->
+
+## FAQ
+**What is a CMS?** A content management system is a software application that allows users to manage digital content.
+
+**Why?** We wanted an alternative to [solo.to](https://solo.to) and [Linktree](https://linktr.ee), so we made our own!
