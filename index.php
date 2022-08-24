@@ -164,9 +164,18 @@
                 href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>-->
+                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
 
-            </div>
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
+
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-skype"></i></a>
+                
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-twitch"></i></a>
+
+            --></div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
             <?php
