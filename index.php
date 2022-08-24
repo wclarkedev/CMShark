@@ -179,10 +179,11 @@
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-tumblr"></i></a>
                                 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>-->
                 
+                // TODO: Add links for new social icons
 
-            --></div>
+            </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
             <?php
