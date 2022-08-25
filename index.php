@@ -164,7 +164,24 @@
                 href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>-->
+                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
+
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
+
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-skype"></i></a>
+                
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-twitch"></i></a>
+                                
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-tumblr"></i></a>
+                                
+                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>-->
+                
+                // TODO: Add links for new social icons
 
             </div>
         </section>
