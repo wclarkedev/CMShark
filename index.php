@@ -81,6 +81,9 @@
                         else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
+                //? Add possibility for use of markdown? 
+                //? https://github.com/MarketingPipeline/Markdown-Tag -- Markdown implementation in the html. 
+                //? Other possibilities- Allow option for text decorations. Code MD interpretor. Dont allow text decorations.
                         if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
@@ -90,6 +93,8 @@
                 ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
+                <?php // TODO Function for getting link href 
+                ?>
                 <!-- Icons for social media 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
@@ -165,7 +170,7 @@
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
-
+// TODO: Add links for new social icons
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
 
@@ -180,15 +185,12 @@
                                 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>-->
-                
-                // TODO: Add links for new social icons
-
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
             <?php
                 if (checkLinks()) {
-                    // Default links
+                    //? Default links
                     for ($i = 0; $i < count($defaultLinks); $i++) {
                         ?>
                             <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
@@ -206,7 +208,7 @@
                     }
                 }
                 if (!checkLinks()) {
-                    // User links
+                    //? User links
                     for ($i = 0; $i < count($links); $i++) {
                         ?>
                         <a href="<?php echo $links[$i]->{'link'};?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
