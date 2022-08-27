@@ -17,7 +17,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     require '../vendor/autoload.php';
 
-    // Create a Router
+    //? Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -25,7 +25,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
 
-    // Admin home page
+    //? Admin home page
     $router->get('/',function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
@@ -87,7 +87,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
 
-    // Admin settings page
+    //? Admin settings page
     $router->get('/settings',function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
@@ -107,7 +107,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
 
-    // User settings page
+    //? User settings page
     $router->get('/settings/user',function () {
         ?>
         <div class="bg-backgroundAccent rounded w-60 h-3/6 fixed top-2 left-2" id="navigation">
