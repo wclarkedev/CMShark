@@ -7,6 +7,8 @@ function defaultContent ($requestedContent) {
         )
     );
     $page = $data->{"page"};
+    $meta = $data->{"meta"};
+    $links = $page->{'links'};
     switch ($requestedContent) {
         case 'page_header':
             $return = array();
@@ -16,16 +18,16 @@ function defaultContent ($requestedContent) {
             return $return;
         break;
         case 'page_meta': 
-            $meta = [];
-            $meta['title'] = 'CMShark - A flexible, customisable and, opensource CMS.';
-            $meta['description'] = 'CMShark is a flexible, customisable and, open source CMS for bio link lists.';
-            $meta['url'] = 'https://cmshark.com';
-            $meta['lang'] = 'en_GB';
-            $meta['owner'] = 'William Clarke';
-            return $meta;
+            $return = [];
+            $return['title'] = $meta->{'title'};
+            $return['description'] = $meta->{'description'};
+            $return['url'] = $meta->{'url'};
+            $return['lang'] = $meta->{'lang'};
+            $return['owner'] = $meta->{'owner'};
+            return $return;
         break;
         case 'links':
-            $links = [];
+            /*$links = [];
             $link = ['href'=>'https://cmshark.com','title'=>'Website','desc'=>'CMShark website.'];
             array_push($links, $link);
             $link = ['href'=>'https://github.com/wclarkey/cmshark','title'=>'GitHub','desc'=>'Github repository.'];
@@ -33,7 +35,7 @@ function defaultContent ($requestedContent) {
             $link = ['href'=>'https://docs.cmshark.com','title'=>'Documentation','desc'=>'Documentation to help you get started.'];
             array_push($links, $link);
             $link = ['href'=>'https://discord.gg/FMmJnz6rmD','title'=>'Discord','desc'=>'CMShark community Discord server.'];
-            array_push($links, $link);
+            array_push($links, $link);*/
             return $links;
         break;
     }
