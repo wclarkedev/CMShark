@@ -101,12 +101,21 @@
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                     href="<?php echo 'https://github.com/'.socialIcons('Github');?>"><i class="fa-brands fa-github"></i></a>
                     <?php
-                }?><!--
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://gitlab.com/'.$username;?>"><i class="fa-brands fa-gitlab"></i></a>
+                if (!empty(trim(socialIcons('Bitbucket')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://bitbucket.org/'.socialIcons('Bitbucket');?>"><i class="fa-brands fa-bitbucket"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Gitlab')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://gitlab.com/'.socialIcons('Gitlab');?>"><i class="fa-brands fa-gitlab"></i></a>
+                    <?php
+                }?>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://www.behance.net/'.$username;?>"><i class="fa-brands fa-behance"></i></a>
@@ -173,7 +182,8 @@
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
-// TODO: Add links for new social icons
+// TODO: Add links for new social icons 
+<!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
 
