@@ -95,10 +95,13 @@
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
                 <?php // TODO Function for getting link href 
                 ?>
-                <!-- Icons for social media 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
-
+                <?php // Github
+                if (!empty(trim(socialIcons('Github')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://github.com/'.socialIcons('Github');?>"><i class="fa-brands fa-github"></i></a>
+                    <?php
+                }?><!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
 
