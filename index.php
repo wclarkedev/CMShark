@@ -193,15 +193,15 @@
                     //? Default links
                     for ($i = 0; $i < count($defaultLinks); $i++) {
                         ?>
-                            <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                            <a href="<?php echo $defaultLinks[$i]->{'link'}?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                                 <div class="py-2 px-2">
                                     <img class="rounded-sm h-20 w-20" alt="Link Logo" src="
-                                        <?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>
+                                        <?php echo getImages('link_icon', $defaultLinks[$i]->{'link'});?>
                                     ">
                                 </div>                
                                 <div class="flex flex-col py-4 px-6">
-                                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
-                                    <span class="text-base text-secondaryText hidden md:flex"><?php echo $defaultLinks[$i]['desc']?></span>
+                                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]->{'title'}?></h3>
+                                    <span class="text-base text-secondaryText hidden md:flex"><?php echo $defaultLinks[$i]->{'description'}?></span>
                                 </div>
                             </a>
                         <?php

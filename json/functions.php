@@ -36,7 +36,7 @@ function defaultContent ($requestedContent) {
             array_push($links, $link);
             $link = ['href'=>'https://discord.gg/FMmJnz6rmD','title'=>'Discord','desc'=>'CMShark community Discord server.'];
             array_push($links, $link);*/
-            return $links;
+            return $page->{'links'};
         break;
     }
     
