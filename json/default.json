@@ -1,17 +1,17 @@
 {
     "page": {
-        "name":"",
-        "bio":"",
-        "location":"",
+        "name":"CMShark",
+        "bio":"CMShark is a flexible, customisable and, open source CMS for bio link lists.",
+        "location":"UK",
         "social-icons": {
             "Bandcamp":"",
             "Behance":"",
             "Bitbucket":"",
-            "Discord":"",
+            "Discord":"https://discord.gg/FMmJnz6rmD",
             "Discourse":"",
-            "Email":"",
+            "Email":"info@cmshark.com",
             "Facebook":"",
-            "Github":"",
+            "Github":"https://github.com/CMShark",
             "Gitlab":"",
             "Instagram":"",
             "Linkedin":"",
@@ -31,10 +31,32 @@
         },
         "links": [
             {
-                "link":"",
-                "title":"",
-                "description":""
+                "link":"https://cmshark.com",
+                "title":"Website",
+                "description":"CMShark website."
+            },
+            {
+                "link":"https://github.com/wclarkey/cmshark",
+                "title":"Github",
+                "description":"CMShark Github repo."
+            },
+            {
+                "link":"https://docs.cmshark.com",
+                "title":"Documentation",
+                "description":"CMShark docs."
+            },
+            {
+                "link":"https://discord.gg/FMmJnz6rmD",
+                "title":"Discord",
+                "description":"CMShark Discord server."
             }
         ]
+    },
+    "meta": {
+        "title":"CMShark",
+        "description":"CMShark is a flexible, customisable and, open source CMS for bio link lists.",
+        "url":"https://cmshark.com",
+        "lang":"en_GB",
+        "owner":"William Clarke"
     }
 }
