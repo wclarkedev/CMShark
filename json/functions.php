@@ -117,6 +117,9 @@ function getSettings ($type, $setting_type = null) {
         case "page":
             return $page_settings;
         break;
+        case "page_theme":
+            return $page_settings->{'theme'};
+        break;
         case "user":
             return $user_settings;
         break;
