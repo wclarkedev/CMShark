@@ -107,3 +107,7 @@ function getImages ($type,$link=null) {
         break;
     }
 }
+
+function getSettings ($type, $setting_type = null) {
+    if (!isset($type) && empty(trim($type))) exit();
+}
