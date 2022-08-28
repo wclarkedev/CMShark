@@ -1,13 +1,19 @@
 <?php
 function defaultContent ($requestedContent) {
     if (!isset($requestedContent) && empty(trim($requestedContent))) exit();
+    $data = json_decode(
+        file_get_contents(
+            './json/default.json'
+        )
+    );
+    $page = $data->{"page"};
     switch ($requestedContent) {
         case 'page_header':
-            $header = [];
-            $header['name'] = 'CMShark';
-            $header['bio'] = 'CMShark is a flexible, customisable and, open source CMS for bio link lists.';
-            $header['location'] = 'UK';
-            return $header;
+            $return = array();
+            $return['name'] = $page->{'name'};
+            $return['bio'] = $page->{'bio'};
+            $return['location'] = $page->{'location'};
+            return $return;
         break;
         case 'page_meta': 
             $meta = [];
