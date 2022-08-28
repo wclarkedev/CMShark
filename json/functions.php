@@ -110,4 +110,15 @@ function getImages ($type,$link=null) {
 
 function getSettings ($type, $setting_type = null) {
     if (!isset($type) && empty(trim($type))) exit();
+    $settings = json_decode(file_get_contents('./json/settings.json'));
+    $page_settings = $settings->{'page'};
+    $user_settings = $settings->{'user'};
+    switch ($type) {
+        case "page":
+            return $page_settings;
+        break;
+        case "user":
+            return $user_settings;
+        break;
+    }
 }
