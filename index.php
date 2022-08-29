@@ -274,20 +274,12 @@
                     href="<?php echo socialIcons('Tumblr'); /* could be tumblr sub domain or custom domain */?>"><i class="fa-brands fa-tumblr"></i></a>
                     <?php
                 }?>
-
-<? // TODO: Add links for new social icons 
-?>
 <!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
 
-
-
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
-                                
-
-                                
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>                          
 -->
             </div>
         </section>
