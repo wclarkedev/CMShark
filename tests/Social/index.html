@@ -5,39 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Social Test | CMShark</title>
-
-        <link rel="stylesheet" href="/tests/Social/style.css">
-        <script src="/tests/Social/script.js"></script>
+        <title>Social Test</title>
     </head>
 
     <body>
-        <select name="social" id="social" onchange="if(this.selectedIndex) alert(`${this.value}`)">
-            <option selected disabled>Select</option>
-            <option value="Bandcamp">Bandcamp</option>
-            <option value="Behance">Behance</option>
-            <option value="Bitbucket">Bitbucket</option>
-            <option value="Discord">Discord</option>
-            <option value="Discourse">Discourse</option>
-            <option value="Email">Email</option>
-            <option value="Facebook">Facebook</option>
-            <option value="GitHub">GitHub</option>
-            <option value="GitLab">GitLab</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Linkedin">Linkedin</option>
-            <option value="Medium">Medium</option>
-            <option value="Patreon">Patreon</option>
-            <option value="Phone">Phone</option>
-            <option value="Pinterest">Pinterest</option>
-            <option value="Quora">Quora</option>
-            <option value="Reddit">Reddit</option>
-            <option value="Snapchat">Snapchat</option>
-            <option value="Stack Overflow">Stack Overflow</option>
-            <option value="Telegram">Telegram</option>
-            <option value="TikTok">TikTok</option>
-            <option value="Twitter">Twitter</option>
-            <option value="WhatsApp">WhatsApp</option>
-            <option value="YouTube">YouTube</option>
-        </select>
+        <form action="forms.php" method="get">
+            <select name="social" id="social">
+                <option selected disabled>Select</option>
+                <option value="Bandcamp">Bandcamp</option>
+                <option value="Behance">Behance</option>
+                <option value="Bitbucket">Bitbucket</option>
+                <option value="Discord">Discord</option>
+                <option value="Discourse">Discourse</option>
+                <option value="Email">Email</option>
+                <option value="Facebook">Facebook</option>
+                <option value="GitHub">GitHub</option>
+                <option value="GitLab">GitLab</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Linkedin">Linkedin</option>
+                <option value="Medium">Medium</option>
+                <option value="Patreon">Patreon</option>
+                <option value="Phone">Phone</option>
+                <option value="Pinterest">Pinterest</option>
+                <option value="Quora">Quora</option>
+                <option value="Reddit">Reddit</option>
+                <option value="Snapchat">Snapchat</option>
+                <option value="Stack Overflow">Stack Overflow</option>
+                <option value="Telegram">Telegram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Twitter">Twitter</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="YouTube">YouTube</option>
+            </select>
+
+            <input type="submit" value="Manage">
+        </form>
     </body>
 </html>
