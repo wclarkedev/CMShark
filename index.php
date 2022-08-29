@@ -268,7 +268,7 @@
                     <?php
                 }
 
-                if (!empty(trim(socialIcons('')))) {
+                if (!empty(trim(socialIcons('Tumblr')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                     href="<?php echo socialIcons('Tumblr'); /* could be tumblr sub domain or custom domain */?>"><i class="fa-brands fa-tumblr"></i></a>
