@@ -81,6 +81,9 @@
                         else echo $defaultHeader['name'];
                 ?></h1>
                 <span class="text-base text-secondaryText text-center max-w-xs"><?php
+                //? Add possibility for use of markdown? 
+                //? https://github.com/MarketingPipeline/Markdown-Tag -- Markdown implementation in the html. 
+                //? Other possibilities- Allow option for text decorations. Code MD interpretor. Dont allow text decorations.
                         if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
@@ -90,123 +93,214 @@
                 ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
-                <!-- Icons for social media 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://github.com/'.$username;?>"><i class="fa-brands fa-github"></i></a>
+                <?php // TODO Function for getting link href 
+                ?>
+                <?php // Github
+                if (!empty(trim(socialIcons('Github')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://github.com/'.socialIcons('Github');?>"><i class="fa-brands fa-github"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://bitbucket.org/'.$username;?>"><i class="fa-brands fa-bitbucket"></i></a>
+                if (!empty(trim(socialIcons('Bitbucket')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://bitbucket.org/'.socialIcons('Bitbucket');?>"><i class="fa-brands fa-bitbucket"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://gitlab.com/'.$username;?>"><i class="fa-brands fa-gitlab"></i></a>
+                if (!empty(trim(socialIcons('Gitlab')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://gitlab.com/'.socialIcons('Gitlab');?>"><i class="fa-brands fa-gitlab"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.behance.net/'.$username;?>"><i class="fa-brands fa-behance"></i></a>
+                if (!empty(trim(socialIcons('Behance')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.behance.net/'.socialIcons('Behance');?>"><i class="fa-brands fa-behance"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.linkedin.com/in/'.$username;?>"><i class="fa-brands fa-linkedin"></i></a>
+                if (!empty(trim(socialIcons('Linkedin')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.linkedin.com/in/'.socialIcons('Linkedin');?>"><i class="fa-brands fa-linkedin"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://'.$username.'.medium.com/';?>"><i class="fa-brands fa-medium"></i></a>
+                if (!empty(trim(socialIcons('Medium')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://'.socialIcons('Medium').'.medium.com/';?>"><i class="fa-brands fa-medium"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.patreon.com/'.$username;?>"><i class="fa-brands fa-patreon"></i></a>
+                if (!empty(trim(socialIcons('Patreon')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.patreon.com/'.socialIcons('Patreon');?>"><i class="fa-brands fa-patreon"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'mailto:'.$usernameEmail;?>"><i class="fa-solid fa-envelope"></i></a>
+                if (!empty(trim(socialIcons('Email')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'mailto:'.socialIcons('Email');?>"><i class="fa-solid fa-envelope"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'tel:'.$usernamePhoneNum;?>"><i class="fa-solid fa-phone"></i></a>
+                if (!empty(trim(socialIcons('Phone')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'tel:'.socialIcons('Phone');?>"><i class="fa-solid fa-phone"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://discord.com/users/'.$username/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
+                if (!empty(trim(socialIcons('Quora')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.quora.com/profile/'.socialIcons('Quora');?>"><i class="fa-brands fa-quora"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.quora.com/profile/'.$username;?>"><i class="fa-brands fa-quora"></i></a>
+                if (!empty(trim(socialIcons('Reddit')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.reddit.com/user/'.socialIcons('Reddit');?>"><i class="fa-brands fa-reddit"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.reddit.com/user/'.$username;?>"><i class="fa-brands fa-reddit"></i></a>
+                if (!empty(trim(socialIcons('Twitter')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://twitter.com/'.socialIcons('Twitter');?>"><i class="fa-brands fa-twitter"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://twitter.com/'.$username;?>"><i class="fa-brands fa-twitter"></i></a>
+                if (!empty(trim(socialIcons('Twitch')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.twitch.tv/'.socialIcons('Twitch');?>"><i class="fa-brands fa-twitch"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.twitch.tv/'.$username;?>"><i class="fa-brands fa-twitch"></i></a>
+                if (!empty(trim(socialIcons('Instagram')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.instagram.com/'.socialIcons('Instagram');?>"><i class="fa-brands fa-instagram"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.instagram.com/'.$username;?>"><i class="fa-brands fa-instagram"></i></a>
+                if (!empty(trim(socialIcons('Facebook')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.facebook.com/'.socialIcons('Facebook');?>"><i class="fa-brands fa-facebook"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.facebook.com/'.$username;?>"><i class="fa-brands fa-facebook"></i></a>
+                if (!empty(trim(socialIcons('Discourse')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo socialIcons('Discourse');?>"><i class="fa-brands fa-discourse"></i></a>
+                    <?php
+                }
 
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo $link;?>"><i class="fa-brands fa-discourse"></i></a>
+                if (!empty(trim(socialIcons('Youtube')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.youtube.com/'.socialIcons('Youtube');?>"><i class="fa-brands fa-youtube"></i></a>
+                    <?php
+                }
 
+                if (!empty(trim(socialIcons('Bandcamp')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://bandcamp.com/'.socialIcons('Bandcamp');?>"><i class="fa-brands fa-bandcamp"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Pinterest')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.pinterest.com/'.socialIcons('Pinterest');?>"><i class="fa-brands fa-pinterest"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Telegram')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://telegram.me/joinchat/'.socialIcons('Telegram');?>"><i class="fa-brands fa-telegram"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Tiktok')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.tiktok.com/@'.socialIcons('Tiktok');?>"><i class="fa-brands fa-tiktok"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Snapchat')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://www.snapchat.com/add/'.socialIcons('Snapchat');?>"><i class="fa-brands fa-snapchat"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Stackoverflow')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://stackoverflow.com/users/'.socialIcons('Stackoverflow'); /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
+                    <?php
+                }?>
+
+<? // TODO: Add links for new social icons 
+?>
+<!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.youtube.com/'.$username;?>"><i class="fa-brands fa-youtube"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://bandcamp.com/'.$username;?>"><i class="fa-brands fa-bandcamp"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.pinterest.com/'.$username;?>"><i class="fa-brands fa-pinterest"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://telegram.me/joinchat/'.$username;?>"><i class="fa-brands fa-telegram"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.tiktok.com/@'.$username;?>"><i class="fa-brands fa-tiktok"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://www.snapchat.com/add/'.$username;?>"><i class="fa-brands fa-snapchat"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://stackoverflow.com/users/'.$username; /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
+                href="<?php echo 'https://discord.com/users/'.$username/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-skype"></i></a>
-                
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-twitch"></i></a>
                                 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-tumblr"></i></a>
                                 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>-->
-                
-                // TODO: Add links for new social icons
-
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
             <?php
                 if (checkLinks()) {
-                    // Default links
+                    //? Default links
                     for ($i = 0; $i < count($defaultLinks); $i++) {
                         ?>
-                            <a href="<?php echo $defaultLinks[$i]['href']?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                            <a href="<?php echo $defaultLinks[$i]->{'link'}?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
                                 <div class="py-2 px-2">
                                     <img class="rounded-sm h-20 w-20" alt="Link Logo" src="
-                                        <?php echo getImages('link_icon', $defaultLinks[$i]['href']);?>
+                                        <?php echo getImages('link_icon', $defaultLinks[$i]->{'link'});?>
                                     ">
                                 </div>                
                                 <div class="flex flex-col py-4 px-6">
-                                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]['title']?></h3>
-                                    <span class="text-base text-secondaryText hidden md:flex"><?php echo $defaultLinks[$i]['desc']?></span>
+                                    <h3 class="text-xl text-primaryText md:p-0 py-5"><?php echo $defaultLinks[$i]->{'title'}?></h3>
+                                    <span class="text-base text-secondaryText hidden md:flex"><?php echo $defaultLinks[$i]->{'description'}?></span>
                                 </div>
                             </a>
                         <?php
                     }
                 }
                 if (!checkLinks()) {
-                    // User links
+                    //? User links
                     for ($i = 0; $i < count($links); $i++) {
                         ?>
                         <a href="<?php echo $links[$i]->{'link'};?>" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">

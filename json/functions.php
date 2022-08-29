@@ -1,34 +1,33 @@
 <?php
 function defaultContent ($requestedContent) {
     if (!isset($requestedContent) && empty(trim($requestedContent))) exit();
+    $data = json_decode(
+        file_get_contents(
+            './json/default.json'
+        )
+    );
+    $page = $data->{"page"};
+    $meta = $data->{"meta"};
+    $links = $page->{'links'};
     switch ($requestedContent) {
         case 'page_header':
-            $header = [];
-            $header['name'] = 'CMShark';
-            $header['bio'] = 'CMShark is a flexible, customisable and, open source CMS for bio link lists.';
-            $header['location'] = 'UK';
-            return $header;
+            $return = array();
+            $return['name'] = $page->{'name'};
+            $return['bio'] = $page->{'bio'};
+            $return['location'] = $page->{'location'};
+            return $return;
         break;
         case 'page_meta': 
-            $meta = [];
-            $meta['title'] = 'CMShark - A flexible, customisable and, opensource CMS.';
-            $meta['description'] = 'CMShark is a flexible, customisable and, open source CMS for bio link lists.';
-            $meta['url'] = 'https://cmshark.com';
-            $meta['lang'] = 'en_GB';
-            $meta['owner'] = 'William Clarke';
-            return $meta;
+            $return = [];
+            $return['title'] = $meta->{'title'};
+            $return['description'] = $meta->{'description'};
+            $return['url'] = $meta->{'url'};
+            $return['lang'] = $meta->{'lang'};
+            $return['owner'] = $meta->{'owner'};
+            return $return;
         break;
         case 'links':
-            $links = [];
-            $link = ['href'=>'https://cmshark.com','title'=>'Website','desc'=>'CMShark website.'];
-            array_push($links, $link);
-            $link = ['href'=>'https://github.com/wclarkey/cmshark','title'=>'GitHub','desc'=>'Github repository.'];
-            array_push($links, $link);
-            $link = ['href'=>'https://docs.cmshark.com','title'=>'Documentation','desc'=>'Documentation to help you get started.'];
-            array_push($links, $link);
-            $link = ['href'=>'https://discord.gg/FMmJnz6rmD','title'=>'Discord','desc'=>'CMShark community Discord server.'];
-            array_push($links, $link);
-            return $links;
+            return $page->{'links'};
         break;
     }
     
@@ -79,7 +78,8 @@ function checkLinks () {
 
 function socialIcons ($icon) {
     $social = json_decode(file_get_contents('./json/page.json'));
-    $social = $social['social-icons'];
+    $social = $social->{'social-icons'};
+    return $social->{$icon};
 }
 
 function getImages ($type,$link=null) {
@@ -104,6 +104,24 @@ function getImages ($type,$link=null) {
             $image['pfp'] = './uploads/default/logo.png'; // cmshark link for default pfp
             $image['favicon'] = './uploads/default/logo.png'; // cmshark link for default favicon
             return $image;
+        break;
+    }
+}
+
+function getSettings ($type, $setting_type = null) {
+    if (!isset($type) && empty(trim($type))) exit();
+    $settings = json_decode(file_get_contents('./json/settings.json'));
+    $page_settings = $settings->{'page'};
+    $user_settings = $settings->{'user'};
+    switch ($type) {
+        case "page":
+            return $page_settings;
+        break;
+        case "page_theme":
+            return $page_settings->{'theme'};
+        break;
+        case "user":
+            return $user_settings;
         break;
     }
 }

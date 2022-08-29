@@ -1,7 +1,9 @@
 {
     "user" : {},
     "page": {
-        "theme":"",
-        "layout":""
+        "theme": {
+            "layout":"",
+            "colour":""
+        }
     }
 }
