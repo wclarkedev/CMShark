@@ -114,11 +114,10 @@ function checkSocialIcons () {
                 break;
             }
         } else {
-            
+            if (isset($social_icons->{$icon}->{'username'}) && !empty(trim($social_icons->{$icon}->{'username'}))) array_push($icons, $icon);
         }
-
+        return $icons;
     }
-
 }
 $test = json_decode(file_get_contents('page.json'));
 $social_icons_list = [
@@ -156,7 +155,7 @@ foreach ($social_icons_list as $icon) {
     if (isset($note) && !empty(trim($note))) {
         switch ($note) {
             case "domain/sub":
-                echo $icon . "<br>";
+                //echo $icon . "<br>";
         }
     }  
 }
