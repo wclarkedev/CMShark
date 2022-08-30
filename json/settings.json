@@ -1,9 +1,9 @@
 {
-    "user" : {},
-    "page": {
-        "theme": {
-            "layout":"",
-            "colour":""
-        }
+  "user": {},
+  "page": {
+    "theme": {
+      "layout": "",
+      "colour": ""
     }
+  }
 }

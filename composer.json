@@ -1,6 +1,6 @@
 {
-    "require": {
-        "bramus/router": "~1.6",
-        "eftec/bladeone": "^4.6"
-    }
+  "require": {
+    "bramus/router": "~1.6",
+    "eftec/bladeone": "^4.6"
+  }
 }
