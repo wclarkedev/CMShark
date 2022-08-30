@@ -4,116 +4,172 @@
     "location":"",
     "social-icons": {
         "Bandcamp":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-bandcamp",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Behance":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-behance",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Bitbucket":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-bitbucket",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Discord":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-discord",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Discourse":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-discourse",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Email":{
-            "fa":"",
-            "link":""
+            "fa":"fa-solid fa-envelope",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Facebook":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-facebook",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Github":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-github",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Gitlab":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-gitlab",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Instagram":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-instagram",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Linkedin":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-linkedin",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Medium":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-medium",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Patreon":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-patreon",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Phone":{
-            "fa":"",
-            "link":""
+            "fa":"fa-solid fa-phone",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Pinterest":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-pinterest",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Quora":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-quora",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Reddit":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-reddit",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Snapchat":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-snapchat",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Stackoverflow":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-stack-overflow",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Telegram":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-telegram",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Tiktok":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-tiktok",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Twitch":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-twitch",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Twitter":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-twitter",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Whatsapp":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-whatsapp",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Youtube":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-youtube",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Tumblr":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-tumblr",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Messenger":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-facebook-messenger",
+            "link":"",
+            "username":"",
+            "notes":""
         },
         "Blogger":{
-            "fa":"",
-            "link":""
+            "fa":"fa-brands fa-blogger",
+            "link":"",
+            "username":"",
+            "notes":""
         }
     },
     "links": [
