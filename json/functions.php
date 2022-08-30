@@ -131,12 +131,6 @@ function getIcon ($i) {
 
 }
 
-function socialIcons ($icon) {
-    $social = json_decode(file_get_contents('./json/page.json'));
-    $social = $social->{'social-icons'};
-    return $social->{$icon};
-}
-
 function checkLinks () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $link = $json->{'links'}[0]->{'link'};
