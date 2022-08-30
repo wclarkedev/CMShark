@@ -120,6 +120,17 @@ function checkSocialIcons () {
     }
 }
 
+function getIcon ($i) {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $icon = $json->{$i};
+    $return_array = [];
+    $return_array['fa'] = $icon->{'fa'};
+    if (isset($icon->{'notes'}) && !empty(trim($icon->{'notes'})) && $icon->{'notes'} == 'domain/sub') $return_array['link'] = $icon->{'link'};
+    else $return_array['link'] = $icon->{'link'} . $icon->{'username'};
+    return $return_array;
+
+}
+
 function socialIcons ($icon) {
     $social = json_decode(file_get_contents('./json/page.json'));
     $social = $social->{'social-icons'};
