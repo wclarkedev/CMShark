@@ -1,5 +1,5 @@
 <?php
-                //error_reporting(0);
+//error_reporting(0);
                 
  require 'json/functions.php';
  $defaultHeader = defaultContent('page_header'); 
@@ -11,10 +11,7 @@
  $favicon = getImages('favicon');
  $defaultImages = getImages('default');
  $links = getPageContent('links');
-
-
  $social_icons_list = checkSocialIcons ();
- print_r ( $social_icons_list );
 
 ?>
 <!doctype html><html lang="en">
@@ -83,7 +80,7 @@
                         if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) echo getPageContent('bio');
                         else echo $defaultHeader['bio'];
                 ?></span>
-                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot"></i><?php
+                <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot mr-1"></i><?php
                         if (isset($pageHeader['location']) && !empty(trim($pageHeader['location']))) echo getPageContent('location');
                         else echo $defaultHeader['location'];
                 ?></span>
