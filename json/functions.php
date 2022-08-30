@@ -70,16 +70,107 @@ function getPageContent ($contentType) {
     }
 }
 
-function checkLinks () {
+function checkSocialIcons () {
     $json = json_decode(file_get_contents('./json/page.json'));
-    $link = $json->{'links'}[0]->{'link'};
-    if (empty(trim($link))) return true;
+    $social_icons = $json->{'social-icons'};
+    $social_icons_list = [
+        'bandcamp',
+        'bahance',
+        'bitbucket',
+        'discourse',
+        'discord',
+        'email',
+        'facebook',
+        'github',
+        'gitlab',
+        'instagram',
+        'linkedin',
+        'medium',
+        'patreon',
+        'phone',
+        'pinterest',
+        'quora',
+        'reddit',
+        'snapchat',
+        'stackoverflow',
+        'telegram',
+        'tiktok',
+        'twitch',
+        'twitter',
+        'whatsapp',
+        'youtube',
+        'tumblr',
+        'messenger',
+        'blogger'
+    ];
+    $icons = array();
+    
+    foreach ($social_icons_list as $icon) {
+        $note = $social_icons->{$icon} -> {'notes'};
+        if (isset($note) && !empty(trim($note))) {
+            switch ($note) {
+                case "domain/sub":
+                    if (isset($social_icons->{$icon}->{'link'}) && !empty(trim($social_icons->{$icon}->{'link'}))) array_push($icons, $icon);
+                break;
+            }
+        } else {
+            
+        }
+
+    }
+
+}
+$test = json_decode(file_get_contents('page.json'));
+$social_icons_list = [
+    'bandcamp',
+    'behance',
+    'bitbucket',
+    'discourse',
+    'discord',
+    'email',
+    'facebook',
+    'github',
+    'gitlab',
+    'instagram',
+    'linkedin',
+    'medium',
+    'patreon',
+    'phone',
+    'pinterest',
+    'quora',
+    'reddit',
+    'snapchat',
+    'stackoverflow',
+    'telegram',
+    'tiktok',
+    'twitch',
+    'twitter',
+    'whatsapp',
+    'youtube',
+    'tumblr',
+    'messenger',
+    'blogger'
+];
+foreach ($social_icons_list as $icon) {
+    $note = $test->{'social-icons'}->{$icon} -> {'notes'};
+    if (isset($note) && !empty(trim($note))) {
+        switch ($note) {
+            case "domain/sub":
+                echo $icon . "<br>";
+        }
+    }  
 }
 
 function socialIcons ($icon) {
     $social = json_decode(file_get_contents('./json/page.json'));
     $social = $social->{'social-icons'};
     return $social->{$icon};
+}
+
+function checkLinks () {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $link = $json->{'links'}[0]->{'link'};
+    if (empty(trim($link))) return true;
 }
 
 function getImages ($type,$link=null) {

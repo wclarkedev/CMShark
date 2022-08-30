@@ -31,7 +31,7 @@
       "fa": "fa-brands fa-discourse",
       "link": "",
       "username": "",
-      "notes": "Custom URL, not username."
+      "notes": "domain/sub"
     },
     "email": {
       "fa": "fa-solid fa-envelope",
@@ -73,7 +73,7 @@
       "fa": "fa-brands fa-medium",
       "link": "",
       "username": "",
-      "notes": "Subdomain - sub.medium.com/"
+      "notes": "domain/sub"
     },
     "patreon": {
       "fa": "fa-brands fa-patreon",
@@ -157,7 +157,7 @@
       "fa": "fa-brands fa-tumblr",
       "link": "",
       "username": "",
-      "notes": "could be tumblr sub domain or custom domain"
+      "notes": "domain/sub"
     },
     "messenger": {
       "fa": "fa-brands fa-facebook-messenger",
@@ -169,7 +169,7 @@
       "fa": "fa-brands fa-blogger",
       "link": "",
       "username": "",
-      "notes": "Custom domain"
+      "notes": "domain/sub"
     }
   },
   "links": [
