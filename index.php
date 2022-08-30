@@ -1,4 +1,6 @@
 <?php
+                //error_reporting(0);
+                
  require 'json/functions.php';
  $defaultHeader = defaultContent('page_header'); 
  $defaultMeta = defaultContent('page_meta');
@@ -9,6 +11,10 @@
  $favicon = getImages('favicon');
  $defaultImages = getImages('default');
  $links = getPageContent('links');
+
+
+ $social_icons_list = checkSocialIcons ();
+ print_r ( $social_icons_list );
 
 ?>
 <!doctype html><html lang="en">
@@ -92,7 +98,20 @@
                 ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
-                <?php
+                <?php 
+                foreach ($social_icons_list as $icon) {
+                    $icon_data = getIcon($icon);
+                    //var_dump ($icon_data);
+                    if (!empty($icon_data)) {
+                        ?>
+                        <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                        href="<?php echo $icon_data['link']?>"><i class="<?php echo $icon_data['fa']?>"></i></a>
+                        <?php
+                    }
+
+                }
+
+                /*
                 if (!empty(trim(socialIcons('Github')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
@@ -250,14 +269,14 @@
                 if (!empty(trim(socialIcons('Stackoverflow')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                    href="<?php echo 'https://stackoverflow.com/users/'.socialIcons('Stackoverflow'); /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
-                    <?php
+                    href="<?php echo 'https://stackoverflow.com/users/'.socialIcons('Stackoverflow'); /* 16269149/will-clarke*/ /*?>"><i class="fa-brands fa-stack-overflow"></i></a>
+                    <?php 
                 }
 
                 if (!empty(trim(socialIcons('Discord')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                    href="<?php echo 'https://discord.com/users/'.socialIcons('Discord')/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
+                    href="<?php echo 'https://discord.com/users/'.socialIcons('Discord')/*(id)*/ /*;?>"><i class="fa-brands fa-discord"></i></a>
                     <?php
                 }
 
@@ -271,15 +290,15 @@
                 if (!empty(trim(socialIcons('Tumblr')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                    href="<?php echo socialIcons('Tumblr'); /* could be tumblr sub domain or custom domain */?>"><i class="fa-brands fa-tumblr"></i></a>
+                    href="<?php echo socialIcons('Tumblr'); /* could be tumblr sub domain or custom domain */ /*?>"><i class="fa-brands fa-tumblr"></i></a>
                     <?php
-                }?>
+                }*/?>
 <!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
+                href="<?php //echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>                          
+                href="<?php //echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>                          
 -->
             </div>
         </section>

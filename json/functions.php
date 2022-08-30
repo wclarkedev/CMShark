@@ -75,7 +75,7 @@ function checkSocialIcons () {
     $social_icons = $json->{'social-icons'};
     $social_icons_list = [
         'bandcamp',
-        'bahance',
+        'behance',
         'bitbucket',
         'discourse',
         'discord',
@@ -113,20 +113,19 @@ function checkSocialIcons () {
                     if (isset($social_icons->{$icon}->{'link'}) && !empty(trim($social_icons->{$icon}->{'link'}))) array_push($icons, $icon);
                 break;
             }
-        } else {
-            if (isset($social_icons->{$icon}->{'username'}) && !empty(trim($social_icons->{$icon}->{'username'}))) array_push($icons, $icon);
-        }
-        return $icons;
+        } 
+        if (!empty($social_icons->{$icon}->{'username'})) array_push($icons, $icon);
     }
+    return $icons;
 }
 
 function getIcon ($i) {
     $json = json_decode(file_get_contents('./json/page.json'));
-    $icon = $json->{$i};
+    $icon = $json->{'social-icons'}->{$i};
     $return_array = [];
     $return_array['fa'] = $icon->{'fa'};
     if (isset($icon->{'notes'}) && !empty(trim($icon->{'notes'})) && $icon->{'notes'} == 'domain/sub') $return_array['link'] = $icon->{'link'};
-    else $return_array['link'] = $icon->{'link'} . $icon->{'username'};
+    $return_array['link'] = $icon->{'link'} . $icon->{'username'};
     return $return_array;
 
 }
