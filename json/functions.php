@@ -119,46 +119,6 @@ function checkSocialIcons () {
         return $icons;
     }
 }
-$test = json_decode(file_get_contents('page.json'));
-$social_icons_list = [
-    'bandcamp',
-    'behance',
-    'bitbucket',
-    'discourse',
-    'discord',
-    'email',
-    'facebook',
-    'github',
-    'gitlab',
-    'instagram',
-    'linkedin',
-    'medium',
-    'patreon',
-    'phone',
-    'pinterest',
-    'quora',
-    'reddit',
-    'snapchat',
-    'stackoverflow',
-    'telegram',
-    'tiktok',
-    'twitch',
-    'twitter',
-    'whatsapp',
-    'youtube',
-    'tumblr',
-    'messenger',
-    'blogger'
-];
-foreach ($social_icons_list as $icon) {
-    $note = $test->{'social-icons'}->{$icon} -> {'notes'};
-    if (isset($note) && !empty(trim($note))) {
-        switch ($note) {
-            case "domain/sub":
-                //echo $icon . "<br>";
-        }
-    }  
-}
 
 function socialIcons ($icon) {
     $social = json_decode(file_get_contents('./json/page.json'));
