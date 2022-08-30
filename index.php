@@ -18,7 +18,6 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="index, follow">
         <meta name="copyright" content="cmshark.com">
-        <meta name="robots" content="index, follow">
 
         <!-- Imports -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -93,9 +92,7 @@
                 ?></span>
             </div>
             <div class="xl:w-6/12 sm:w-8/12 flex flex-wrap flex-row mx-auto mb-6 justify-center">
-                <?php // TODO Function for getting link href 
-                ?>
-                <?php // Github
+                <?php
                 if (!empty(trim(socialIcons('Github')))) {
                     ?>
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
@@ -255,28 +252,35 @@
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                     href="<?php echo 'https://stackoverflow.com/users/'.socialIcons('Stackoverflow'); /* 16269149/will-clarke*/?>"><i class="fa-brands fa-stack-overflow"></i></a>
                     <?php
-                }?>
+                }
 
-<? // TODO: Add links for new social icons 
-?>
+                if (!empty(trim(socialIcons('Discord')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo 'https://discord.com/users/'.socialIcons('Discord')/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Blogger')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo socialIcons('Blogger');?>"><i class="fa-brands fa-blogger"></i></a>
+                    <?php
+                }
+
+                if (!empty(trim(socialIcons('Tumblr')))) {
+                    ?>
+                    <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
+                    href="<?php echo socialIcons('Tumblr'); /* could be tumblr sub domain or custom domain */?>"><i class="fa-brands fa-tumblr"></i></a>
+                    <?php
+                }?>
 <!--
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                 href="<?php echo 'https://wa.me/'.$usernameNum; /*https://faq.whatsapp.com/563219570998715/?locale=en_US*/?>"><i class="fa-brands fa-whatsapp"></i></a>
 
                 <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo 'https://discord.com/users/'.$username/*(id)*/;?>"><i class="fa-brands fa-discord"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>
-
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-skype"></i></a>
-                                
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-tumblr"></i></a>
-                                
-                <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
-                href="<?php echo ''.$username;?>"><i class="fa-brands fa-blogger"></i></a>-->
+                href="<?php echo ''.$username;?>"><i class="fa-brands fa-facebook-messenger"></i></a>                          
+-->
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
