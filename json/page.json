@@ -3,169 +3,169 @@
     "bio": "",
     "location": "",
     "social-icons": {
-        "Bandcamp": {
+        "bandcamp": {
             "fa": "fa-brands fa-bandcamp",
             "link": "https://bandcamp.com/",
             "username": "",
             "notes": ""
         },
-        "Behance": {
+        "behance": {
             "fa": "fa-brands fa-behance",
             "link": "https://www.behance.net/",
             "username": "",
             "notes": ""
         },
-        "Bitbucket": {
+        "bitbucket": {
             "fa":"fa-brands fa-bitbucket",
             "link":"https://bitbucket.org/",
             "username":"",
             "notes":""
         },
-        "Discord": {
+        "discord": {
             "fa":"fa-brands fa-discord",
             "link":"https://discord.com/users/",
             "username":"",
             "notes":""
         },
-        "Discourse": {
+        "discourse": {
             "fa":"fa-brands fa-discourse",
             "link":"",
             "username":"",
             "notes":"Custom URL, not username."
         },
-        "Email": {
+        "email": {
             "fa":"fa-solid fa-envelope",
             "link":"mailto:",
             "username":"",
             "notes":""
         },
-        "Facebook": {
+        "facebook": {
             "fa":"fa-brands fa-facebook",
             "link":"https://www.facebook.com/",
             "username":"",
             "notes":""
         },
-        "Github": {
+        "github": {
             "fa":"fa-brands fa-github",
             "link":"https://github.com/",
             "username":"",
             "notes":""
         },
-        "Gitlab": {
+        "gitlab": {
             "fa":"fa-brands fa-gitlab",
             "link":"https://gitlab.com/",
             "username":"",
             "notes":""
         },
-        "Instagram": {
+        "instagram": {
             "fa":"fa-brands fa-instagram",
             "link":"https://www.instagram.com/",
             "username":"",
             "notes":""
         },
-        "Linkedin": {
+        "linkedin": {
             "fa":"fa-brands fa-linkedin",
             "link":"https://www.linkedin.com/in/",
             "username":"",
             "notes":""
         },
-        "Medium": {
+        "medium": {
             "fa":"fa-brands fa-medium",
             "link":"",
             "username":"",
             "notes":"Subdomain - sub.medium.com/"
         },
-        "Patreon": {
+        "patreon": {
             "fa":"fa-brands fa-patreon",
             "link":"https://www.patreon.com/",
             "username":"",
             "notes":""
         },
-        "Phone": {
+        "phone": {
             "fa":"fa-solid fa-phone",
             "link":"tel:",
             "username":"",
             "notes":""
         },
-        "Pinterest": {
+        "pinterest": {
             "fa":"fa-brands fa-pinterest",
             "link":"https://www.pinterest.com/",
             "username":"",
             "notes":""
         },
-        "Quora": {
+        "quora": {
             "fa":"fa-brands fa-quora",
             "link":"https://www.quora.com/profile/",
             "username":"",
             "notes":""
         },
-        "Reddit": {
+        "reddit": {
             "fa":"fa-brands fa-reddit",
             "link":"https://www.reddit.com/user/",
             "username":"",
             "notes":""
         },
-        "Snapchat": {
+        "snapchat": {
             "fa":"fa-brands fa-snapchat",
             "link":"https://www.snapchat.com/add/",
             "username":"",
             "notes":""
         },
-        "Stackoverflow": {
+        "stackoverflow": {
             "fa":"fa-brands fa-stack-overflow",
             "link":"https://stackoverflow.com/users/",
             "username":"",
             "notes":"16269149/will-clarke -- username"
         },
-        "Telegram": {
+        "telegram": {
             "fa":"fa-brands fa-telegram",
             "link":"https://telegram.me/joinchat/",
             "username":"",
             "notes":""
         },
-        "Tiktok": {
+        "tiktok": {
             "fa":"fa-brands fa-tiktok",
             "link":"https://www.tiktok.com/@",
             "username":"",
             "notes":""
         },
-        "Twitch": {
+        "twitch": {
             "fa":"fa-brands fa-twitch",
             "link":"https://www.twitch.tv/",
             "username":"",
             "notes":""
         },
-        "Twitter": {
+        "twitter": {
             "fa":"fa-brands fa-twitter",
             "link":"https://twitter.com/",
             "username":"",
             "notes":""
         },
-        "Whatsapp": {
+        "whatsapp": {
             "fa":"fa-brands fa-whatsapp",
             "link":"https://wa.me/",
             "username":"",
             "notes":"https://faq.whatsapp.com/563219570998715/?locale=en_US"
         },
-        "Youtube": {
+        "youtube": {
             "fa":"fa-brands fa-youtube",
             "link":"https://www.youtube.com/",
             "username":"",
             "notes":""
         },
-        "Tumblr": {
+        "tumblr": {
             "fa":"fa-brands fa-tumblr",
             "link":"",
             "username":"",
             "notes":"could be tumblr sub domain or custom domain"
         },
-        "Messenger": {
+        "messenger": {
             "fa":"fa-brands fa-facebook-messenger",
             "link":"",
             "username":"",
             "notes":"Not done"
         },
-        "Blogger": {
+        "blogger": {
             "fa":"fa-brands fa-blogger",
             "link":"",
             "username":"",
