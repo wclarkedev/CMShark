@@ -2,6 +2,7 @@
     Order allow,deny
     Deny from all
 </FilesMatch>
+
 <Files .htaccess>
     Order allow,deny
     Deny from all
