@@ -70,16 +70,70 @@ function getPageContent ($contentType) {
     }
 }
 
+function checkSocialIcons () {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $social_icons = $json->{'social-icons'};
+    $social_icons_list = [
+        'bandcamp',
+        'behance',
+        'bitbucket',
+        'discourse',
+        'discord',
+        'email',
+        'facebook',
+        'github',
+        'gitlab',
+        'instagram',
+        'linkedin',
+        'medium',
+        'patreon',
+        'phone',
+        'pinterest',
+        'quora',
+        'reddit',
+        'snapchat',
+        'stackoverflow',
+        'telegram',
+        'tiktok',
+        'twitch',
+        'twitter',
+        'whatsapp',
+        'youtube',
+        'tumblr',
+        'messenger',
+        'blogger'
+    ];
+    $icons = array();
+    
+    foreach ($social_icons_list as $icon) {
+        $note = $social_icons->{$icon} -> {'notes'};
+        if (isset($note) && !empty(trim($note))) {
+            switch ($note) {
+                case "domain/sub":
+                    if (isset($social_icons->{$icon}->{'link'}) && !empty(trim($social_icons->{$icon}->{'link'}))) array_push($icons, $icon);
+                break;
+            }
+        } 
+        if (!empty($social_icons->{$icon}->{'username'})) array_push($icons, $icon);
+    }
+    return $icons;
+}
+
+function getIcon ($i) {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $icon = $json->{'social-icons'}->{$i};
+    $return_array = [];
+    $return_array['fa'] = $icon->{'fa'};
+    if (isset($icon->{'notes'}) && !empty(trim($icon->{'notes'})) && $icon->{'notes'} == 'domain/sub') $return_array['link'] = $icon->{'link'};
+    $return_array['link'] = $icon->{'link'} . $icon->{'username'};
+    return $return_array;
+
+}
+
 function checkLinks () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $link = $json->{'links'}[0]->{'link'};
     if (empty(trim($link))) return true;
-}
-
-function socialIcons ($icon) {
-    $social = json_decode(file_get_contents('./json/page.json'));
-    $social = $social->{'social-icons'};
-    return $social->{$icon};
 }
 
 function getImages ($type,$link=null) {

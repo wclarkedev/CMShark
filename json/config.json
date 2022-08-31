@@ -1,11 +1,10 @@
 {
-    "title":"",
-    "description":"",
-    "url":"",
-    "lang":"",
-    "owner":"",
+  "title": "",
+  "description": "",
+  "url": "",
+  "lang": "",
+  "owner": "",
 
-    
-    "google-analytics":"",
-    "api-key":""
+  "google-analytics": "",
+  "api-key": ""
 }
