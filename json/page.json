@@ -21,6 +21,12 @@
       "username": "",
       "notes": ""
     },
+    "blogger": {
+      "fa": "fa-brands fa-blogger",
+      "link": "",
+      "username": "",
+      "notes": "domain/sub"
+    },
     "discord": {
       "fa": "fa-brands fa-discord",
       "link": "https://discord.com/users/",
@@ -74,6 +80,12 @@
       "link": "",
       "username": "",
       "notes": "domain/sub"
+    },
+    "messenger": {
+      "fa": "fa-brands fa-facebook-messenger",
+      "link": "",
+      "username": "",
+      "notes": "Not done"
     },
     "patreon": {
       "fa": "fa-brands fa-patreon",
@@ -129,6 +141,12 @@
       "username": "",
       "notes": ""
     },
+    "tumblr": {
+      "fa": "fa-brands fa-tumblr",
+      "link": "",
+      "username": "",
+      "notes": "domain/sub"
+    },
     "twitch": {
       "fa": "fa-brands fa-twitch",
       "link": "https://www.twitch.tv/",
@@ -152,24 +170,6 @@
       "link": "https://www.youtube.com/",
       "username": "",
       "notes": ""
-    },
-    "tumblr": {
-      "fa": "fa-brands fa-tumblr",
-      "link": "",
-      "username": "",
-      "notes": "domain/sub"
-    },
-    "messenger": {
-      "fa": "fa-brands fa-facebook-messenger",
-      "link": "",
-      "username": "",
-      "notes": "Not done"
-    },
-    "blogger": {
-      "fa": "fa-brands fa-blogger",
-      "link": "",
-      "username": "",
-      "notes": "domain/sub"
     }
   },
   "links": [
