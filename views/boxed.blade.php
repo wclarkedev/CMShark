@@ -1,23 +1,19 @@
 @php 
-    //error_reporting(0);
+//error_reporting(0);
                 
- require 'json/functions.php';
- $defaultHeader = defaultContent('page_header'); 
- $defaultMeta = defaultContent('page_meta');
- $defaultLinks = defaultContent('links');
- $pageHeader = getPageContent('page_header');
- $pageMeta = getPageContent('page_meta');
- $pfp = getImages('pfp');
- $favicon = getImages('favicon');
- $defaultImages = getImages('default');
- $links = getPageContent('links');
- $social_icons_list = checkSocialIcons ();
- @endphp
- <head>
- <script src="https://cdn.tailwindcss.com"></script>
- <script src="tailwind.config.js"></script>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
- </head>
+    require 'json/functions.php';
+    $defaultHeader = defaultContent('page_header'); 
+    $defaultMeta = defaultContent('page_meta');
+    $defaultLinks = defaultContent('links');
+    $pageHeader = getPageContent('page_header');
+    $pageMeta = getPageContent('page_meta');
+    $pfp = getImages('pfp');
+    $favicon = getImages('favicon');
+    $defaultImages = getImages('default');
+    $links = getPageContent('links');
+    $social_icons_list = checkSocialIcons ();
+    
+@endphp
     <body class="bg-backgroundColor">
 {{-- ! Boxed page theme --}}
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
