@@ -1,3 +1,23 @@
+@php 
+    //error_reporting(0);
+                
+ require 'json/functions.php';
+ $defaultHeader = defaultContent('page_header'); 
+ $defaultMeta = defaultContent('page_meta');
+ $defaultLinks = defaultContent('links');
+ $pageHeader = getPageContent('page_header');
+ $pageMeta = getPageContent('page_meta');
+ $pfp = getImages('pfp');
+ $favicon = getImages('favicon');
+ $defaultImages = getImages('default');
+ $links = getPageContent('links');
+ $social_icons_list = checkSocialIcons ();
+ @endphp
+ <head>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script src="tailwind.config.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
+ </head>
     <body class="bg-backgroundColor">
 {{-- ! Boxed page theme --}}
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
@@ -8,23 +28,23 @@
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2">
                         @if (isset($pageHeader['name']) && !empty(trim($pageHeader['name']))) 
-                            {{getPageContent('name')}};
+                            {{getPageContent('name')}}
                         @else 
-                            {{$defaultHeader['name']}};
+                            {{$defaultHeader['name']}}
                         @endif
                 </h1>
                 <span class="text-base text-secondaryText text-center max-w-xs">
                         @if (isset($pageHeader['bio']) && !empty(trim($pageHeader['bio']))) 
-                            {{getPageContent('bio')}};
+                            {{getPageContent('bio')}}
                         @else 
-                            {{$defaultHeader['bio']}};
+                            {{$defaultHeader['bio']}}
                         @endif
                 </span>
                 <span class="text-base text-accent font-semibold text-center mt-1"><i class="fa-solid fa-location-dot mr-1"></i>
                         @if (isset($pageHeader['location']) && !empty(trim($pageHeader['location']))) 
-                            {{getPageContent('location')}};
+                            {{getPageContent('location')}}
                         @else 
-                            {{$defaultHeader['location']}};;
+                            {{$defaultHeader['location']}}
                         @endif
                 </span>
             </div>
