@@ -37,7 +37,7 @@
                     @endphp
                     <a class="text-2xl text-primaryText py-1 px-2 hover:text-accent focus:text-accent" 
                     href="{{$icon_data['link']}}"><i class="{{$icon_data['fa']}}"></i></a>
-                @nextforeach
+                @endforeach
             </div>
         </section>
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
