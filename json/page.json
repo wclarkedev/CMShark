@@ -30,19 +30,19 @@
     "discord": {
       "fa": "fa-brands fa-discord",
       "link": "https://discord.com/users/",
-      "username": "349239473",
+      "username": "",
       "notes": ""
     },
     "discourse": {
       "fa": "fa-brands fa-discourse",
-      "link": "sgkhdskhf",
+      "link": "",
       "username": "",
       "notes": "domain/sub"
     },
     "email": {
       "fa": "fa-solid fa-envelope",
       "link": "mailto:",
-      "username": "will@wclarke.dev",
+      "username": "",
       "notes": ""
     },
     "facebook": {
