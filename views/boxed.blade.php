@@ -1,6 +1,7 @@
+{{-- ? TEMPORARY IMPORTS
+TODO Import data properly in the index.php file --}}
 @php 
-//error_reporting(0);
-                
+//error_reporting(0);       
     require 'json/functions.php';
     $defaultHeader = defaultContent('page_header'); 
     $defaultMeta = defaultContent('page_meta');
@@ -12,7 +13,7 @@
     $defaultImages = getImages('default');
     $links = getPageContent('links');
     $social_icons_list = checkSocialIcons ();
-    
+
 @endphp
     <body class="bg-backgroundColor">
 {{-- ! Boxed page theme --}}
