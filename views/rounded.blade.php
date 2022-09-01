@@ -47,7 +47,7 @@
         <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
         @if ($checkLinks) 
             @for ($i = 0; $i < count($defaultLinks); $i++) 
-                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-14 text-primaryText flex-row flex rounded-full hover:bg-backgroundAccentLighter">
                     <div class="py-2 px-2">
                         <img class="rounded-sm h-20 w-20" alt="Link Logo" src="{{ getImages('link_icon', $defaultLinks[$i]->{'link'}) }}">
                     </div>                
@@ -60,7 +60,7 @@
         @endif
         @if (!$checkLinks) 
             @for ($i = 0; $i < count($links); $i++)
-                <a href="{{ $links[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-md hover:bg-backgroundAccentLighter">
+                <a href="{{ $links[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-full hover:bg-backgroundAccentLighter">
                     <div class="py-2 px-2">
                         <img class="rounded-sm h-20 w-20" alt="Link Logo" src="{{ getImages('link_icon', $links[$i]->{'link'}) }}">
                     </div>                
