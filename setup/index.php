@@ -24,29 +24,38 @@ $router->set404(function () {
 });
 $router->get('/', function () {
     ?>
-        <section class="" id="setup-welcome"></section>
+        <section class="" id="setup-welcome">
+            <div class="flex flex-col">
+                <div class="flex mx-auto flex-col">
+                    <h1>Welcome to CMShark</h1>
+                    <span>
+                        This setup process will help you get started with CMShark. From creating your administrator account to choosing which layout and theme you would like to use,
+                        this setup process will allow you to configure and setup it all easily.
+                    </span>
+                    <small class="font-semibold">
+                        If you are having issues with this setup process, please 
+                        <a class="text-blue-500 hover:underline" 
+                        href="https://github.com/wclarkey/CMShark/issues/new?labels=bug&title=Setup+Process+Bug+Report&body=Describe+the+problem:" 
+                        target="_blank">
+                            report the bug
+                        </a>.
+                    </small>
+                </div>
+                <div class="flex mx-auto flex-col">
+                    <h2 class="font-semibold text-center">Need some additional help?</h2>
+                    <span class="text-center">Check out these resources designed to help you.</span>
+                    <ul class="flex flex-row">
+                        <li><a class="text-blue-500 hover:underline" href="https://docs.cmshark.com">Documentation</a></li>
+                        <li><a class="text-blue-500 hover:underline" href="https://discord.gg/FMmJnz6rmD">Community Discord Server</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <section class="" id="setup-page-header"></section>
         <section class="" id="setup-basic-info-form">
             <form method="POST" class="flex flex-col">
-                <div class="flex flex-col">
-                    <label class="">Page Title - A title for your page </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Page Description - A short description about your page </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Name - Your first and last name, separated with a space </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Language - The language the content of this site will be written in </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <!-- Diff input <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">-->
+                <div class="">
+                    <label></label>
                 </div>
             </form>
         </section>
@@ -84,7 +93,7 @@ $router->get('/account', function (){
                 </div>
             </form>
         </section>
-        <section class="" id="setup-nextpage"></section>
+        <section class="" id="setup-nextpage"><a href="">Next Page</a></section>
     <?php
 });
 $router->post('/account', function () {
