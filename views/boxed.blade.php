@@ -1,5 +1,3 @@
-{{-- ? TEMPORARY IMPORTS
-TODO Import data properly in the index.php file --}}
 @php 
     //error_reporting(0);       
     require './functions.php';
