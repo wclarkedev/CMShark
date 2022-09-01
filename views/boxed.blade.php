@@ -2,8 +2,10 @@
 TODO Import data properly in the index.php file --}}
 @php 
 //error_reporting(0);       
-    require 'json/functions.php';
     require './functions.php';
+    $checkLinks = checkLinks();
+
+    require 'json/functions.php';
     $defaultHeader = defaultContent('page_header'); 
     $defaultMeta = defaultContent('page_meta');
     $defaultLinks = defaultContent('links');
@@ -14,7 +16,7 @@ TODO Import data properly in the index.php file --}}
     $defaultImages = getImages('default');
     $links = getPageContent('links');
     $social_icons_list = checkSocialIcons ();
-    $checkLinks = checkLinks();
+
 
 @endphp
     <body class="bg-backgroundColor">
