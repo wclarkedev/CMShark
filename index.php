@@ -65,18 +65,51 @@
         ?>">
     </head>
 <?php
-    echo $blade->run("boxed",
-        array(
-                "pageHeader"=>$pageHeader,
-                "defaultHeader"=>$defaultHeader,
-                "pageMeta"=>$pageMeta,
-                "defaultMeta"=>$defaultMeta,
-                "links"=>$links,
-                "defaultLinks"=>$defaultLinks,
-                "social_icons_list"=>$social_icons_list,
-                "defaultImages"=>$defaultImages,
-                "pfp"=>$pfp,
-                "favicon"=>$favicon
-        )
-);
+        if (getSettings('page_theme') == 'boxed') {
+                echo $blade->run("boxed",
+                        array(
+                                "pageHeader"=>$pageHeader,
+                                "defaultHeader"=>$defaultHeader,
+                                "pageMeta"=>$pageMeta,
+                                "defaultMeta"=>$defaultMeta,
+                                "links"=>$links,
+                                "defaultLinks"=>$defaultLinks,
+                                "social_icons_list"=>$social_icons_list,
+                                "defaultImages"=>$defaultImages,
+                                "pfp"=>$pfp,
+                                "favicon"=>$favicon
+                        )
+                );
+        } elseif (getSettings('page_theme') == 'rounded') {
+                echo $blade->run("rounded",
+                        array(
+                                "pageHeader"=>$pageHeader,
+                                "defaultHeader"=>$defaultHeader,
+                                "pageMeta"=>$pageMeta,
+                                "defaultMeta"=>$defaultMeta,
+                                "links"=>$links,
+                                "defaultLinks"=>$defaultLinks,
+                                "social_icons_list"=>$social_icons_list,
+                                "defaultImages"=>$defaultImages,
+                                "pfp"=>$pfp,
+                                "favicon"=>$favicon
+                        )
+                );
+        } else {
+                // default theme
+                echo $blade->run("boxed",
+                        array(
+                                "pageHeader"=>$pageHeader,
+                                "defaultHeader"=>$defaultHeader,
+                                "pageMeta"=>$pageMeta,
+                                "defaultMeta"=>$defaultMeta,
+                                "links"=>$links,
+                                "defaultLinks"=>$defaultLinks,
+                                "social_icons_list"=>$social_icons_list,
+                                "defaultImages"=>$defaultImages,
+                                "pfp"=>$pfp,
+                                "favicon"=>$favicon
+                        )
+                );
+        }
 ?>

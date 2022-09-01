@@ -163,7 +163,7 @@ function checkLinks () {
 }
 
 function getSettings ($type, $setting_type = null) {
-    if (!isset($type) && empty(trim($type))) exit();
+    //if (!isset($type) && empty(trim($type))) exit();
     $settings = json_decode(file_get_contents('./json/settings.json'));
     $page_settings = $settings->{'page'};
     $user_settings = $settings->{'user'};
