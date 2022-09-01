@@ -15,16 +15,17 @@ A customisable, flexible and, self hostable flat file CMS for bio link lists.
 
 ## Features
 
-<!--- Responsive layout.
-- Flexibility:
-    - You can edit the source code and change the front end as much as you want.
-    - The admin area can be changed, themed and much more. (Not recommended)
-- [Full white label](https://www.thatcompany.com/white-label-marketing/what-is-white-label) and rebrand abilities.
-- Open source, you can easily view the code and make sure that everything is safe before you decide to use it.
-- Font Awesome implementation.
+- Multiple themes to choose from.
+- Full whitelabel capabilities.
+- Open source and code transparancy.
+- Cusomisable experience.
+- Full mobile responsiveness layout.
+- Google Analytics support with cookie notice and relevent legal documentation.
 
+## Future  features
 
-Future features -
-- Better page editing
-- Page insights
-- Better performance -->
+- Built in page insights.
+- Better admin UI.
+- More themes.
+- More text editing features (markdown support or options to add text decoration).
+- Improved page performance.
