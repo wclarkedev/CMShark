@@ -78,7 +78,5 @@
                 "pfp"=>$pfp,
                 "favicon"=>$favicon
         )
-
-
 );
 ?>
