@@ -97,7 +97,7 @@
                 );
         } else {
                 // default theme
-                echo $blade->run("boxed",
+                echo $blade->run("rounded",
                         array(
                                 "pageHeader"=>$pageHeader,
                                 "defaultHeader"=>$defaultHeader,
