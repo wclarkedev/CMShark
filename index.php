@@ -1,4 +1,15 @@
 <?php
+    require 'json/functions.php';
+    $defaultHeader = defaultContent('page_header'); 
+    $defaultMeta = defaultContent('page_meta');
+    $defaultLinks = defaultContent('links');
+    $pageHeader = getPageContent('page_header');
+    $pageMeta = getPageContent('page_meta');
+    $pfp = Images('pfp');
+    $favicon = Images('favicon');
+    $defaultImages = Images('default');
+    $links = getPageContent('links');
+    $social_icons_list = checkSocialIcons ();
 //error_reporting(0); 
     require_once('vendor/autoload.php');
     use eftec\bladeone\BladeOne;
@@ -54,5 +65,20 @@
         ?>">
     </head>
 <?php
-    echo $blade->run("boxed");
+    echo $blade->run("boxed",
+        array(
+                "pageHeader"=>$pageHeader,
+                "defaultHeader"=>$defaultHeader,
+                "pageMeta"=>$pageMeta,
+                "defaultMeta"=>$defaultMeta,
+                "links"=>$links,
+                "defaultLinks"=>$defaultLinks,
+                "social_icons_list"=>$social_icons_list,
+                "defaultImages"=>$defaultImages,
+                "pfp"=>$pfp,
+                "favicon"=>$favicon
+        )
+
+
+);
 ?>
