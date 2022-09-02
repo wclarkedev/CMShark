@@ -53,7 +53,6 @@
                     </div>                
                     <div class="flex flex-col mx-auto text-center">
                         <h3 class="text-xl text-primaryText text-center px-2 py-3">{{ $defaultLinks[$i]->{'title'} }}</h3>
-                        {{--<span class="text-sm text-secondaryText hidden">{{ $defaultLinks[$i]->{'description'} }}</span>--}}
                     </div>
                 </a>
             @endfor
@@ -66,7 +65,6 @@
                     </div>                
                     <div class="flex flex-col mx-auto text-center">
                         <h3 class="text-xl text-primaryText text-center px-2 py-3">{{ $links[$i]->{'title'} }}</h3>
-                        {{--<span class="text-sm text-secondaryText hidden">{{ $defaultLinks[$i]->{'description'} }}</span>--}}
                     </div>
                 </a>
             @endfor
