@@ -6,10 +6,10 @@
 @endphp
     <body class="bg-backgroundColor">
 {{-- ! Boxed page theme --}}
-        <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
+        <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
-                src="">
+                src="https://cdn.discordapp.com/attachments/1001586892199960636/1011372204870602833/Screenshot_20220617-224430_Instagram.jpg">
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2">
@@ -44,16 +44,16 @@
                 @endforeach
             </div>
         </section>
-        <section id="links" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
+        <section id="links" class="xl:w-5/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
         @if ($checkLinks) 
             @for ($i = 0; $i < count($defaultLinks); $i++) 
-                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-14 text-primaryText flex-row flex rounded-full hover:bg-backgroundAccentLighter">
+                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-14 text-primaryText flex-row flex rounded-full hover:bg-transparent hover:ring hover:ring-backgroundAccent">
                     <div class="py-2 px-2">
-                        <img class="rounded-sm h-20 w-20" alt="Link Logo" src="{{ getImages('link_icon', $defaultLinks[$i]->{'link'}) }}">
+                        <img class="hidden rounded-sm h-20 w-20" alt="Link Logo" src="{{ getImages('link_icon', $defaultLinks[$i]->{'link'}) }}">
                     </div>                
-                    <div class="flex flex-col py-4 px-6">
-                        <h3 class="text-xl text-primaryText md:p-0 py-5">{{ $defaultLinks[$i]->{'title'} }}</h3>
-                        <span class="text-base text-secondaryText hidden md:flex">{{ $defaultLinks[$i]->{'description'} }}</span>
+                    <div class="flex flex-row mx-auto text-center">
+                        <h3 class="text-xl text-primaryText md:p-0 py-5 text-center">{{ $defaultLinks[$i]->{'title'} }}</h3>
+                        <span class="text-sm text-secondaryText hidden ">{{ $defaultLinks[$i]->{'description'} }}</span>
                     </div>
                 </a>
             @endfor
