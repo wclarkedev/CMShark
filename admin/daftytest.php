@@ -1,6 +1,6 @@
 <?php
 require_once "../vendor/autoload.php";
-new HotReloader\HotReloader('//localhost/your-project/phrwatcher.php');
+//new HotReloader\HotReloader('//localhost/admin/daftytest.php');
 use eftec\bladeone\BladeOne;
 $views = __DIR__ . '/views';
 $cache = __DIR__ . '/cache';
