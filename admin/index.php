@@ -25,16 +25,25 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     </head>
     <body class="bg-backgroundColor">
 <?php
-    //? Admin home page
     $router->get('/',function () {
     });
 
-    //? Admin settings page
     $router->get('/settings',function () {
     });
 
-    //? User settings page
     $router->get('/settings/user',function () {
+    });
+
+    $router->post('/',function () {
+
+    });
+
+    $router->post('/settings',function () {
+
+    });
+
+    $router->post('/settings/user',function () {
+
     });
 
     $router->run();
