@@ -1,7 +1,10 @@
 <?php
-require_once "/php-hot-reloader/src/HotReloader.php";
+require_once "../vendor/autoload.php";
 new HotReloader\HotReloader('//localhost/your-project/phrwatcher.php');
-echo $blade->run("nav");
+use eftec\bladeone\BladeOne;
+$views = __DIR__ . '/views';
+$cache = __DIR__ . '/cache';
+$blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
 ?>
 <!DOCTYPE html><html lang="en">
     <head>
