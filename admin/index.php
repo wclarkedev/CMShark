@@ -30,7 +30,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     $router->get('/',function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>""));
+        echo $blade->run("nav", array("page"=>"admin-home"));
         ?>
             <form method="post">
 
@@ -41,7 +41,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     $router->get('/settings',function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>""));
+        echo $blade->run("nav", array("page"=>"admin-page-settings"));
         ?>
             <form method="post">
 
@@ -50,9 +50,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
 
-    $router->get('/settings/user',function () {
+    $router->get('/settings/account',function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>""));
+        echo $blade->run("nav", array("page"=>"admin-account-settings"));
         ?>
             <form method="post">
 
@@ -69,7 +69,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     });
 
-    $router->post('/settings/user',function () {
+    $router->post('/settings/account',function () {
 
     });
 
