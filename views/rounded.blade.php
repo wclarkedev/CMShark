@@ -4,6 +4,14 @@
     require './functions.php';
     $checkLinks = checkLinks();
 @endphp
+    <style>
+        .cmshark-link:hover > .cmshark-link-icon{
+            display:block;
+        }
+        .cmshark-link-icon {
+            display:none;
+        }
+    </style>
     <body class="bg-backgroundColor">
 {{-- ! Boxed page theme --}}
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto rounded-md mt-10">
@@ -47,14 +55,15 @@
         <section id="links" class="xl:w-5/12 sm:w-8/12 w-8/12 flex flex-col mx-auto mb-10 mt-1">
         @if ($checkLinks) 
             @for ($i = 0; $i < count($defaultLinks); $i++) 
-                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-14 text-primaryText flex-row flex rounded-full hover:bg-transparent hover:ring hover:ring-backgroundAccent">
+                <a href="{{ $defaultLinks[$i]->{'link'} }}" class="bg-backgroundAccent my-1 h-14 text-primaryText flex-row flex rounded-full hover:bg-backgroundAccentLighter cmshark-link">
                     <div class="py-2 px-2">
                         <img class="hidden rounded-sm h-20 w-20" alt="Link Logo" src="{{ getImages('link_icon', $defaultLinks[$i]->{'link'}) }}">
                     </div>                
-                    <div class="flex flex-row mx-auto text-center">
+                    <div class="flex flex-col mx-auto text-center">
                         <h3 class="text-xl text-primaryText md:p-0 py-5 text-center">{{ $defaultLinks[$i]->{'title'} }}</h3>
-                        <span class="text-sm text-secondaryText hidden ">{{ $defaultLinks[$i]->{'description'} }}</span>
+                        {{--<span class="text-sm text-secondaryText hidden">{{ $defaultLinks[$i]->{'description'} }}</span>--}}
                     </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square cmshark-link-icon"></i>
                 </a>
             @endfor
         @endif
@@ -68,6 +77,7 @@
                         <h3 class="text-xl text-primaryText md:p-0 py-5">{{ $links[$i]->{'title'} }}</h3>
                         <span class="text-base text-secondaryText hidden md:flex">{{ $links[$i]->{'description'} }}</span>
                     </div>
+                    <i class="fa-solid fa-link"></i>
                 </a>
             @endfor
         @endif
