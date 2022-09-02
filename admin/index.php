@@ -30,17 +30,35 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     $router->get('/',function () {
         global $blade;
-        echo $blade->run("navtest");
+        echo $blade->run("nav", array("page"=>""));
         ?>
-        <h1>Test</h1>
-    </div>
+            <form method="post">
+
+            </form>
+        </div>
         <?php
     });
 
     $router->get('/settings',function () {
+        global $blade;
+        echo $blade->run("nav", array("page"=>""));
+        ?>
+            <form method="post">
+
+            </form>
+        </div>
+        <?php
     });
 
     $router->get('/settings/user',function () {
+        global $blade;
+        echo $blade->run("nav", array("page"=>""));
+        ?>
+            <form method="post">
+
+            </form>
+        </div>
+        <?php
     });
 
     $router->post('/',function () {

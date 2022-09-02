@@ -1,3 +1,3 @@
 {{-- Admin UI template --}}
 <div class="" id="navigation"></div>
-<div class="" id="page-content">
+<div class="flex flex-col mx-auto" id="page-content">
