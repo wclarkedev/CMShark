@@ -5,8 +5,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     }
 
     require '../vendor/autoload.php';
+    use eftec\bladeone\BladeOne;
+    $views = __DIR__ . '/views';
+    $cache = __DIR__ . '/cache';
+    $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
 
-    //? Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -26,6 +29,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     <body class="bg-backgroundColor">
 <?php
     $router->get('/',function () {
+        global $blade;
+        echo $blade->run("navtest");
+        ?>
+        <h1>Test</h1>
+    </div>
+        <?php
     });
 
     $router->get('/settings',function () {
