@@ -20,12 +20,13 @@ A customisable, flexible and, self hostable flat file CMS for bio link lists.
 - Open source and code transparancy.
 - Cusomisable experience.
 - Full mobile responsiveness layout.
-- Google Analytics support with cookie notice and relevent legal documentation.
 
 ## Future  features
 
 - Built in page insights.
-- Better admin UI.
+- Better admin UI (using react).
 - More themes.
 - More text editing features (markdown support or options to add text decoration).
 - Improved page performance.
+- 2FA security options.
+- ReCAPTCHA security options (Google reCAPTCHA and alternatives).
