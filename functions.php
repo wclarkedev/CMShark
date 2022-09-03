@@ -46,8 +46,3 @@ function getImages ($type,$link=null) {
         break;
     }
 }
-function ga() {
-    $file = './json/config.json';
-    if (isset($file->{'ga'}) && !empty(trim($file->{'ga'}))) return true;
-    return false;
-}
