@@ -85,7 +85,7 @@
  <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
  </div>
  </div>
- <!--<script>
+ <script>
  document.addEventListener('DOMContentLoaded', () => {
  document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
  element.addEventListener('click', () => {
@@ -96,6 +96,6 @@
  });
  });
  });
- </script>-->
+ </script>
  <?php endif; ?>
  </body>

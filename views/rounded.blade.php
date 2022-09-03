@@ -70,7 +70,7 @@
             @endfor
         @endif
         </section>
-        @if (true)
+        @if (ga())
             <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
                 <i class="fa-solid fa-cookie-bite mx-1"></i> This site uses cookies. <a class="hover:underline text-accent ml-1" href="https://cmshark.com/cookies"> Read more</a>.
                 
