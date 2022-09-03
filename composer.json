@@ -1,6 +1,7 @@
 {
   "require": {
     "bramus/router": "~1.6",
-    "eftec/bladeone": "^4.6"
+    "eftec/bladeone": "^4.6",
+    "phpmailer/phpmailer": "^6.6"
   }
 }
