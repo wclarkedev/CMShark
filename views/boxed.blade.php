@@ -1,6 +1,6 @@
 @php 
     //error_reporting(0);       
-    require './functions.php';
+    require './views/functions.php';
     $checkLinks = checkLinks();
 @endphp
     <body class="bg-backgroundColor">
