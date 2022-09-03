@@ -71,23 +71,25 @@
             @endfor
         @endif
         </section>
-        <!--<div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
-            <i class="fa-solid fa-cookie-bite mx-1"></i> We are using cookies to enhance your experience on this site. By using this site, you agree to our use of cookies.
-            
-            <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
-                <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
+        @if (ga())
+            <div class="fixed bottom-1 right-1 px-4 pt-2 pb-4 md:py-2 bg-backgroundAccent z-10 border border-accent text-center text-primaryText flex flex-col md:flex-row items-center justify-center" id="cookie-consent">
+                <i class="fa-solid fa-cookie-bite mx-1"></i> This site uses cookies. <a class="hover:underline text-accent ml-1" href="https://cmshark.com/cookies"> Read more</a>.
+                
+                <div class="cursor-pointer px-6 pt-2 pb-4 md:px-0 md:pt-0 md:pb-0" data-behavior="accept-cookie-consent">
+                    <button class="md:mb-0 ml-0 md:ml-4 px-3 py-1 rounded-md bg-backgroundColor hover:ring hover:ring-accent">Okay</button>
+                </div>
             </div>
-        </div>-->
-        <!--<script>
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
-                element.addEventListener('click', () => {
-                    const expirationDate = new Date();
-                    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
-                    document.cookie = 'cookie_consent_accepted=true; path=/; expires=' + expirationDate.toUTCString();
-                    document.getElementById('cookie-consent').classList.add('hidden');
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelectorAll('[data-behavior="accept-cookie-consent"]').forEach(element => {
+                    element.addEventListener('click', () => {
+                        const expirationDate = new Date();
+                        expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+                        document.cookie = 'cookie_consent_accepted=true; path=/; expires=' + expirationDate.toUTCString();
+                        document.getElementById('cookie-consent').classList.add('hidden');
+                    });
+                    });
                 });
-                });
-            });
-        </script>-->
+            </script>
+        @endif
     </body>
