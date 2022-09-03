@@ -26,16 +26,27 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     <body class="bg-backgroundColor">
 <?php
     $router->get('/',function () {
+        ?>
+        <div class="" id="welcome-container">
+            <h1>Welcome to CMShark</h1>
+        </div>
+        <?php
     });
 
     $router->get('/account',function () {
+        ?>
+        <div class="" id="account-welcome-container">
+            <h1>CMShark Account setup</h1>
+        </div>
+        <?php
     });
 
     $router->get('/page',function () {
-    });
-
-    $router->post('/',function () {
-
+        ?>
+        <div class="" id="page-welcome-container">
+            <h1>CMShark Page setup</h1>
+        </div>
+        <?php
     });
 
     $router->post('/account',function () {
