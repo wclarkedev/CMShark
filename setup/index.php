@@ -29,6 +29,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="" id="welcome-container">
             <h1>Welcome to CMShark</h1>
+            <span>
+                CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
+                to help you get started easily without needing to edit configuration files. 
+            </span>
+            <a href="account/" class="">Get Started</a>
         </div>
         <?php
     });
@@ -37,6 +42,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="" id="account-welcome-container">
             <h1>CMShark Account setup</h1>
+            <!--
+                Security questions
+                Email
+                Password
+                Username
+            -->
         </div>
         <?php
     });
@@ -45,6 +56,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="" id="page-welcome-container">
             <h1>CMShark Page setup</h1>
+            <!--
+                Meta 
+                Page theme (layout)
+            -->
         </div>
         <?php
     });
