@@ -25,52 +25,25 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     </head>
     <body class="bg-backgroundColor">
 <?php
-    $router->get('/',function () {
+    $router->get('/', function () {
         ?>
-        <div class="flex mx-auto">
+        <div class="flex flex-col mx-auto">
             <div class="flex flex-col mx-auto w-5/12 mt-12" id="welcome-container">
-                <h1 class="text-primaryText text-center text-2xl font-semibold" >Welcome to CMShark</h1>
+                <h1 class="text-primaryText text-center text-3xl font-semibold" >Welcome to CMShark</h1>
                 <span class="text-primaryText my-5">
                     CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
                     to help you get started easily without needing to edit configuration files. 
                 </span>
-                <a href="account/" class="">Get Started</a>
+                <a href="#account" class="">Get Started</a>
+            </div>
+            <div class="flex flex-col mx-auto w-5/12 mt-12" id="account">
+                <h2 class="text-primaryText text-2xl font-semibold">Account Setup</h2>
             </div>
         </div>
         <?php
     });
 
-    $router->get('/account',function () {
-        ?>
-        <div class="" id="account-welcome-container">
-            <h1>CMShark Account setup</h1>
-            <!--
-                Security questions
-                Email
-                Password
-                Username
-            -->
-        </div>
-        <?php
-    });
-
-    $router->get('/page',function () {
-        ?>
-        <div class="" id="page-welcome-container">
-            <h1>CMShark Page setup</h1>
-            <!--
-                Meta 
-                Page theme (layout)
-            -->
-        </div>
-        <?php
-    });
-
-    $router->post('/account',function () {
-
-    });
-
-    $router->post('/page',function () {
+    $router->post('/', function () {
 
     });
 
