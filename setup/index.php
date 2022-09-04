@@ -27,13 +27,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     $router->get('/',function () {
         ?>
-        <div class="" id="welcome-container">
-            <h1>Welcome to CMShark</h1>
-            <span>
-                CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
-                to help you get started easily without needing to edit configuration files. 
-            </span>
-            <a href="account/" class="">Get Started</a>
+        <div class="flex mx-auto">
+            <div class="flex flex-col mx-auto w-5/12 mt-12" id="welcome-container">
+                <h1 class="text-primaryText text-center text-2xl font-semibold" >Welcome to CMShark</h1>
+                <span class="text-primaryText my-5">
+                    CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
+                    to help you get started easily without needing to edit configuration files. 
+                </span>
+                <a href="account/" class="">Get Started</a>
+            </div>
         </div>
         <?php
     });
