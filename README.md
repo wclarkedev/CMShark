@@ -2,6 +2,8 @@
 
 A customisable, flexible and, self hostable flat file CMS for bio link lists.
 
+[![wakatime](https://wakatime.com/badge/github/wclarkey/CMShark.svg)](https://wakatime.com/badge/github/wclarkey/CMShark)
+
 **This is still in development and doesn't have anything online.**
 
 - [Working Example](http://will.clarke.ml)
