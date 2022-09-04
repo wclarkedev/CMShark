@@ -34,37 +34,41 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                     CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
                     to help you get started easily without needing to edit configuration files. 
                 </span>
-                <a href="#get-started" class="">Get Started</a>
+                <a href="account/" class="">Get Started</a>
             </div>
-            <div class="flex flex-col mx-auto w-5/12 mt-12" id="get-started">
-                <h2 class="text-primaryText text-2xl font-semibold">Account Setup</h2>
-                <form class="" method="POST">
-                    <section class="">
-                        <label>Username</label>
-                        <input class="" type="text" placeholder="" name="account-setup-username">
-                    </section>
-                    <section class="">
-                        <label>Email</label>
-                        <input class="" type="text" placeholder="" name="account-setup-email">
-                    </section>
-                    <section class="">
-                        <label>Password</label>
-                        <input class="" type="password" placeholder="" name="account-setup-password">
-                    </section>
-                    <section class="">
-                        <label>Confirm Password</label>
-                        <input class="" type="password" placeholder="" name="account-setup-confirm-password">
-                    </section>
-                    <section class="">
-                        <label>Security Question 1</label>
-                        
-                    </section>
-                    <section class="">
-                        <label>Security Question 2</label>
-                        
-                    </section>
-                </form>
-            </div>
+        </div>
+        <?php
+    });
+    $router->get('account/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-3xl text-center font-semibold">Account Setup</h2>
+            <form class="" method="POST">
+                <section class="flex flex-col">
+                    <label>Username</label>
+                    <input class="" type="text" placeholder="" name="account-setup-username">
+                </section>
+                <section class="flex flex-col">
+                    <label>Email</label>
+                    <input class="" type="text" placeholder="" name="account-setup-email">
+                </section>
+                <section class="flex flex-col">
+                    <label>Password</label>
+                    <input class="" type="password" placeholder="" name="account-setup-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Confirm Password</label>
+                    <input class="" type="password" placeholder="" name="account-setup-confirm-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Security Question 1</label>
+                    
+                </section>
+                <section class="flex flex-col">
+                    <label>Security Question 2</label>
+                    
+                </section>
+            </form>
         </div>
         <?php
     });
