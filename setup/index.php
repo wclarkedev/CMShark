@@ -40,6 +40,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
     $router->get('account/', function () {
+        // https://www.okta.com/blog/2021/03/security-questions/
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-3xl text-center font-semibold">Account Setup</h2>
