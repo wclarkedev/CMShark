@@ -74,6 +74,32 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
 
+    $router->get('page/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-3xl text-center font-semibold">Site Setup</h2>
+            <form class="" method="POST">
+                <section class="flex flex-col">
+                    <label>Title</label>
+                    <input class="" type="text" placeholder="" name="account-setup-username">
+                </section>
+                <section class="flex flex-col">
+                    <label>Description</label>
+                    <input class="" type="text" placeholder="" name="account-setup-email">
+                </section>
+                <section class="flex flex-col">
+                    <label>Your Full Name</label>
+                    <input class="" type="password" placeholder="" name="account-setup-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Site Language</label>
+                    
+                </section>
+            </form>
+        </div>
+        <?php
+    });
+
     $router->post('/', function () {
 
     });
