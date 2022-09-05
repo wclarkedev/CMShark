@@ -58,24 +58,19 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                     <label class="text-lg text-primaryText my-2">Password</label>
                     <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-password">
                 </section>
-                <section class="flex flex-col w-6/12 mx-auto my-4">
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Confirm Password</label>
                     <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-confirm-password">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto my-4">
-                    <label class="text-lg text-primaryText">Security Question 1</label>
-                    <small class="italic text-secondaryText mb-2">* Security questions are optional. It is recommended that you fill out at least one as form of password recovery.</small>
+                    <label class="text-lg text-primaryText my-2">Security Question</label>
+                    <small class="italic text-secondaryText mb-2">* Using a security question is optional. It is recommended that you fill out a security question as a form of password recovery.</small>
                     <select class="" name="account-setup-security-question-choice-1">
-                        <option value="" class=""></option>
+                        <option selected hidden>Security Question</option>
                     </select>
+                    <small class="italic text-secondaryText my-2">* Before choosing a security question, make sure that the answer is something that you will remember.</small>
                     <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" placeholder="Answer to security question" type="text" name="account-setup-security-question-choice-1-answer">
-                </section>
-                <section class="flex flex-col w-6/12 mx-auto my-4">
-                    <label class="text-lg text-primaryText">Security Question 2</label>
-                    <select class="" name="account-setup-security-question-choice-2">
-                        <option value="" class=""></option>
-                    </select>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" placeholder="Answer to security question" type="text" name="account-setup-security-question-choice-2-answer">
+
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Save & Continue">
