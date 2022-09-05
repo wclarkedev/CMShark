@@ -45,29 +45,33 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
             <form class="" method="POST">
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
-                    <label class="text-lg text-primaryText">Username</label>
-                    <input class="" type="text" placeholder="" name="account-setup-username">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Username</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="text" placeholder="e.g. jonny" name="account-setup-username">
                 </section>
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
-                    <label class="text-lg text-primaryText">Email</label>
-                    <input class="" type="text" placeholder="" name="account-setup-email">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-1">Email</label>
+                    <small class="italic text-secondaryText mb-2">* This must be a valid email that can recieve mail.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="text" placeholder="e.g. jonhstevens@cmshark.com" name="account-setup-email">
                 </section>
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
-                    <label class="text-lg text-primaryText">Password</label>
-                    <input class="" type="password" placeholder="" name="account-setup-password">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Password</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-password">
                 </section>
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
-                    <label class="text-lg text-primaryText">Confirm Password</label>
-                    <input class="" type="password" placeholder="" name="account-setup-confirm-password">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Confirm Password</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-confirm-password">
                 </section>
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText">Security Question 1</label>
                     
                 </section>
-                <section class="flex flex-col my-8 w-6/12 mx-auto">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText">Security Question 2</label>
                     
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Save & Continue">
                 </section>
             </form>
         </div>
