@@ -45,27 +45,27 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
             <form class="" method="POST">
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Username</label>
                     <input class="" type="text" placeholder="" name="account-setup-username">
                 </section>
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Email</label>
                     <input class="" type="text" placeholder="" name="account-setup-email">
                 </section>
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Password</label>
                     <input class="" type="password" placeholder="" name="account-setup-password">
                 </section>
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Confirm Password</label>
                     <input class="" type="password" placeholder="" name="account-setup-confirm-password">
                 </section>
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Security Question 1</label>
                     
                 </section>
-                <section class="flex flex-col">
+                <section class="flex flex-col my-8 w-6/12 mx-auto">
                     <label class="text-lg text-primaryText">Security Question 2</label>
                     
                 </section>
