@@ -1,3 +1,18 @@
+<?php
+$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+    if (php_sapi_name() === 'cli-server' && is_file($filename)) {
+        return false;
+    }
+
+    require '../vendor/autoload.php';
+
+    //? Create a Router
+    $router = new \Bramus\Router\Router();
+    $router->set404(function () {
+        header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+        echo '404, route not found!';
+    });
+?>
 <!DOCTYPE html><html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,111 +21,90 @@
         <script src="/tailwind.config.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
         <title>Setup CMShark</title>
-        <meta name="title" content="Setup CMShark">
+        <meta name="title" content="Admin">
     </head>
-    <body class="">
+    <body class="bg-backgroundColor">
 <?php
-// TODO Make UI and theme implementation 
-$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-if (php_sapi_name() === 'cli-server' && is_file($filename)) {
-    return false;
-}
-
-require '../vendor/autoload.php';
-$router = new \Bramus\Router\Router();
-$router->set404(function () {
-    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-    echo '404, route not found!';
-});
-$router->get('/', function () {
-    ?>
-        <section class="" id="setup-welcome"></section>
-        <section class="" id="setup-page-header"></section>
-        <section class="" id="setup-basic-info-form">
-            <form method="POST" class="flex flex-col">
-                <div class="flex flex-col">
-                    <label class="">Page Title - A title for your page </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Page Description - A short description about your page </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Name - Your first and last name, separated with a space </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Language - The language the content of this site will be written in </label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <!-- Diff input <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">-->
-                </div>
+    $router->get('/', function () {
+        ?>
+        <div class="flex flex-col mx-auto">
+            <div class="flex flex-col mx-auto w-5/12 mt-12" id="welcome-container">
+                <h1 class="text-primaryText text-center text-3xl font-semibold" >Welcome to CMShark</h1>
+                <span class="text-primaryText my-5">
+                    CMShark is an open source, customisable and, whitelabel link list experience. We have put together a series of setup steps 
+                    to help you get started easily without needing to edit configuration files. 
+                </span>
+                <a href="account/" class="">Get Started</a>
+            </div>
+        </div>
+        <?php
+    });
+    $router->get('account/', function () {
+        // https://www.okta.com/blog/2021/03/security-questions/
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-3xl text-center font-semibold">Account Setup</h2>
+            <form class="" method="POST">
+                <section class="flex flex-col">
+                    <label>Username</label>
+                    <input class="" type="text" placeholder="" name="account-setup-username">
+                </section>
+                <section class="flex flex-col">
+                    <label>Email</label>
+                    <input class="" type="text" placeholder="" name="account-setup-email">
+                </section>
+                <section class="flex flex-col">
+                    <label>Password</label>
+                    <input class="" type="password" placeholder="" name="account-setup-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Confirm Password</label>
+                    <input class="" type="password" placeholder="" name="account-setup-confirm-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Security Question 1</label>
+                    
+                </section>
+                <section class="flex flex-col">
+                    <label>Security Question 2</label>
+                    
+                </section>
             </form>
-        </section>
-        <section class="" id="setup-nextpage"></section>
-    <?php
-});
-$router->post('/', function () {
+        </div>
+        <?php
+    });
 
-});
-
-$router->get('/account', function (){ 
-    ?>
-        <section class="" id="setup-page-header"></section>
-        <section class="" id="setup-basic-info-form">
-            <form method="POST" class="flex flex-col">
-                <div class="flex flex-col">
-                    <label class="">Username</label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Email</label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Password</label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
-                <div class="flex flex-col">
-                    <label class="">Confirm Password</label>
-                    <!--<small><sup>*</sup> This can be changed at a later date in settings. </small>-->
-                    <input class="w-1/12 border-2 border-gray-500" type="text" name="" placeholder="">
-                </div>
+    $router->get('page/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-3xl text-center font-semibold">Site Setup</h2>
+            <form class="" method="POST">
+                <section class="flex flex-col">
+                    <label>Title</label>
+                    <input class="" type="text" placeholder="" name="account-setup-username">
+                </section>
+                <section class="flex flex-col">
+                    <label>Description</label>
+                    <input class="" type="text" placeholder="" name="account-setup-email">
+                </section>
+                <section class="flex flex-col">
+                    <label>Your Full Name</label>
+                    <input class="" type="password" placeholder="" name="account-setup-password">
+                </section>
+                <section class="flex flex-col">
+                    <label>Site Language</label>
+                    
+                </section>
             </form>
-        </section>
-        <section class="" id="setup-nextpage"></section>
-    <?php
-});
-$router->post('/account', function () {
+        </div>
+        <?php
+    });
 
-});
-$router->get('/account/success', function (){
+    $router->post('/', function () {
 
-});
+    });
 
-$router->get('/page', function () {
-
-});
-$router->post('/page', function () {
-
-});
-
-$router->get('/complete', function () {
-
-});
-$router->get('/repair', function () {
-
-});
-$router->get('/repair/recreate', function () {
-
-});
-$router->run();
+    $router->run();
 ?>
     </body>
 </html>

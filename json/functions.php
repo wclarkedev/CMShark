@@ -119,24 +119,7 @@ function checkSocialIcons () {
     return $icons;
 }
 
-function getIcon ($i) {
-    $json = json_decode(file_get_contents('./json/page.json'));
-    $icon = $json->{'social-icons'}->{$i};
-    $return_array = [];
-    $return_array['fa'] = $icon->{'fa'};
-    if (isset($icon->{'notes'}) && !empty(trim($icon->{'notes'})) && $icon->{'notes'} == 'domain/sub') $return_array['link'] = $icon->{'link'};
-    $return_array['link'] = $icon->{'link'} . $icon->{'username'};
-    return $return_array;
-
-}
-
-function checkLinks () {
-    $json = json_decode(file_get_contents('./json/page.json'));
-    $link = $json->{'links'}[0]->{'link'};
-    if (empty(trim($link))) return true;
-}
-
-function getImages ($type,$link=null) {
+function Images ($type,$link=null) {
     if (!isset($type) && empty(trim($type))) exit();
     switch ($type) {
         case "pfp":
@@ -162,8 +145,25 @@ function getImages ($type,$link=null) {
     }
 }
 
+function getIcon ($i) {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $icon = $json->{'social-icons'}->{$i};
+    $return_array = [];
+    $return_array['fa'] = $icon->{'fa'};
+    if (isset($icon->{'notes'}) && !empty(trim($icon->{'notes'})) && $icon->{'notes'} == 'domain/sub') $return_array['link'] = $icon->{'link'};
+    $return_array['link'] = $icon->{'link'} . $icon->{'username'};
+    return $return_array;
+
+}
+
+function checkLinks () {
+    $json = json_decode(file_get_contents('./json/page.json'));
+    $link = $json->{'links'}[0]->{'link'};
+    if (empty(trim($link))) return true;
+}
+
 function getSettings ($type, $setting_type = null) {
-    if (!isset($type) && empty(trim($type))) exit();
+    //if (!isset($type) && empty(trim($type))) exit();
     $settings = json_decode(file_get_contents('./json/settings.json'));
     $page_settings = $settings->{'page'};
     $user_settings = $settings->{'user'};
