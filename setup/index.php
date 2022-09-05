@@ -65,11 +65,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Security Question</label>
                     <small class="italic text-secondaryText mb-2">* Using a security question is optional. It is recommended that you fill out a security question as a form of password recovery.</small>
-                    <select class="" name="account-setup-security-question-choice-1">
+                    <select class="" name="account-setup-security-question-choice">
                         <option selected hidden>Security Question</option>
                     </select>
                     <small class="italic text-secondaryText my-2">* Before choosing a security question, make sure that the answer is something that you will remember.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" placeholder="Answer to security question" type="text" name="account-setup-security-question-choice-1-answer">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" placeholder="Answer to security question" type="text" name="account-setup-security-question-answer">
 
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
