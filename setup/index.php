@@ -21,7 +21,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <script src="/tailwind.config.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
         <title>Setup CMShark</title>
-        <meta name="title" content="Admin">
+        <meta name="title" content="Setup CMShark">
+        <link rel="icon" type="image/x-icon" href="/uploads/cmsharklogoshark.png">
     </head>
     <body class="bg-backgroundColor">
 <?php
