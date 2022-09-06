@@ -48,32 +48,32 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Username</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="text" placeholder="e.g. jonny" name="account-setup-username">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonny" name="account-setup-username">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-1">Email</label>
-                    <small class="italic text-secondaryText mb-2">* This must be a valid email that can recieve mail.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="text" placeholder="e.g. jonhstevens@cmshark.com" name="account-setup-email">
+                    <small class="italic text-accent mb-2">* This must be a valid email that can recieve mail.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonhstevens@cmshark.com" name="account-setup-email">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Password</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-password">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="account-setup-password">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Confirm Password</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" type="password" placeholder="**************" name="account-setup-confirm-password">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="account-setup-confirm-password">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Security Question</label>
-                    <small class="italic text-secondaryText mb-2">* Using a security question is optional. It is recommended that you fill out a security question as a form of password recovery.</small>
-                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" name="account-setup-security-question-choice">
+                    <small class="italic text-accent mb-3">* Using a security question is optional. It is recommended that you fill out a security question as a form of password recovery.</small>
+                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-security-question-choice">
                         <option selected hidden>Security Question</option>
                         <option value="What city were you born in?">What city were you born in?</option>
                         <option value="What was the make and model of your first car?">What was the make and model of your first car?</option>
                         <option value="What was the first concert you attended?">What was the first concert you attended?</option>
                     </select>
-                    <small class="italic text-secondaryText my-2">* Before choosing a security question, make sure that the answer is something that you will remember.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm" placeholder="Answer to security question" type="text" name="account-setup-security-question-answer">
+                    <small class="italic text-accent my-3">* Before choosing a security question, make sure that the answer is something that you will remember.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" placeholder="Answer to security question" type="text" name="account-setup-security-question-answer">
 
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
