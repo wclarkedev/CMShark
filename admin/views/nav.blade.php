@@ -1,3 +1,8 @@
+@php
+$username = 'admin';
+$username = ucfirst($username);
+$version = 0.1;
+@endphp
 {{-- Admin UI template --}}
 <aside class="h-screen sticky top-0">
     <nav class="bg-transparent md:h-screen w-full md:w-[300px] border-r border-navBorder px-[16px] pt-[16px]">
@@ -42,7 +47,7 @@
                     </div>
                     <code
                         class="hidden md:block px-[5px] py-[4px] text-[12px] text-codeColor bg-codeBackground rounded font-bold"
-                        dir="ltr">v 0.0.1</code>
+                        dir="ltr">v {{$version}}</code>
                 </div>
             </div>
             <div class="border-t border-navBorder mb-[24px]"></div>
