@@ -25,10 +25,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <meta name="title" content="Log into CMShark">
         <link rel="icon" type="image/x-icon" href="/uploads/cmsharklogoshark.png">
     </head>
-    <body class="bg-backgroundColor">
+<body class="bg-backgroundColor">
 <?php
     $router->get('/', function () {
-        // https://www.okta.com/blog/2021/03/security-questions/
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Login</h2>
@@ -51,5 +50,5 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
     $router->run();
-    ?>
-    </body>
+?>
+</body>
