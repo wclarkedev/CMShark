@@ -16,7 +16,7 @@ $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO);
         <title>Admin | CMShark</title>
         <meta name="title" content="Admin">
     </head>
-    <body class="bg-backgroundColor w-full h-full">
+    <body class="bg-background w-full h-full">
         <div class="flex">
             <?php echo $blade->run("nav"); ?>
             <main class="p-4 text-gray-200">
