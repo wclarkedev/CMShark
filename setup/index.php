@@ -108,6 +108,21 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
+    $router->get('success/', function () {
+        ?>
+        <div class="flex flex-col mx-auto">
+            <div class="flex flex-col mx-auto w-5/12 mt-12" id="welcome-container">
+                <h1 class="text-primaryText text-center text-4xl font-semibold" >Success!</h1>
+                <span class="text-primaryText my-5 text-lg">
+                    Your CMShark site has been setup successfully. You can now edit the page, page settings and configuration of the site. 
+                    Get started with checking out the <a href="https://docs.cmshark.com" class="text-accent hover:underline">documentation</a> or 
+                    jump right into your site <a href="/admin" class="text-accent hover:underline">admin</a> page.
+                </span>
+            </div>
+        </div>
+        <?php
+    });
+
 
     $router->post('/', function () {
 
