@@ -4,6 +4,8 @@ $username = ucfirst($username);
 $version = 0.1;
 @endphp
 {{-- Admin UI template --}}
+{{-- TODO implement auto active nav item on page load (pass page name into blade template and apply relevent styles) 
+TODO page content --}}
 <aside class="h-screen sticky top-0">
     <nav class="bg-transparent md:h-screen w-full md:w-[300px] border-r border-navBorder px-[16px] pt-[16px]">
         <div class="">
