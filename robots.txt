@@ -11,7 +11,8 @@ Disallow: /*.json
 Disallow: /.htaccess
 Disallow: /tailwind.config.js
 Disallow: /README.md
-Disallow: /views/
-Disallow: /cache/
+Disallow: /views/*
+Disallow: /cache/*
+Disallow: /LICENSE
 Allow: /
 Allow: /uploads/*
