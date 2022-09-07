@@ -1,5 +1,8 @@
 {
   "username": "",
   "email": "",
-  "password": ""
+  "password": "",
+  "security-question":"",
+  "security-answer":"",
+  "account-id":""
 }
