@@ -115,7 +115,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <h1 class="text-primaryText text-center text-4xl font-semibold" >Success!</h1>
                 <span class="text-primaryText my-5 text-lg">
                     Your CMShark site has been setup successfully. You can now edit the page, page settings and configuration of the site. 
-                    Get started with checking out the <a href="https://docs.cmshark.com" class="text-accent hover:underline">documentation</a> or 
+                    Get started with checking out the <a href="https://docs.cmshark.com" target="_blank" class="text-accent hover:underline">documentation</a> or 
                     jump right into your site <a href="/admin" class="text-accent hover:underline">admin</a> page.
                 </span>
             </div>
