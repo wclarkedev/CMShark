@@ -45,6 +45,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
+            <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Username</label>
@@ -87,23 +88,29 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     $router->get('page/', function () {
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
-            <h2 class="text-primaryText text-3xl text-center font-semibold">Site Setup</h2>
+            <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
+            <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
             <form class="" method="POST">
-                <section class="flex flex-col">
-                    <label>Title</label>
-                    <input class="" type="text" placeholder="" name="account-setup-username">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Username</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonny" name="account-setup-username">
                 </section>
-                <section class="flex flex-col">
-                    <label>Description</label>
-                    <input class="" type="text" placeholder="" name="account-setup-email">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Password</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="account-setup-password">
                 </section>
-                <section class="flex flex-col">
-                    <label>Your Full Name</label>
-                    <input class="" type="password" placeholder="" name="account-setup-password">
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Your CMShark API key <b class="text-red-600">*</b></label>
+                    <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-confirm-password">
                 </section>
-                <section class="flex flex-col">
-                    <label>Site Language</label>
-                    
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Your CMShark Account ID <b class="text-red-600">*</b></label>
+                    <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-confirm-password">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Save & Continue">
                 </section>
             </form>
         </div>
