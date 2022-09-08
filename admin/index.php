@@ -47,7 +47,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"edit-page"));?>
             <main class="p-4">
-                <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
+                <div class="flex flex-col">
+                    <form method="POST" class="flex flex-col mx-auto">
+                        <h1>helsl</h1>
+                    </form>
+                </div>
             </main>            
         </div>
         <?php
