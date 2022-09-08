@@ -40,13 +40,13 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->get('account/', function () {
+    $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
             <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
-            <form class="" method="POST">
+            <form method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Username <b class="text-red-600">*</b></label>
                     <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonny" name="account-setup-username">
@@ -83,6 +83,13 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </form>
         </div>
         <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty(trim($_POST['account-setup-username']))) echo '<span style="color:red;">Error</span>';
+            $username = $_POST['account-setup-username'];
+            //if (empty(trim($_POST['account-setup-email']))) exit();
+            $email = $_POST['account-setup-email'];
+        }
+
     });
 
     $router->get('page/', function () {
@@ -124,9 +131,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
 
-    $router->post('/', function () {
-
-    });
 
     $router->run();
 ?>
