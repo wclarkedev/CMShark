@@ -54,7 +54,7 @@ TODO page content --}}
             </div>
             <div class="border-t border-navBorder mb-[24px]"></div>
             <div id="navigation" class="hidden md:block">
-                <a href="" style="font-size: 14px; align-items: center;"
+                <a href="/admin" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
                     {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -70,7 +70,7 @@ TODO page content --}}
                     <i class="fa-solid fa-house-chimney mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Home</span>
                 </a>
-                <a href="//google.com" style="font-size: 14px; align-items: center;"
+                <a href="/admin/page/edit" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
                     {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -82,7 +82,7 @@ TODO page content --}}
                     <i class="fa-solid fa-pencil mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Edit Page</span>
                 </a>
-                <a href="" style="font-size: 14px; align-items: center;"
+                <a href="/admin/page/settings" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
                     {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -98,7 +98,7 @@ TODO page content --}}
                     <i class="fa-solid fa-gear mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Page Settings</span>
                 </a>
-                <a href="" style="font-size: 14px; align-items: center;"
+                <a href="/admin/account" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
                     {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
