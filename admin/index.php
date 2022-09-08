@@ -32,7 +32,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     $router->get('/',function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-home"));
+        echo $blade->run("nav", array("page"=>"home"));
         ?>
             <form method="post">
 
@@ -42,7 +42,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('/page/edit', function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-home"));
+        echo $blade->run("nav", array("page"=>"edit-page"));
         ?>
             <form method="post">
 
@@ -52,7 +52,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('/page/settings', function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-home"));
+        echo $blade->run("nav", array("page"=>"page-settings"));
         ?>
             <form method="post">
 
@@ -62,7 +62,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('/account', function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-home"));
+        echo $blade->run("nav", array("page"=>"account"));
         ?>
             <form method="post">
 

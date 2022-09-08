@@ -71,7 +71,7 @@ TODO page content */ ?>
  <span class="text-center cursor-pointer">Home</span>
  </a>
  <a href="//google.com" style="font-size: 14px; align-items: center;"
- class="cusor-pointer flex text-navActiveTextColor font-semibold bg-navItemActive rounded w-full px-[12px] py-[10px]">
+ class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
  <?php /*<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
  stroke-linejoin="round">
@@ -80,7 +80,8 @@ TODO page content */ ?>
  <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5"></path>
  </svg>*/ ?>
  <i class="fa-solid fa-pencil mr-3 ml-1"></i>
- <span class="text-center cursor-pointer text-navActiveTextColor">Edit Page</span>
+ <span class="text-center cursor-pointer 
+ <?php if($page == 'p'): ?> text-navActiveTextColor <?php endif; ?>">Edit Page</span>
  </a>
  <a href="" style="font-size: 14px; align-items: center;"
  class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
