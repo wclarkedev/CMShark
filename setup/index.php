@@ -4,10 +4,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     if (php_sapi_name() === 'cli-server' && is_file($filename)) {
         return false;
     }
-
+    //error_reporting(0);
     require '../vendor/autoload.php';
-    require './functions.php';
-
+    require '../functions.php';
+    ob_start();
     //? Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
@@ -44,6 +44,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
+        global $oskk;
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
@@ -69,7 +70,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Security Question</label>
                     <small class="italic text-accent mb-3">* Using a security question is optional. It is recommended that you fill out a security question as a form of password recovery.</small>
-                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-security-question-choice">
+                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-security-question">
                         <option selected hidden>Security Question</option>
                         <option value="What city were you born in?">What city were you born in?</option>
                         <option value="What was the make and model of your first car?">What was the make and model of your first car?</option>
@@ -87,36 +88,36 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (empty(trim($_POST['account-setup-username']))) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">1Error</span>';
                 exit();
             }
             $username = $_POST['account-setup-username'];
             if (empty(trim($_POST['account-setup-email']))) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">2Error</span>';
                 exit();
             }
             $email = $_POST['account-setup-email'];
             if (empty(trim($_POST['account-setup-password']))) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">3Error</span>';
                 exit();
             }
             $password = $_POST['account-setup-password'];
             if (empty(trim($_POST['account-setup-confirm-password']))) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">4Error</span>';
                 exit();
             }
             $confirm_password = $_POST['account-setup-confirm-password'];
             if ($password != $confirm_password) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">5Error</span>';
                 exit();
             }
             if (!emailMatch($email)) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">6Error</span>';
                 exit();
             }
             $email = validateEmail($email);
             if (!validatePassword($password)[0]) {
-                echo '<span style="color:red;">Error</span>';
+                echo '<span style="color:red;">7Error</span>';
                 exit();
             }
             $username = filter_var($username, FILTER_SANITIZE_STRING);
@@ -133,11 +134,28 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $iv = '1234567891011121';
 
             $e_email = openssl_encrypt($email, $cipher, $oskk, $options, $iv);
-            $e_username = openssl_encrypt($username, $cipher, $oskk, $options, $iv);
             $e_pw = openssl_encrypt($confirm_password, $cipher, $oskk, $options, $iv);
             if ($security_question_use) {
                 $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
                 $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
+            }
+
+            $json_data = array();
+            $json_data['username'] = $username;
+            $json_data['email'] = $e_email;
+            $json_data['password'] = $e_pw;
+            if ($security_question_use) {
+                $json_data['security_question'] = $e_sq;
+                $json_data['security_answer'] = $e_sqa;
+            }
+            file_put_contents('../json/account.json',json_encode($json_data));
+            $saved_data = file_get_contents('../json/account.json');
+            $saved_data = json_decode($saved_data);
+            if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
+                header("Location: /setup/page/");
+            } else {
+                echo '<span style="color:red;">8Error</span>';
+                exit();
             }
         }
 
