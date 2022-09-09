@@ -1,4 +1,5 @@
 <?php
+$oskk = 'fssgridsfhrdyh9ido';
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     if (php_sapi_name() === 'cli-server' && is_file($filename)) {
         return false;
@@ -120,14 +121,24 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             }
             $username = filter_var($username, FILTER_SANITIZE_STRING);
             
-            // Security question
             if (!empty(trim($_POST['account-setup-security-question-answer']))) {
                 $security_question = $_POST['account-setup-security-question'];
                 $security_answer = filter_var($_POST['account-setup-security-question-answer'], FILTER_SANITIZE_STRING);
                 $security_question_use = true;
             }
 
-            // Enter & Encrypt data
+            $cipher = 'AES-128-CTR';
+            $iv_length = openssl_cipher_iv_length($cipher);
+            $options = 0;
+            $iv = '1234567891011121';
+
+            $e_email = openssl_encrypt($email, $cipher, $oskk, $options, $iv);
+            $e_username = openssl_encrypt($username, $cipher, $oskk, $options, $iv);
+            $e_pw = openssl_encrypt($confirm_password, $cipher, $oskk, $options, $iv);
+            if ($security_question_use) {
+                $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
+                $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
+            }
         }
 
     });
