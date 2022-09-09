@@ -6,7 +6,6 @@ function redirectForNotLoggedIn(){
 }
 function validateEmail($badEmail){
     $email = filter_var($badEmail, FILTER_SANITIZE_EMAIL);
-    if (empty(trim($email))) return false;
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 function validatePassword($password){

@@ -5,6 +5,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     }
 
     require '../vendor/autoload.php';
+    require './functions.php';
 
     //? Create a Router
     $router = new \Bramus\Router\Router();
@@ -86,8 +87,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (empty(trim($_POST['account-setup-username']))) echo '<span style="color:red;">Error</span>';
             $username = $_POST['account-setup-username'];
-            //if (empty(trim($_POST['account-setup-email']))) exit();
+            if (empty(trim($_POST['account-setup-email']))) echo '<span style="color:red;">Error</span>';
             $email = $_POST['account-setup-email'];
+            if (empty(trim($_POST['account-setup-password']))) echo '<span style="color:red;">Error</span>';
+            $password = $_POST['account-setup-password'];
+            if (empty(trim($_POST['account-setup-confirm-password']))) echo '<span style="color:red;">Error</span>';
+            $confirm_password = $_POST['account-setup-confirm-password'];
+            if ($password != $confirm_password) echo '<span style="color:red;">Error</span>';
+            if (!emailMatch($email)) echo '<span style="color:red;">Error</span>';
+            $email = validateEmail($email);
         }
 
     });
