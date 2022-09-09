@@ -85,17 +85,49 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (empty(trim($_POST['account-setup-username']))) echo '<span style="color:red;">Error</span>';
+            if (empty(trim($_POST['account-setup-username']))) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
             $username = $_POST['account-setup-username'];
-            if (empty(trim($_POST['account-setup-email']))) echo '<span style="color:red;">Error</span>';
+            if (empty(trim($_POST['account-setup-email']))) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
             $email = $_POST['account-setup-email'];
-            if (empty(trim($_POST['account-setup-password']))) echo '<span style="color:red;">Error</span>';
+            if (empty(trim($_POST['account-setup-password']))) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
             $password = $_POST['account-setup-password'];
-            if (empty(trim($_POST['account-setup-confirm-password']))) echo '<span style="color:red;">Error</span>';
+            if (empty(trim($_POST['account-setup-confirm-password']))) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
             $confirm_password = $_POST['account-setup-confirm-password'];
-            if ($password != $confirm_password) echo '<span style="color:red;">Error</span>';
-            if (!emailMatch($email)) echo '<span style="color:red;">Error</span>';
+            if ($password != $confirm_password) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
+            if (!emailMatch($email)) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
             $email = validateEmail($email);
+            if (!validatePassword($password)[0]) {
+                echo '<span style="color:red;">Error</span>';
+                exit();
+            }
+            $username = filter_var($username, FILTER_SANITIZE_STRING);
+            
+            // Security question
+            if (!empty(trim($_POST['account-setup-security-question-answer']))) {
+                $security_question = $_POST['account-setup-security-question'];
+                $security_answer = filter_var($_POST['account-setup-security-question-answer'], FILTER_SANITIZE_STRING);
+                $security_question_use = true;
+            }
+
+            // Enter & Encrypt data
         }
 
     });
