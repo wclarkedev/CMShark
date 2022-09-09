@@ -27,7 +27,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     </head>
 <body class="bg-backgroundColor">
 <?php
-    $router->get('/', function () {
+    $router->match('GET|POST','/', function () {
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Login</h2>
