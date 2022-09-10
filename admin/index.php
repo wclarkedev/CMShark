@@ -41,7 +41,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->get('/page/edit', function () {
+    $router->match('GET|POST', '/page/edit', function () {
         global $blade;
         ?>
         <div class="flex">
@@ -56,7 +56,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->get('/page/settings', function () {
+    $router->match('GET|POST', '/page/settings', function () {
         global $blade;
         ?>
         <div class="flex">
@@ -67,7 +67,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->get('/account', function () {
+    $router->match('GET|POST', '/account', function () {
         global $blade;
         ?>
         <div class="flex">
