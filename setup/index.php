@@ -152,7 +152,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $saved_data = file_get_contents('../json/account.json');
             $saved_data = json_decode($saved_data);
             if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
-                header("Location: /setup/page/");
+                header("Location: /setup/success/");
             } else {
                 echo '<span style="color:red;">8Error</span>';
                 exit();
