@@ -115,10 +115,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 exit();
             }
             $email = validateEmail($email);
-            if (!validatePassword($password)[0]) {
+            /*if (!validatePassword($password)[0]) {
                 echo '<span style="color:red;">7Error</span>';
                 exit();
-            }
+            }*/
             $username = filter_var($username, FILTER_SANITIZE_STRING);
             
             if (!empty(trim($_POST['account-setup-security-question-answer']))) {

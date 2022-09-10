@@ -70,14 +70,14 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $options = 0;
             $iv = '1234567891011121';
 
-            $jsondata = file_get_contents(json_decode('/json/account.json'));
+            $jsondata = file_get_contents('../json/account.json');
+            $jsondata = json_decode($jsondata);
             $epw = $jsondata->{'password'};
-            $eun = $jsondata->{'username'};
+            $un = $jsondata->{'username'};
 
             $depw = openssl_decrypt($epw, $cipher, $oskk, $options, $iv);
-            $deun = openssl_decrypt($eun, $cipher, $oskk, $options, $iv);
 
-            if ($deun != $username) {
+            if ($un != $username) {
                 echo '<span style="color:red;">3Error</span>';
                 exit();
             }
