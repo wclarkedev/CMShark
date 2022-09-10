@@ -138,16 +138,25 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
                 $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
             }
+            $jsondata = file_get_contents('../json/account.json');
+            $jsondata = json_decode($jsondata);
+            $jsondata->{'username'} = $username;
+            $jsondata->{'email'} = $e_email;
+            $jsondata->{'password'} = $e_pw;
 
-            $json_data = array();
+            if ($security_question_use) {
+                $jsondata->{'security_question'} = $e_sq;
+                $jsondata->{'security_answer'} = $e_sqa;
+            }
+            /*$json_data = array();
             $json_data['username'] = $username;
             $json_data['email'] = $e_email;
             $json_data['password'] = $e_pw;
             if ($security_question_use) {
                 $json_data['security_question'] = $e_sq;
                 $json_data['security_answer'] = $e_sqa;
-            }
-            file_put_contents('../json/account.json',json_encode($json_data));
+            }*/
+            file_put_contents('../json/account.json',json_encode($jsondata));
             $saved_data = file_get_contents('../json/account.json');
             $saved_data = json_decode($saved_data);
             if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {

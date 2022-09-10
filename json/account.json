@@ -1,1 +1,8 @@
-{"username":"","email":"","password":""}
+{
+    "username": "",
+    "email": "",
+    "password": "",
+    "security-question":"",
+    "security-answer":"",
+    "account-id":""
+}
