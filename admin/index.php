@@ -23,54 +23,60 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="/tailwind.config.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
-        <title>Admin | CMShark</title>
-        <meta name="title" content="Admin">
+        <title>CMShark Admin</title>
+        <meta name="title" content="CMShark Admin">
+        <link rel="icon" type="image/x-icon" href="/uploads/cmsharklogoshark.png">
+        <script src="views/script.js"></script>
     </head>
-    <body class="bg-backgroundColor">
+    <body class="bg-backgroundColor w-full h-full">
 <?php
     $router->get('/',function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-home"));
         ?>
-            <form method="post">
-
-            </form>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"home"));?>
+            <main class="p-4">
+                <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
+            </main>            
         </div>
         <?php
     });
-
-    $router->get('/settings',function () {
+    $router->get('/page/edit', function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-page-settings"));
         ?>
-            <form method="post">
-
-            </form>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"edit-page"));?>
+            <main class="p-4">
+                <div class="flex flex-col">
+                    <form method="POST" class="flex flex-col mx-auto">
+                        <h1>helsl</h1>
+                    </form>
+                </div>
+            </main>            
         </div>
         <?php
     });
-
-    $router->get('/settings/account',function () {
+    $router->get('/page/settings', function () {
         global $blade;
-        echo $blade->run("nav", array("page"=>"admin-account-settings"));
         ?>
-            <form method="post">
-
-            </form>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"page-settings"));?>
+            <main class="p-4">
+                <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
+            </main>            
         </div>
         <?php
     });
-
-    $router->post('/',function () {
-
-    });
-
-    $router->post('/settings',function () {
-
-    });
-
-    $router->post('/settings/account',function () {
-
+    $router->get('/account', function () {
+        global $blade;
+        ?>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"account"));?>
+            <main class="p-4">
+                <h1 class="text-4xl text-gray-400">Hi {{user}}</h1>
+            </main>            
+        </div>
+        <?php
     });
 
     $router->run();
