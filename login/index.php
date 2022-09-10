@@ -6,6 +6,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     }
 
     require '../vendor/autoload.php';
+    ob_start();
 
     //? Create a Router
     $router = new \Bramus\Router\Router();
@@ -28,6 +29,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <body class="bg-backgroundColor">
 <?php
     $router->match('GET|POST','/', function () {
+        session_start();
+        $oskk = 'fssgridsfhrdyh9ido';
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Login</h2>
@@ -35,11 +38,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Username <b class="text-red-600">*</b></label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonny" name="account-setup-username">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="e.g. jonny" name="login-username">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Password <b class="text-red-600">*</b></label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="account-setup-password">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="login-password">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Login">
@@ -48,6 +51,43 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </form>
         </div>
         <?php
+        if ($_SERVER['REQUEST_METHOD']=='POST') {
+            if (empty(trim($_POST['login-username']))) {
+                echo '<span style="color:red;">1Error</span>';
+                exit();
+            }
+            $username = $_POST['login-username'];
+            if (empty(trim($_POST['login-password']))) {
+                echo '<span style="color:red;">2Error</span>';
+                exit();
+            }
+            $password = $_POST['login-password'];
+            
+            $username = filter_var($username, FILTER_SANITIZE_STRING);
+            
+            $cipher = 'AES-128-CTR';
+            $iv_length = openssl_cipher_iv_length($cipher);
+            $options = 0;
+            $iv = '1234567891011121';
+
+            $jsondata = file_get_contents(json_decode('/json/account.json'));
+            $epw = $jsondata->{'password'};
+            $eun = $jsondata->{'username'};
+
+            $depw = openssl_decrypt($epw, $cipher, $oskk, $options, $iv);
+            $deun = openssl_decrypt($eun, $cipher, $oskk, $options, $iv);
+
+            if ($deun != $username) {
+                echo '<span style="color:red;">3Error</span>';
+                exit();
+            }
+            if ($depw != $password) {
+                echo '<span style="color:red;">4Error</span>';
+                exit();
+            }
+            $_SESSION['loggedin'] = true;
+            header("Location: /admin/");
+        }
     });
     $router->match('GET|POST', 'forgot-password/', function () {});
     $router->run();
