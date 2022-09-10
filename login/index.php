@@ -49,6 +49,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
+    $router->match('GET|POST', 'forgot-password/', function () {});
     $router->run();
 ?>
 </body>
