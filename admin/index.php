@@ -46,10 +46,29 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"edit-page"));?>
-            <main class="p-4">
+            <main class="mx-auto mt-6 w-10/12">
                 <div class="flex flex-col">
+                    <h1 class="text-primaryText text-3xl font-semibold text-center">Edit Page</h1>
                     <form method="POST" class="flex flex-col mx-auto">
-                        <h1>helsl</h1>
+                        <div class="flex-col flex mt-8 w-[350px]">
+                            <h2 class="text-primaryText underline text-xl text-center">Page header</h2>
+                            <section class="flex flex-col my-2">
+                                <label class="text-lg text-primaryText my-2">Name</label>
+                                <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="Your name" name="account-setup-confirm-password">
+                            </section>
+                            <section class="flex flex-col my-2">
+                                <label class="text-lg text-primaryText my-2">Bio</label>
+                                <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="Short description of yourself" name="account-setup-confirm-password">
+                            </section>
+                            <section class="flex flex-col my-2">
+                                <label class="text-lg text-primaryText my-2">Location</label>
+                                <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="The country or city you are from" name="account-setup-confirm-password">
+                            </section>
+                            <section class="flex flex-col my-2">
+                                <label class="text-lg text-primaryText my-2">Profile picture</label>
+                                <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="password" placeholder="**************" name="account-setup-confirm-password">
+                            </section>
+                        </div>
                     </form>
                 </div>
             </main>            
