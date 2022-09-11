@@ -80,7 +80,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"page-settings"));?>
-            <main class="p-4">
+            <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
             </main>            
         </div>
@@ -91,8 +91,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         ?>
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"account"));?>
-            <main class="p-4">
-                <h1 class="text-4xl text-gray-400">Hi {{user}}</h1>
+            <main class="mx-auto mt-6 w-10/12">
+                <h1 class="text-primaryText text-3xl font-semibold text-center">Edit Page</h1>
+                <div class="bg-backgroundAccent rounded w-4/12">
+                    <h1>HI</h1>
+                </div>
             </main>            
         </div>
         <?php
