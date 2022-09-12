@@ -1,5 +1,4 @@
 <?php
-$oskk = 'fssgridsfhrdyh9ido';
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     if (php_sapi_name() === 'cli-server' && is_file($filename)) {
         return false;
@@ -44,7 +43,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
-        global $oskk;
+        $oskk = 'fssgridsfhrdyh9ido';
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
@@ -116,10 +115,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 exit();
             }
             $email = validateEmail($email);
-            if (!validatePassword($password)[0]) {
+            /*if (!validatePassword($password)[0]) {
                 echo '<span style="color:red;">7Error</span>';
                 exit();
-            }
+            }*/
             $username = filter_var($username, FILTER_SANITIZE_STRING);
             
             if (!empty(trim($_POST['account-setup-security-question-answer']))) {
@@ -139,20 +138,29 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
                 $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
             }
+            $jsondata = file_get_contents('../json/account.json');
+            $jsondata = json_decode($jsondata);
+            $jsondata->{'username'} = $username;
+            $jsondata->{'email'} = $e_email;
+            $jsondata->{'password'} = $e_pw;
 
-            $json_data = array();
+            if ($security_question_use) {
+                $jsondata->{'security_question'} = $e_sq;
+                $jsondata->{'security_answer'} = $e_sqa;
+            }
+            /*$json_data = array();
             $json_data['username'] = $username;
             $json_data['email'] = $e_email;
             $json_data['password'] = $e_pw;
             if ($security_question_use) {
                 $json_data['security_question'] = $e_sq;
                 $json_data['security_answer'] = $e_sqa;
-            }
-            file_put_contents('../json/account.json',json_encode($json_data));
+            }*/
+            file_put_contents('../json/account.json',json_encode($jsondata));
             $saved_data = file_get_contents('../json/account.json');
             $saved_data = json_decode($saved_data);
             if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
-                header("Location: /setup/page/");
+                header("Location: /setup/success/");
             } else {
                 echo '<span style="color:red;">8Error</span>';
                 exit();
