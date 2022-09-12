@@ -89,7 +89,69 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             header("Location: /admin/");
         }
     });
-    $router->match('GET|POST', 'forgot-password/', function () {});
+    $router->match('GET|POST', 'forgot-password/', function () {
+         session_start();
+        $oskk = 'fssgridsfhrdyh9ido';
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-4xl text-center font-semibold">Password Recovery</h2>
+            <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
+            <form class="" method="POST">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Account Email <b class="text-red-600">*</b></label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="hello@cmshark.com" name="login-username">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Next">
+                    <span class=" text-center text-accent hover:underline my-10"><a href="/"><i class="fa-solid fa-arrow-left"></i> Return to site</a></span> 
+                </section>
+            </form>
+        </div>
+        <?php
+        /*
+        if ($_SERVER['REQUEST_METHOD']=='POST') {
+            if (empty(trim($_POST['login-username']))) {
+                echo '<span style="color:red;">1Error</span>';
+                exit();
+            }
+            $username = $_POST['login-username'];
+            if (empty(trim($_POST['login-password']))) {
+                echo '<span style="color:red;">2Error</span>';
+                exit();
+            }
+            $password = $_POST['login-password'];
+            
+            $username = filter_var($username, FILTER_SANITIZE_STRING);
+            
+            $cipher = 'AES-128-CTR';
+            $iv_length = openssl_cipher_iv_length($cipher);
+            $options = 0;
+            $iv = '1234567891011121';
+
+            $jsondata = file_get_contents('../json/account.json');
+            $jsondata = json_decode($jsondata);
+            $epw = $jsondata->{'password'};
+            $un = $jsondata->{'username'};
+
+            $depw = openssl_decrypt($epw, $cipher, $oskk, $options, $iv);
+
+            if ($un != $username) {
+                echo '<span style="color:red;">3Error</span>';
+                exit();
+            }
+            if ($depw != $password) {
+                echo '<span style="color:red;">4Error</span>';
+                exit();
+            }
+            $_SESSION['loggedin'] = true;
+            header("Location: /admin/");
+        }*/
+    });
+    $router->match('GET|POST', 'forgot-password/step-2/', function () {
+        echo "hello world";
+    });
+    $router->match('GET|POST', 'forgot-password/step-3/', function () {});
+    $router->get('forgot-password/success/', function () {});
     $router->run();
 ?>
 </body>
