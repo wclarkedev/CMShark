@@ -100,7 +100,21 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
+    $router->get('/logs', function () {
+        global $blade;
+        ?>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"logs"));?>
+            <main class="mx-auto mt-6 w-10/12">
+                <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
+                <div class="bg-backgroundAccent rounded w-4/12">
+                    <h1>HI</h1>
+                </div>
+            </main>            
+        </div>
+        <?php
 
+    });
     $router->run();
 ?>
     </body>
