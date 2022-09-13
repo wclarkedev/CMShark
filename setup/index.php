@@ -115,10 +115,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 exit();
             }
             $email = validateEmail($email);
-            /*if (!validatePassword($password)[0]) {
+            if (!validatePassword($password)[0]) {
                 echo '<span style="color:red;">7Error</span>';
                 exit();
-            }*/
+            }
             $username = filter_var($username, FILTER_SANITIZE_STRING);
             
             if (!empty(trim($_POST['account-setup-security-question-answer']))) {
@@ -148,14 +148,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 $jsondata->{'security_question'} = $e_sq;
                 $jsondata->{'security_answer'} = $e_sqa;
             }
-            /*$json_data = array();
-            $json_data['username'] = $username;
-            $json_data['email'] = $e_email;
-            $json_data['password'] = $e_pw;
-            if ($security_question_use) {
-                $json_data['security_question'] = $e_sq;
-                $json_data['security_answer'] = $e_sqa;
-            }*/
             file_put_contents('../json/account.json',json_encode($jsondata));
             $saved_data = file_get_contents('../json/account.json');
             $saved_data = json_decode($saved_data);
@@ -170,6 +162,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
     $router->get('page/', function () {
+        // Add theme options (layout + colour)
+        // Add backend
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Site Setup</h2>
