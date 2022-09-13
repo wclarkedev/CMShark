@@ -6,6 +6,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     }
 
     require '../vendor/autoload.php';
+    require '../functions.php';
     ob_start();
 
     //? Create a Router
@@ -30,6 +31,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     $router->match('GET|POST','/', function () {
         session_start();
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin');
         $oskk = 'fssgridsfhrdyh9ido';
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
@@ -90,7 +92,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         }
     });
     $router->match('GET|POST', 'forgot-password/', function () {
-         session_start();
+        session_start();
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin/account');
         $oskk = 'fssgridsfhrdyh9ido';
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
@@ -99,7 +102,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Account Email <b class="text-red-600">*</b></label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="hello@cmshark.com" name="login-username">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="hello@cmshark.com" name="pw-reset-email">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Next">
@@ -108,6 +111,17 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </form>
         </div>
         <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty(trim($_POST['pw-reset-email']))) {
+                echo '<span style="color:red;">1Error</span>';
+                exit();
+            }
+            if (!emailMatch($_POST['pw-reset-email'])) {
+                echo '<span style="color:red;">2Error</span>';
+                exit();
+            }
+            $email = filter_var($_POST['pw-reset-email'], FILTER_SANITIZE_EMAIL);
+        }
         /*
         if ($_SERVER['REQUEST_METHOD']=='POST') {
             if (empty(trim($_POST['login-username']))) {
