@@ -7,6 +7,16 @@ error_reporting(0);
 function get_audit_logs(){
     global $logs;
     // Get all log data and return in nice format to loop through in blade template
+    //if (isset($logs)) exit();
+    $count = count($logs);
+    //echo $count;
+    $output = array();
+    for ($i = 0; $i < $count; $i++) {
+        $output[$i]['name'] = $logs[$i]->{'user'};
+        $output[$i]['action'] = $logs[$i]->{'action'};
+        $output[$i]['time'] = $logs[$i]->{'time'};
+    }
+    return $output;
 }
 function set_audit_log($action, $user) {
     global $logs;
@@ -26,4 +36,5 @@ function set_audit_log($action, $user) {
     $json = json_encode($logs);
     file_put_contents($log_file, $json);
 }
-set_audit_log('test','test');
+//set_audit_log('test','test');
+//var_dump(get_audit_logs());
