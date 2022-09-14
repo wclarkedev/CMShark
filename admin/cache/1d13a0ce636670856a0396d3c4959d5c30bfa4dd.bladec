@@ -1,0 +1,27 @@
+<?php /* Audit logging page content */ ?>
+<?php 
+ require 'audit-logging.php';
+ $audit_logs = get_audit_logs();
+ ?>
+<table class="table-auto text-primaryText">
+ <thead>
+ <tr>
+ <th>Action</th>
+ <th>User</th>
+ <th>Time</th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php $__currentLoopData = $audit_logs; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $log): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td> <?php echo \htmlentities($log['action']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ <td> <?php echo \htmlentities($log['user']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ <td> <?php echo \htmlentities($log['time']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <tr>
+ <td>Your audit logs will show up here</td>
+ </tr>
+ </tbody>
+</table>

@@ -5,6 +5,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     }
 
     require '../vendor/autoload.php';
+    require 'audit-logging.php';
     use eftec\bladeone\BladeOne;
     $views = __DIR__ . '/views';
     $cache = __DIR__ . '/cache';
@@ -107,8 +108,31 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <?php echo $blade->run("nav", array("page"=>"logs"));?>
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
-                <div class="bg-backgroundAccent rounded w-4/12">
-                    <h1>HI</h1>
+                <div>
+                    <table class="table-auto">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>User</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $audit_logs = get_audit_logs();
+                                $audit_log_count = count($audit_logs);
+                                for ($i = 0; $i < $audit_log_count; $i++) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $audit_logs[$i]['action']?></td>
+                                        <td><?php echo $audit_logs[$i]['user']?></td>
+                                        <td><?php echo $audit_logs[$i]['time']?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </main>            
         </div>
