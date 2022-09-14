@@ -1,2 +1,4 @@
 tests/ContentDelivery/db.*
 /vendor/
+admin/cache/*
+cache/*
