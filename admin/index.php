@@ -103,6 +103,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('/logs', function () {
         global $blade;
+        // TODO Table styling with tailwind
         ?>
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"logs"));?>
