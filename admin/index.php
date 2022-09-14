@@ -109,7 +109,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
                 <div>
-                    <table class="table-auto">
+                    <table class="table-auto table">
                         <thead>
                             <tr>
                                 <th>Action</th>
