@@ -110,12 +110,18 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
                 <div>
-                    <table class="table-auto table">
-                        <thead>
-                            <tr>
-                                <th>Action</th>
-                                <th>User</th>
-                                <th>Time</th>
+                    <table class="min-w-full text-center">
+                        <thead class="border-b">
+                            <tr class="border-b bg-backgroundColor border-codeColor">
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    Action
+                                </th>
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    User
+                                </th>
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    Time
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -124,10 +130,16 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                                 $audit_log_count = count($audit_logs);
                                 for ($i = 0; $i < $audit_log_count; $i++) {
                                     ?>
-                                    <tr>
-                                        <td><?php echo $audit_logs[$i]['action']?></td>
-                                        <td><?php echo $audit_logs[$i]['user']?></td>
-                                        <td><?php echo $audit_logs[$i]['time']?></td>
+                                    <tr class="border-b bg-backgroundColor border-codeColor">
+                                        <td class="text-sm text-secondaryText font-semibold px-6 py-4 whitespace-nowrap">
+                                            <?php echo $audit_logs[$i]['action']?>
+                                        </td>
+                                        <td class="text-sm text-secondaryText font-medium px-6 py-4 whitespace-nowrap">
+                                            <?php echo $audit_logs[$i]['name']?>
+                                        </td>
+                                        <td class="text-sm text-secondaryText font-medium px-6 py-4 whitespace-nowrap">
+                                            <?php echo $audit_logs[$i]['time']?>
+                                        </td>
                                     </tr>
                                     <?php
                                 }
