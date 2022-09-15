@@ -1,5 +1,8 @@
 tailwind.config = {
   theme: {
+    minWidth: {
+      '1/2': '50%'
+    },
     extend: {
       colors: {
         backgroundColor: "#12141D",

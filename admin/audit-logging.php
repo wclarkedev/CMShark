@@ -31,7 +31,7 @@ function set_audit_log($action, $user) {
     //$logs = $logs->{'logs'};
     $count = count($logs) - 1;
     //$logs = $logs->{$count+1};
-    array_push($logs, $output);
+    array_unshift($logs, $output);
 
     $json = json_encode($logs);
     file_put_contents($log_file, $json);

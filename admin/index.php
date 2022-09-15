@@ -109,8 +109,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <?php echo $blade->run("nav", array("page"=>"logs"));?>
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
-                <div>
-                    <table class="min-w-full text-center">
+                <div class="mx-auto mt-6">
+                    <table class="min-w-1/2 text-center mx-auto">
                         <thead class="border-b">
                             <tr class="border-b bg-backgroundColor border-codeColor">
                                 <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
