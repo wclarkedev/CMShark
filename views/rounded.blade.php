@@ -1,11 +1,10 @@
-{{-- TODO Change design --}}
 @php 
-    //error_reporting(0);       
+    error_reporting(0);       
     require './views/functions.php';
     $checkLinks = checkLinks();
 @endphp
     <body class="bg-backgroundColor">
-{{-- ! Boxed page theme --}}
+{{-- ! Rounded page theme --}}
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 

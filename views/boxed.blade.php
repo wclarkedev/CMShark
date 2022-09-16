@@ -1,5 +1,5 @@
 @php 
-    //error_reporting(0);       
+    error_reporting(0);       
     require './views/functions.php';
     $checkLinks = checkLinks();
 @endphp
@@ -8,7 +8,13 @@
         <section id="header" class="xl:w-6/12 sm:w-8/12 w-8/12 bg-backgroundAccent flex flex-col mx-auto rounded-md mt-10">
             <div class="flex flex-col mx-auto my-6">
                 <img class="rounded-full h-32 w-32" alt="Profile Picture" 
-                src="uploads/cmsharklogoshark.png">
+                src="
+                    @if (isset($pfp) && !empty(trim($pfp))) 
+                        {{$pfp}}
+                    @else
+                        {{$defaultImages['pfp']}}
+                    @endif
+                ">
             </div>
             <div class="flex flex-col mx-auto mb-4">
                 <h1 class="text-primaryText text-3xl font-bold text-center mb-2">
