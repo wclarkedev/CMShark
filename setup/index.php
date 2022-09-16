@@ -6,6 +6,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     //error_reporting(0);
     require '../vendor/autoload.php';
     require '../functions.php';
+    require '../admin/audit-logging.php';
     ob_start();
     //? Create a Router
     $router = new \Bramus\Router\Router();
@@ -122,10 +123,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 exit();
             }
             $email = validateEmail($email);
-            if (!validatePassword($password)[0]) {
-                echo '<span style="color:red;">7Error</span>';
-                exit();
-            }
             $username = filter_var($username, FILTER_SANITIZE_STRING);
             
             if (!empty(trim($_POST['account-setup-security-question-answer']))) {
@@ -160,7 +157,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $saved_data = json_decode($saved_data);
             if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
                 header("Location: /setup/success/");
-                require '../admin/audit-logging.php';
+
                 set_audit_log('Account setup completed.', 'System');
             } else {
                 echo '<span style="color:red;">8Error</span>';
