@@ -103,7 +103,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('/logs', function () {
         global $blade;
-        // TODO Table styling with tailwind
         ?>
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"logs"));?>
@@ -114,6 +113,20 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
 
     });
+    /* $router->get('/logs/(\d+)', function ($page_num) {
+        global $blade;
+        ?>
+        <div class="flex">
+            <?php echo $blade->run("nav", array("page"=>"logs"));?>
+            <main class="mx-auto mt-6 w-10/12">
+                <?php echo $blade->run("logging", array("logs"=>get_audit_logs(), "page_num"=>$page_num));
+                
+                echo "<h1 class=\"text-primaryText\">".htmlentities($page_num)."</h1>";?>
+            </main>            
+        </div>
+        <?php
+    }); */
+
     $router->run();
 ?>
     </body>
