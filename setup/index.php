@@ -40,10 +40,17 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </div>
         </div>
         <?php
+        $json = file_get_contents('../json/config.json');
+        $string = generateRandomString(20);
+        $json = json_decode($json);
+        $json->{'key'} = $string;
+        $output = json_encode($json);
+        file_put_contents('../json/config.json', $output);
     });
     $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
-        $oskk = 'fssgridsfhrdyh9ido';
+        $oskk = json_decode(file_get_contents('../json/config.json'));
+        $oskk = $oskk->{'key'};
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
@@ -153,6 +160,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $saved_data = json_decode($saved_data);
             if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
                 header("Location: /setup/success/");
+                require '../admin/audit-logging.php';
+                set_audit_log('Account setup completed.', 'System');
             } else {
                 echo '<span style="color:red;">8Error</span>';
                 exit();
