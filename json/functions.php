@@ -126,7 +126,7 @@ function Images ($type,$link=null) {
             return './uploads/pfp.webp';
         break;
         case "favicon":
-            return './uploads/fav.ico';
+            return '';
         break;
         case "link_icon":
             if (!isset($link) && empty(trim($link))) exit();
@@ -138,8 +138,8 @@ function Images ($type,$link=null) {
         break;
         case "default":
             $image = [];
-            $image['pfp'] = './uploads/default/logo.png'; // cmshark link for default pfp
-            $image['favicon'] = './uploads/default/logo.png'; // cmshark link for default favicon
+            $image['pfp'] = './uploads/cmsharklogoshark.png'; // cmshark link for default pfp
+            $image['favicon'] = './uploads/cmsharklogoshark.png'; // cmshark link for default favicon
             return $image;
         break;
     }
