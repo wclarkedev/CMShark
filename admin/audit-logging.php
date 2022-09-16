@@ -23,7 +23,7 @@ function set_audit_log($action, $user) {
     global $log_file;
     if (empty(trim($action))) exit();
     if (empty(trim($user))) exit();
-    $time = date("H:i:s - d/m/Y");
+    $time = date("d/m/Y - H:i:s");
     $output = array();
     $output['action'] = $action;
     $output['user'] = $user;
@@ -38,3 +38,12 @@ function set_audit_log($action, $user) {
 }
 //set_audit_log('test','test');
 //var_dump(get_audit_logs());
+
+/*
+$log =get_audit_logs();
+$limit = 2;
+$log = array_chunk($log, $limit);
+$page = 0; // page 1
+$log = $log[$page];
+var_dump($log);
+*/
