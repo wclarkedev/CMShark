@@ -17,7 +17,6 @@ function validatePassword($password){
     if (!preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/',$password)) return array(false, 'Your password must contain at least 1 special character.');  
     return array(true);
 }
-// TODO: Encryption functions 
 function emailMatch($email) {
     return preg_match('/^\\S+@\\S+\\.\\S+$/', $email);
 }

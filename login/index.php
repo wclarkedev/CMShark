@@ -32,7 +32,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     $router->match('GET|POST','/', function () {
         session_start();
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin');
-        $oskk = 'fssgridsfhrdyh9ido';
+        $oskk = json_decode(file_get_contents('../json/config.json'));
+        $oskk = $oskk->{'key'};
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Login</h2>
@@ -55,12 +56,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
         if ($_SERVER['REQUEST_METHOD']=='POST') {
             if (empty(trim($_POST['login-username']))) {
-                echo '<span style="color:red;">1Error</span>';
+                echo '<span style="color:red;">One or more required fields are empty</span>';
                 exit();
             }
             $username = $_POST['login-username'];
             if (empty(trim($_POST['login-password']))) {
-                echo '<span style="color:red;">2Error</span>';
+                echo '<span style="color:red;">One or more required fields are empty</span>';
                 exit();
             }
             $password = $_POST['login-password'];
@@ -80,11 +81,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $depw = openssl_decrypt($epw, $cipher, $oskk, $options, $iv);
 
             if ($un != $username) {
-                echo '<span style="color:red;">3Error</span>';
+                echo '<span style="color:red;">Incorrect Credentials</span>';
                 exit();
             }
             if ($depw != $password) {
-                echo '<span style="color:red;">4Error</span>';
+                echo '<span style="color:red;">Incorrect Credentials</span>';
                 exit();
             }
             $_SESSION['loggedin'] = true;
@@ -94,7 +95,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     $router->match('GET|POST', 'forgot-password/', function () {
         session_start();
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin/account');
-        $oskk = 'fssgridsfhrdyh9ido';
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password Recovery</h2>
