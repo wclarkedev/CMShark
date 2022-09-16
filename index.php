@@ -65,7 +65,7 @@
         ?>">
     </head>
 <?php
-        if (getSettings('page_theme') == 'boxed') {
+        if (getSettings('page_theme')->{'layout'} == 'boxed') {
                 echo $blade->run("boxed",
                         array(
                                 "pageHeader"=>$pageHeader,
@@ -80,7 +80,7 @@
                                 "favicon"=>$favicon
                         )
                 );
-        } elseif (getSettings('page_theme') == 'rounded') {
+        } elseif (getSettings('page_theme')->{'layout'} == 'rounded') {
                 echo $blade->run("rounded",
                         array(
                                 "pageHeader"=>$pageHeader,
