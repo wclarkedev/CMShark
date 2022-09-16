@@ -31,9 +31,9 @@
             @endforeach
         </tbody>
     </table>
-    <div class="" id="page-navigation">
+    {{-- <div class="" id="page-navigation">
         <span class="">backwards</span>
         <span class="">Page num</span>
         <span class="">forwards</span>
-    </div>
+    </div> --}}
 </div>
