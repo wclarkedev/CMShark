@@ -1,5 +1,6 @@
 <h1 class="text-primaryText text-3xl font-semibold text-center">Logs</h1>
 <div class="mx-auto mt-6">
+    {{--? <p>Page {{$page_num}}</p> --}}
     <table class="min-w-1/2 text-center mx-auto">
         <thead class="border-b">
             <tr class="border-b bg-backgroundColor border-codeColor">
@@ -30,4 +31,9 @@
             @endforeach
         </tbody>
     </table>
+    <div class="" id="page-navigation">
+        <span class="">backwards</span>
+        <span class="">Page num</span>
+        <span class="">forwards</span>
+    </div>
 </div>
