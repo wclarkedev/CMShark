@@ -56,77 +56,27 @@ TODO page content --}}
             <div id="navigation" class="hidden md:block">
                 <a href="/admin" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6">
-                        </path>
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
-                        <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727"></path>
-                        <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727"></path>
-                    </svg>--}}
+
                     <i class="fa-solid fa-house-chimney mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Home</span>
                 </a>
                 <a href="/admin/page/edit" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2"></path>
-                        <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5"></path>
-                    </svg>--}}
                     <i class="fa-solid fa-pencil mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Edit Page</span>
                 </a>
                 <a href="/admin/page/settings" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6">
-                        </path>
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
-                        <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727"></path>
-                        <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727"></path>
-                    </svg>--}}
                     <i class="fa-solid fa-gear mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Page Settings</span>
                 </a>
                 <a href="/admin/account" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6">
-                        </path>
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
-                        <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727"></path>
-                        <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727"></path>
-                    </svg>--}}
                     <i class="fa-solid fa-user-gear mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Account Settings</span>
                 </a>
                 <a href="/admin/logs" style="font-size: 14px; align-items: center;"
                     class="cusor-pointer hover:text-navHoverTextColor flex text-navIconColor font-semibold bg-transparent hover:bg-navItemHover rounded w-full px-[12px] py-[10px]">
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6">
-                        </path>
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
-                        <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727"></path>
-                        <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727"></path>
-                    </svg>--}}
                     <i class="fa-solid fa-box-archive mr-3 ml-1"></i>
                     <span class="text-center cursor-pointer">Audit Logs</span>
                 </a>
