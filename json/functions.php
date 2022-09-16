@@ -123,7 +123,7 @@ function Images ($type,$link=null) {
     if (!isset($type) && empty(trim($type))) exit();
     switch ($type) {
         case "pfp":
-            return './uploads/pfp.webp';
+            return '';
         break;
         case "favicon":
             return '';
