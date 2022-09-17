@@ -186,7 +186,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <section class="flex flex-col mx-auto mb-4">
-                        <label class="text-lg text-primaryText my-2">Site theme</label>
+                        <label class="text-lg text-primaryText my-2">Site theme <b class="text-red-600">*</b></label>
                         <div class="flex flex-row mx-auto w-12/12">
                             <div class="flex items-center px-4 w-[150px] rounded border border-gray-200 dark:border-gray-700 mx-5">
                                 <input id="bordered-radio-1" type="radio" value="rounded" name="site-setup-theme" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -212,6 +212,16 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 exit();
             }
             $api_key = $_POST['site-setup-api'];
+            if (empty(trim($_POST['site-setup-user-id']))) {
+                echo '<span style="color:red;">2Error</span>';
+                exit();
+            }
+            $user_id = $_POST['site-setup-user-id'];
+            if (empty(trim($_POST['site-setup-theme']))) {
+                echo '<span style="color:red;">3Error</span>';
+                exit();
+            }
+            $theme = $_POST['site-setup-theme'];
             
         }
     });
