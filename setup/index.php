@@ -169,52 +169,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
     $router->get('page/', function () {
-        // Add theme options (layout + colour)
-        // Add backend
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Site Setup</h2>
             <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
             <form class="" method="POST">
-                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
-                    <label class="text-lg text-primaryText my-2">Site title</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="CMShark" name="site-setup-title">
-                </section>
-                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
-                    <label class="text-lg text-primaryText my-2">Site description</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="An open source flexible cms." name="site-setup-description">
-                </section>
-                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
-                    <label class="text-lg text-primaryText my-2">Site URL</label>
-                    <small class="italic text-accent mb-3">* This is the domain name that your CMShark site will be visited under.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="cmshark.com" name="site-setupsiteur
-                </section>
-                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
-                    <label class="text-lg text-primaryText my-2">Site language <b class="text-red-600">*</b></label>
-                    <small class="italic text-accent mb-3">* This is the content of your CMShark site will be in.</small>
-                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="site-setup-lang">
-                        <option selected hidden>Language</option>
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                        <option value="de">German</option>
-                        <option value="fr">French</option>
-                        <option value="cy">Welsh</option>
-                        <option value="pl">Polish</option>
-                        <option value="ko">Korean</option>
-                        <option value="ja">Japanese</option>
-                        <option value="bg">Bulgarian</option>
-                        <option value="zh-hk">Chinese</option>
-                        <option value="nl">Dutch</option>
-                        <option value="ar">Arabic</option>
-                        <option value="he">Hebrew</option>
-                        <option value="it">Italian</option>
-                        <option value="ro">Romanian</option>
-                    </select>
-                </section>
-                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
-                    <label class="text-lg text-primaryText my-2">Your name</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="John Doe" name="site-setup-url">
-                </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your CMShark API key <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
@@ -247,6 +206,14 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </form>
         </div>
         <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty(trim($_POST['site-setup-api']))) {
+                echo '<span style="color:red;">1Error</span>';
+                exit();
+            }
+            $api_key = $_POST['site-setup-api'];
+            
+        }
     });
     $router->get('success/', function () {
         ?>
