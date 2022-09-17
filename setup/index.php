@@ -178,21 +178,21 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Site title</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-site-title">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="CMShark" name="site-setup-title">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Site description</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-site-description">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="An open source flexible cms." name="site-setup-description">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Site URL</label>
                     <small class="italic text-accent mb-3">* This is the domain name that your CMShark site will be visited under.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="cmshark.com" name="account-setup-site-url">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="cmshark.com" name="site-setupsiteur
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Site language <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* This is the content of your CMShark site will be in.</small>
-                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-site-lang">
+                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="site-setup-lang">
                         <option selected hidden>Language</option>
                         <option value="en">English</option>
                         <option value="es">Spanish</option>
@@ -213,17 +213,17 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your name</label>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="John Doe" name="account-setup-site-url">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="John Doe" name="site-setup-url">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your CMShark API key <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-api">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText placeholder:italic" type="text" placeholder="api key" name="site-setup-api">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your CMShark Account ID <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-account-id">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText placeholder:italic" type="text" placeholder="account id" name="site-setup-account-id">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <section class="flex flex-col mx-auto mb-4">
