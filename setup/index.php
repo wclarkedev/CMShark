@@ -47,6 +47,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         $json->{'key'} = $string;
         $output = json_encode($json);
         file_put_contents('../json/config.json', $output);
+        set_audit_log('Initiate CMShark setup.', 'System');
     });
     $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
@@ -176,14 +177,69 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Site title</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-site-title">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Site description</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-site-description">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Site URL</label>
+                    <small class="italic text-accent mb-3">* This is the domain name that your CMShark site will be visited under.</small>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="cmshark.com" name="account-setup-site-url">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Site language <b class="text-red-600">*</b></label>
+                    <small class="italic text-accent mb-3">* This is the content of your CMShark site will be in.</small>
+                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-site-lang">
+                        <option selected hidden>Language</option>
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="de">German</option>
+                        <option value="fr">French</option>
+                        <option value="cy">Welsh</option>
+                        <option value="pl">Polish</option>
+                        <option value="ko">Korean</option>
+                        <option value="ja">Japanese</option>
+                        <option value="bg">Bulgarian</option>
+                        <option value="zh-hk">Chinese</option>
+                        <option value="nl">Dutch</option>
+                        <option value="ar">Arabic</option>
+                        <option value="he">Hebrew</option>
+                        <option value="it">Italian</option>
+                        <option value="ro">Romanian</option>
+                    </select>
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
+                    <label class="text-lg text-primaryText my-2">Your name</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="John Doe" name="account-setup-site-url">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your CMShark API key <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-confirm-password">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-api">
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                     <label class="text-lg text-primaryText my-2">Your CMShark Account ID <b class="text-red-600">*</b></label>
                     <small class="italic text-accent mb-3">* Don't have one? Click <a href="" class="underline hover:no-underline font-semibold">here</a> to get yours.</small>
-                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-confirm-password">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="" name="account-setup-account-id">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <section class="flex flex-col mx-auto mb-4">
+                        <label class="text-lg text-primaryText my-2">Site theme</label>
+                        <div class="flex flex-row mx-auto w-12/12">
+                            <div class="flex items-center px-4 w-[150px] rounded border border-gray-200 dark:border-gray-700 mx-5">
+                                <input id="bordered-radio-1" type="radio" value="rounded" name="site-setup-theme" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="bordered-radio-1" class="py-4 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Rounded</label>
+                            </div>
+                            <div class="flex items-center px-4 w-[150px] rounded border border-gray-200 dark:border-gray-700 mx-5">
+                                <input id="bordered-radio-2" type="radio" value="boxed" name="site-setup-theme" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="bordered-radio-2" class="py-4 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">Boxed</label>
+                            </div>
+                        </div>
+                        <a href="https://cmshark.com/cmshark/theme-demo" class="text-accent text-center hover:underline my-2" target="_blank">View demos</a>
+                    </section>
                 </section>
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Save">
@@ -205,6 +261,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </div>
         </div>
         <?php
+        set_audit_log('CMShark setup process completed.', 'System');
     });
 
 
