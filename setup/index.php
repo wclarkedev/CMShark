@@ -161,6 +161,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
                 set_audit_log('Account setup completed.', 'System');
             } else {
+                set_audit_log('Account setup failed.','System');
                 echo '<span style="color:red;">8Error</span>';
                 exit();
             }
@@ -223,6 +224,25 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             }
             $theme = $_POST['site-setup-theme'];
             
+            $api_key = filter_var($api_key, FILTER_SANITIZE_STRING);
+            $user_id = filter_var($user_id, FILTER_SANITIZE_STRING);
+
+            $config = json_decode(file_get_contents('../json/config.json'));
+            $config->{'cmshark'}->{'api-key'} = $api_key;
+            $config->{'cmshark'}->{'user-id'} = $user_id;
+            $config->{'settings'}->{'page'}->{'theme'}->{'layout'} = $theme;
+            $config = json_encode($config);
+            file_put_contents('../json/config.json', $config);
+            
+            $saved = json_decode(file_get_contents('../json/config.json'));
+            if (isset($saved->{'cmshark'}->{'api-key'}) && isset($saved->{'cmshark'}->{'user-id'})) {
+                header('Location: /setup/success');
+                set_audit_log('Page setup completed.','System');
+            } else {
+                set_audit_log('Page setup failed.', 'System');
+                echo '<span style="color:red;">4Error</span>';
+                exit();
+            }
         }
     });
     $router->get('success/', function () {
