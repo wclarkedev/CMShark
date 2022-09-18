@@ -41,13 +41,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </div>
         </div>
         <?php
-        $json = file_get_contents('../json/config.json');
-        $string = generateRandomString(20);
-        $json = json_decode($json);
-        $json->{'key'} = $string;
-        $output = json_encode($json);
-        file_put_contents('../json/config.json', $output);
-        set_audit_log('Initiate CMShark setup.', 'System');
     });
     $router->match('GET|POST','account/', function () {
         // https://www.okta.com/blog/2021/03/security-questions/
@@ -94,6 +87,13 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </form>
         </div>
         <?php
+        $json = file_get_contents('../json/config.json');
+        $string = generateRandomString(20);
+        $json = json_decode($json);
+        $json->{'key'} = $string;
+        $output = json_encode($json);
+        file_put_contents('../json/config.json', $output);
+        set_audit_log('Initiate CMShark setup.', 'System');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (empty(trim($_POST['account-setup-username']))) {
                 echo '<span style="color:red;">1Error</span>';
@@ -168,7 +168,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
     });
 
-    $router->get('page/', function () {
+    $router->match('GET|POST','page/', function () {
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Site Setup</h2>
