@@ -48,6 +48,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
                     <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Login">
                     <span class=" text-center text-accent hover:underline my-10"><a href="/"><i class="fa-solid fa-arrow-left"></i> Return to site</a></span> 
+                    <span class=" text-center text-accent hover:underline my-6"><a href="forgot-password/">Forgot password?</a></span> 
                 </section>
             </form>
         </div>
@@ -91,12 +92,47 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         }
     });
     $router->match('GET|POST', 'forgot-password/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
+            <small class="text-primaryText text-center my-2">Enter the account email or username</small>
+            <form class="" method="POST">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <label class="text-lg text-primaryText my-2">Account Email or Username</label>
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText" type="text" placeholder="example@cmshark.com" name="reset-password-username-or-pw">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Continue">
+                    <span class=" text-center text-accent hover:underline my-10"><a href="/login"><i class="fa-solid fa-arrow-left"></i> Return to login</a></span> 
+                </section>
+            </form>
+        </div>
+        <?php
     });
-    $router->match('GET|POST', 'forgot-password/step-2/', function () {
+    $router->match('GET|POST', 'forgot-password/options/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
+            <small class="text-primaryText text-center my-2">Choose a method of account verification</small>
+            <form class="" method="POST">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-security-question">
+                        <option selected hidden>Verification Method</option>
+                        <option value="sq">Security Question</option>
+                        <option value="2fa">Two Factor Authentication</option>
+                    </select>
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Continue">
+                    <span class=" text-center text-accent hover:underline my-10"><a href="/login"><i class="fa-solid fa-arrow-left"></i> Return to login</a></span> 
+                </section>
+            </form>
+        </div>
+        <?php
     });
-    $router->match('GET|POST', 'forgot-password/step-3/', function () {
-    });
-    $router->get('forgot-password/success/', function () {
+
+    $router->match('GET|POST', 'forgot-password/new-password/', function () {
+
     });
     $router->run();
 ?>
