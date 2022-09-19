@@ -131,7 +131,24 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->match('GET|POST', 'forgot-password/verify/security-question/', function () {});
+    $router->match('GET|POST', 'forgot-password/verify/security-question/', function () {
+        ?>
+        <div class="flex flex-col mx-auto w-5/12 mt-12">
+            <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
+            <small class="text-primaryText text-center my-2">Answer your security question</small>
+            <form class="" method="POST">
+                <section class="flex flex-col w-6/12 mx-auto my-4">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm my-2" disabled value="<?php echo "Security question";?>">
+                    <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm placeholder:text-secondaryText my-2" type="text" placeholder="Answer" name="reset-password-username-or-pw">
+                </section>
+                <section class="flex flex-col w-6/12 mx-auto mt-6 mb-4">
+                    <input class="text-center text-lg text-primaryText ring ring-accent bg-accent w-fit place-self-center py-1 px-3 rounded-sm hover:underline font-semibold cursor-pointer" type="submit" value="Continue">
+                    <span class=" text-center text-accent hover:underline my-10"><a href="/login"><i class="fa-solid fa-arrow-left"></i> Return to login</a></span> 
+                </section>
+            </form>
+        </div>
+        <?php
+    });
     $router->match('GET|POST', 'forgot-password/verify/2fa/', function () {});
 
     $router->match('GET|POST', 'forgot-password/new-password/', function () {
