@@ -130,7 +130,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-
+    $router->match('GET|POST', 'forgot-password/verify/security-question/', function () {});
+    $router->match('GET|POST', 'forgot-password/verify/2fa/', function () {});
+    
     $router->match('GET|POST', 'forgot-password/new-password/', function () {
 
     });
