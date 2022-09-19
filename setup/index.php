@@ -8,7 +8,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     require '../functions.php';
     require '../admin/audit-logging.php';
     ob_start();
-    //? Create a Router
     $router = new \Bramus\Router\Router();
     $router->set404(function () {
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -278,6 +277,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </div>
             <?php
             set_audit_log('CMShark setup process completed.', 'System');
+            $setup = true;
         } else {
             header("Location: /");
         }
