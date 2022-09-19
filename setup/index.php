@@ -27,6 +27,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     </head>
     <body class="bg-backgroundColor">
 <?php
+    $setup_file = '../json/config.json';
     $setup = json_decode(file_get_contents('../json/config.json'));
     $setup = $setup->{'setup'}->{'setup-complete'};
     $router->get('/', function () {
@@ -263,6 +264,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->get('success/', function () {
         global $setup; 
+        global $setup_file;
         if (!$setup) {
             ?>
             <div class="flex flex-col mx-auto">
@@ -277,7 +279,10 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             </div>
             <?php
             set_audit_log('CMShark setup process completed.', 'System');
-            $setup = true;
+            $content = json_decode(file_get_contents($setup_file));
+            $content->{'setup'}->{'setup-complete'} = true;
+            $content = json_encode($content);
+            file_put_contents($setup_file, $content);
         } else {
             header("Location: /");
         }
