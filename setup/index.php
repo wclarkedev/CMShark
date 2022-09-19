@@ -4,6 +4,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         return false;
     }
     error_reporting(0);
+    session_start();
     require '../vendor/autoload.php';
     require '../functions.php';
     require '../admin/audit-logging.php';
@@ -283,6 +284,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             $content->{'setup'}->{'setup-complete'} = true;
             $content = json_encode($content);
             file_put_contents($setup_file, $content);
+            $_SESSION['loggedin'] = true;
         } else {
             header("Location: /");
         }
