@@ -10,12 +10,17 @@
     $defaultImages = Images('default');
     $links = getPageContent('links');
     $social_icons_list = checkSocialIcons ();
-error_reporting(0); 
+    error_reporting(0); 
     require_once('vendor/autoload.php');
     use eftec\bladeone\BladeOne;
     $views = __DIR__ . '/views';
     $cache = __DIR__ . '/cache';
     $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
+    $router = new \Bramus\Router\Router();
+    $router->set404(function () {
+        header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+        echo '404, route not found!';
+    });
 ?>
 <!doctype html><html lang="en">
     <head>
@@ -65,51 +70,54 @@ error_reporting(0);
         ?>">
     </head>
 <?php
-        if (getSettings('page_theme')->{'layout'} == 'boxed') {
-                echo $blade->run("boxed",
-                        array(
-                                "pageHeader"=>$pageHeader,
-                                "defaultHeader"=>$defaultHeader,
-                                "pageMeta"=>$pageMeta,
-                                "defaultMeta"=>$defaultMeta,
-                                "links"=>$links,
-                                "defaultLinks"=>$defaultLinks,
-                                "social_icons_list"=>$social_icons_list,
-                                "defaultImages"=>$defaultImages,
-                                "pfp"=>$pfp,
-                                "favicon"=>$favicon
-                        )
-                );
-        } elseif (getSettings('page_theme')->{'layout'} == 'rounded') {
-                echo $blade->run("rounded",
-                        array(
-                                "pageHeader"=>$pageHeader,
-                                "defaultHeader"=>$defaultHeader,
-                                "pageMeta"=>$pageMeta,
-                                "defaultMeta"=>$defaultMeta,
-                                "links"=>$links,
-                                "defaultLinks"=>$defaultLinks,
-                                "social_icons_list"=>$social_icons_list,
-                                "defaultImages"=>$defaultImages,
-                                "pfp"=>$pfp,
-                                "favicon"=>$favicon
-                        )
-                );
-        } else {
-                // default theme
-                echo $blade->run("rounded",
-                        array(
-                                "pageHeader"=>$pageHeader,
-                                "defaultHeader"=>$defaultHeader,
-                                "pageMeta"=>$pageMeta,
-                                "defaultMeta"=>$defaultMeta,
-                                "links"=>$links,
-                                "defaultLinks"=>$defaultLinks,
-                                "social_icons_list"=>$social_icons_list,
-                                "defaultImages"=>$defaultImages,
-                                "pfp"=>$pfp,
-                                "favicon"=>$favicon
-                        )
-                );
-        }
+        $router->get('/', function () {
+                if (getSettings('page_theme')->{'layout'} == 'boxed') {
+                        echo $blade->run("boxed",
+                                array(
+                                        "pageHeader"=>$pageHeader,
+                                        "defaultHeader"=>$defaultHeader,
+                                        "pageMeta"=>$pageMeta,
+                                        "defaultMeta"=>$defaultMeta,
+                                        "links"=>$links,
+                                        "defaultLinks"=>$defaultLinks,
+                                        "social_icons_list"=>$social_icons_list,
+                                        "defaultImages"=>$defaultImages,
+                                        "pfp"=>$pfp,
+                                        "favicon"=>$favicon
+                                )
+                        );
+                } elseif (getSettings('page_theme')->{'layout'} == 'rounded') {
+                        echo $blade->run("rounded",
+                                array(
+                                        "pageHeader"=>$pageHeader,
+                                        "defaultHeader"=>$defaultHeader,
+                                        "pageMeta"=>$pageMeta,
+                                        "defaultMeta"=>$defaultMeta,
+                                        "links"=>$links,
+                                        "defaultLinks"=>$defaultLinks,
+                                        "social_icons_list"=>$social_icons_list,
+                                        "defaultImages"=>$defaultImages,
+                                        "pfp"=>$pfp,
+                                        "favicon"=>$favicon
+                                )
+                        );
+                } else {
+                        // default theme
+                        echo $blade->run("rounded",
+                                array(
+                                        "pageHeader"=>$pageHeader,
+                                        "defaultHeader"=>$defaultHeader,
+                                        "pageMeta"=>$pageMeta,
+                                        "defaultMeta"=>$defaultMeta,
+                                        "links"=>$links,
+                                        "defaultLinks"=>$defaultLinks,
+                                        "social_icons_list"=>$social_icons_list,
+                                        "defaultImages"=>$defaultImages,
+                                        "pfp"=>$pfp,
+                                        "favicon"=>$favicon
+                                )
+                        );
+                }
+        });
+
 ?>
