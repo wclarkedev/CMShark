@@ -10,3 +10,4 @@ $email = 'will@wclarke.dev';
 $name = 'cmshark';
 $secret_key = $g->generateSecretKey();
 
+// TODO Generate 2fa qr code + otp enter and validation 
