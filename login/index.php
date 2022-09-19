@@ -27,8 +27,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     </head>
 <body class="bg-backgroundColor">
 <?php
+    session_start();
     $router->match('GET|POST','/', function () {
-        session_start();
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin');
         $oskk = json_decode(file_get_contents('../json/config.json'));
         $oskk = $oskk->{'key'};
@@ -110,6 +110,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <?php
     });
     $router->match('GET|POST', 'forgot-password/options/', function () {
+        if (!isset($_SESSION['step1']) && !$_SESSION['step1']) header("Location: /login/forgot-password/");
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
@@ -132,7 +133,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
     $router->match('GET|POST', 'forgot-password/verify/security-question/', function () {});
     $router->match('GET|POST', 'forgot-password/verify/2fa/', function () {});
-    
+
     $router->match('GET|POST', 'forgot-password/new-password/', function () {
 
     });
