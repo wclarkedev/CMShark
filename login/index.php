@@ -29,6 +29,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 <?php
     session_start();
     $router->match('GET|POST','/', function () {
+        // TODO - Implement 2fa
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) header('/admin');
         $oskk = json_decode(file_get_contents('../json/config.json'));
         $oskk = $oskk->{'key'};
@@ -91,6 +92,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             header("Location: /admin/");
         }
     });
+    // TODO - Backend logic for pw recovery 
+
     $router->match('GET|POST', 'forgot-password/', function () {
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
@@ -169,7 +172,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     });
 
     $router->match('GET|POST', 'forgot-password/new-password/', function () {
-
+        // TODO - Create form for new password 
     });
     $router->run();
 ?>

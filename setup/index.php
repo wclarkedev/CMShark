@@ -14,6 +14,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
         echo '404, route not found!';
     });
+    // TODO - Implement 2fa setup
 ?>
 <!DOCTYPE html><html lang="en">
     <head>
