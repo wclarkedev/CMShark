@@ -10,7 +10,7 @@
     $defaultImages = Images('default');
     $links = getPageContent('links');
     $social_icons_list = checkSocialIcons ();
-//error_reporting(0); 
+error_reporting(0); 
     require_once('vendor/autoload.php');
     use eftec\bladeone\BladeOne;
     $views = __DIR__ . '/views';

@@ -3,7 +3,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     if (php_sapi_name() === 'cli-server' && is_file($filename)) {
         return false;
     }
-    //error_reporting(0);
+    error_reporting(0);
     require '../vendor/autoload.php';
     require '../functions.php';
     require '../admin/audit-logging.php';
