@@ -109,6 +109,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
             <small class="text-primaryText text-center my-2">Enter the account email or username</small>
+            <?php
+                if (!empty(trim($error))) {
+                    ?>
+                    <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                    </div>
+                    <?php
+                }
+            ?>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Account Email or Username</label>
@@ -128,6 +137,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
             <small class="text-primaryText text-center my-2">Choose a method of account verification</small>
+            <?php
+                if (!empty(trim($error))) {
+                    ?>
+                    <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                    </div>
+                    <?php
+                }
+            ?>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <select class="cursor-pointer bg-backgroundAccent py-2 px-3 text-secondaryText rounded-sm" name="account-setup-security-question">
@@ -149,6 +167,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
             <small class="text-primaryText text-center my-2">Answer your security question</small>
+            <?php
+                if (!empty(trim($error))) {
+                    ?>
+                    <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                    </div>
+                    <?php
+                }
+            ?>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <input class="bg-backgroundAccent py-2 px-3 text-primaryText rounded-sm my-2" disabled value="<?php echo "Security question";?>">
@@ -167,6 +194,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
             <small class="text-primaryText text-center my-2">Answer your security question</small>
+            <?php
+                if (!empty(trim($error))) {
+                    ?>
+                    <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                    </div>
+                    <?php
+                }
+            ?>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">OTP / 2FA Verification Code</label>
@@ -186,6 +222,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
             <small class="text-primaryText text-center my-2">Set a new password</small>
+            <?php
+                if (!empty(trim($error))) {
+                    ?>
+                    <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                    </div>
+                    <?php
+                }
+            ?>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
                     <label class="text-lg text-primaryText my-2">Password</label>
