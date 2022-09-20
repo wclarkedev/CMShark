@@ -75,8 +75,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Login</h2>
             <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
-            <div class="" id="error-container">
-                <p class="" id="error"><?= $error ?></p>
+            <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                <p class="text-center text-red-600 font-semibold" id="error"><?= $error ?></p>
             </div>
             <form class="" method="POST">
                 <section class="flex flex-col w-6/12 mx-auto my-4">
