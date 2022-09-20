@@ -79,7 +79,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 if (!empty(trim($error))) {
                     ?>
                     <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
-                        <p class="text-center text-red-600 font-semibold" id="error"><?= $error ?></p>
+                        <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
                     </div>
                     <?php
                 }
