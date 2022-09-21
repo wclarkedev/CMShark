@@ -105,6 +105,26 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     // TODO - Backend logic for pw recovery 
 
     $router->match('GET|POST', 'forgot-password/', function () {
+        $file = '../json/account.json';
+        $error = '';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty(trim($_POST['reset-password-username-or-pw']))) {
+                $error = 'One or more required fields are empty';
+                exit();
+            }
+            $eu_input = $_POST['reset-password-username-or-pw'];
+            $json = json_decode(file_get_contents($file));
+            if (emailMatch($eu_input)) {
+                $eu_input = filter_var($eu_input, FILTER_SANITIZE_EMAIL);
+            }
+            $eu_input = filter_var($eu_input, FILTER_SANITIZE_STRING);
+            if ($eu_input != $json->{'username'} || $eu_input != $json->{'email'}) {
+                $error = 'That email or username was not recognised';
+                exit();
+            }
+            $_SESSION['step1'] = true;
+            header('Location: options/');
+        }
         ?>
         <div class="flex flex-col mx-auto w-5/12 mt-12">
             <h2 class="text-primaryText text-4xl text-center font-semibold">Password reset</h2>
