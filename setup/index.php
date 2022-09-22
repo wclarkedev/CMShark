@@ -67,6 +67,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <div class="flex flex-col mx-auto w-5/12 mt-12">
                 <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
                 <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
+                <?php
+                    if (!empty(trim($error))) {
+                        ?>
+                        <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                            <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                        </div>
+                        <?php
+                    }
+                ?>
                 <form method="POST">
                     <section class="flex flex-col w-6/12 mx-auto my-4">
                         <label class="text-lg text-primaryText my-2">Username <b class="text-red-600">*</b></label>
@@ -190,6 +199,15 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
             <div class="flex flex-col mx-auto w-5/12 mt-12">
                 <h2 class="text-primaryText text-4xl text-center font-semibold">Site Setup</h2>
                 <small class="text-primaryText text-center my-2">Required fields <b class="text-red-600">*</b></small>
+                <?php
+                    if (!empty(trim($error))) {
+                        ?>
+                        <div class="bg-backgroundAccent rounded-sm w-6/12 flex flex-col mx-auto my-4 p-3 ring ring-accent" id="error-container">
+                            <p class="text-center text-red-600 font-semibold" id="error">Error: <?= $error ?></p>
+                        </div>
+                        <?php
+                    }
+                ?>
                 <form class="" method="POST">
                     <section class="flex flex-col w-6/12 mx-auto mt-4 mb-6">
                         <label class="text-lg text-primaryText my-2">Your CMShark API key <b class="text-red-600">*</b></label>
