@@ -195,6 +195,43 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     $router->match('GET|POST','page/', function () {
         global $setup; 
         if (!$setup) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (empty(trim($_POST['site-setup-api']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $api_key = $_POST['site-setup-api'];
+                if (empty(trim($_POST['site-setup-user-id']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $user_id = $_POST['site-setup-user-id'];
+                if (empty(trim($_POST['site-setup-theme']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $theme = $_POST['site-setup-theme'];
+                
+                $api_key = filter_var($api_key, FILTER_SANITIZE_STRING);
+                $user_id = filter_var($user_id, FILTER_SANITIZE_STRING);
+    
+                $config = json_decode(file_get_contents('../json/config.json'));
+                $config->{'cmshark'}->{'api-key'} = $api_key;
+                $config->{'cmshark'}->{'user-id'} = $user_id;
+                $config->{'settings'}->{'page'}->{'theme'}->{'layout'} = $theme;
+                $config = json_encode($config);
+                file_put_contents('../json/config.json', $config);
+                
+                $saved = json_decode(file_get_contents('../json/config.json'));
+                if (isset($saved->{'cmshark'}->{'api-key'}) && isset($saved->{'cmshark'}->{'user-id'})) {
+                    header('Location: /setup/success');
+                    set_audit_log('Page setup completed.','System');
+                } else {
+                    set_audit_log('Page setup failed.', 'System');
+                    $error = "Page setup failed";
+                    exit();
+                }
+            }
             ?>
             <div class="flex flex-col mx-auto w-5/12 mt-12">
                 <h2 class="text-primaryText text-4xl text-center font-semibold">Site Setup</h2>
@@ -241,43 +278,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 </form>
             </div>
             <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                if (empty(trim($_POST['site-setup-api']))) {
-                    echo '<span style="color:red;">1Error</span>';
-                    exit();
-                }
-                $api_key = $_POST['site-setup-api'];
-                if (empty(trim($_POST['site-setup-user-id']))) {
-                    echo '<span style="color:red;">2Error</span>';
-                    exit();
-                }
-                $user_id = $_POST['site-setup-user-id'];
-                if (empty(trim($_POST['site-setup-theme']))) {
-                    echo '<span style="color:red;">3Error</span>';
-                    exit();
-                }
-                $theme = $_POST['site-setup-theme'];
-                
-                $api_key = filter_var($api_key, FILTER_SANITIZE_STRING);
-                $user_id = filter_var($user_id, FILTER_SANITIZE_STRING);
-    
-                $config = json_decode(file_get_contents('../json/config.json'));
-                $config->{'cmshark'}->{'api-key'} = $api_key;
-                $config->{'cmshark'}->{'user-id'} = $user_id;
-                $config->{'settings'}->{'page'}->{'theme'}->{'layout'} = $theme;
-                $config = json_encode($config);
-                file_put_contents('../json/config.json', $config);
-                
-                $saved = json_decode(file_get_contents('../json/config.json'));
-                if (isset($saved->{'cmshark'}->{'api-key'}) && isset($saved->{'cmshark'}->{'user-id'})) {
-                    header('Location: /setup/success');
-                    set_audit_log('Page setup completed.','System');
-                } else {
-                    set_audit_log('Page setup failed.', 'System');
-                    echo '<span style="color:red;">4Error</span>';
-                    exit();
-                }
-            }
         } else {
             header("Location: /");
         }
