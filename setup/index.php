@@ -63,6 +63,80 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     $router->match('GET|POST','account/', function () {
         global $setup; 
         if (!$setup) {
+            $oskk = json_decode(file_get_contents('../json/config.json'));
+            $oskk = $oskk->{'key'};
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (empty(trim($_POST['account-setup-username']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $username = $_POST['account-setup-username'];
+                if (empty(trim($_POST['account-setup-email']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $email = $_POST['account-setup-email'];
+                if (empty(trim($_POST['account-setup-password']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $password = $_POST['account-setup-password'];
+                if (empty(trim($_POST['account-setup-confirm-password']))) {
+                    $error = "One or more required fields were empty";
+                    exit();
+                }
+                $confirm_password = $_POST['account-setup-confirm-password'];
+                if ($password != $confirm_password) {
+                    $error = "The password and confirm password did not match";
+                    exit();
+                }
+                if (!emailMatch($email)) {
+                    $error = "Incorrect email format";
+                    exit();
+                }
+                $email = validateEmail($email);
+                $username = filter_var($username, FILTER_SANITIZE_STRING);
+                
+                if (!empty(trim($_POST['account-setup-security-question-answer']))) {
+                    $security_question = $_POST['account-setup-security-question'];
+                    $security_answer = filter_var($_POST['account-setup-security-question-answer'], FILTER_SANITIZE_STRING);
+                    $security_question_use = true;
+                }
+    
+                $cipher = 'AES-128-CTR';
+                $iv_length = openssl_cipher_iv_length($cipher);
+                $options = 0;
+                $iv = '1234567891011121';
+    
+                $e_email = openssl_encrypt($email, $cipher, $oskk, $options, $iv);
+                $e_pw = openssl_encrypt($confirm_password, $cipher, $oskk, $options, $iv);
+                if ($security_question_use) {
+                    $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
+                    $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
+                }
+                $jsondata = file_get_contents('../json/account.json');
+                $jsondata = json_decode($jsondata);
+                $jsondata->{'username'} = $username;
+                $jsondata->{'email'} = $e_email;
+                $jsondata->{'password'} = $e_pw;
+    
+                if ($security_question_use) {
+                    $jsondata->{'security_question'} = $e_sq;
+                    $jsondata->{'security_answer'} = $e_sqa;
+                }
+                file_put_contents('../json/account.json',json_encode($jsondata));
+                $saved_data = file_get_contents('../json/account.json');
+                $saved_data = json_decode($saved_data);
+                if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
+                    header("Location: /setup/success/");
+                    $_SESSION['setup-step-1-complete'] = true;
+                    set_audit_log('Account setup completed.', 'System');
+                } else {
+                    set_audit_log('Account setup failed.','System');
+                    $error = "Account setup failed";
+                    exit();
+                }
+            }
             ?>
             <div class="flex flex-col mx-auto w-5/12 mt-12">
                 <h2 class="text-primaryText text-4xl text-center font-semibold">Account Setup</h2>
@@ -113,80 +187,6 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
                 </form>
             </div>
             <?php
-            $oskk = json_decode(file_get_contents('../json/config.json'));
-            $oskk = $oskk->{'key'};
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                if (empty(trim($_POST['account-setup-username']))) {
-                    echo '<span style="color:red;">1Error</span>';
-                    exit();
-                }
-                $username = $_POST['account-setup-username'];
-                if (empty(trim($_POST['account-setup-email']))) {
-                    echo '<span style="color:red;">2Error</span>';
-                    exit();
-                }
-                $email = $_POST['account-setup-email'];
-                if (empty(trim($_POST['account-setup-password']))) {
-                    echo '<span style="color:red;">3Error</span>';
-                    exit();
-                }
-                $password = $_POST['account-setup-password'];
-                if (empty(trim($_POST['account-setup-confirm-password']))) {
-                    echo '<span style="color:red;">4Error</span>';
-                    exit();
-                }
-                $confirm_password = $_POST['account-setup-confirm-password'];
-                if ($password != $confirm_password) {
-                    echo '<span style="color:red;">5Error</span>';
-                    exit();
-                }
-                if (!emailMatch($email)) {
-                    echo '<span style="color:red;">6Error</span>';
-                    exit();
-                }
-                $email = validateEmail($email);
-                $username = filter_var($username, FILTER_SANITIZE_STRING);
-                
-                if (!empty(trim($_POST['account-setup-security-question-answer']))) {
-                    $security_question = $_POST['account-setup-security-question'];
-                    $security_answer = filter_var($_POST['account-setup-security-question-answer'], FILTER_SANITIZE_STRING);
-                    $security_question_use = true;
-                }
-    
-                $cipher = 'AES-128-CTR';
-                $iv_length = openssl_cipher_iv_length($cipher);
-                $options = 0;
-                $iv = '1234567891011121';
-    
-                $e_email = openssl_encrypt($email, $cipher, $oskk, $options, $iv);
-                $e_pw = openssl_encrypt($confirm_password, $cipher, $oskk, $options, $iv);
-                if ($security_question_use) {
-                    $e_sq = openssl_encrypt($security_question, $cipher, $oskk, $options, $iv);
-                    $e_sqa = openssl_encrypt($security_answer, $cipher, $oskk, $options, $iv);
-                }
-                $jsondata = file_get_contents('../json/account.json');
-                $jsondata = json_decode($jsondata);
-                $jsondata->{'username'} = $username;
-                $jsondata->{'email'} = $e_email;
-                $jsondata->{'password'} = $e_pw;
-    
-                if ($security_question_use) {
-                    $jsondata->{'security_question'} = $e_sq;
-                    $jsondata->{'security_answer'} = $e_sqa;
-                }
-                file_put_contents('../json/account.json',json_encode($jsondata));
-                $saved_data = file_get_contents('../json/account.json');
-                $saved_data = json_decode($saved_data);
-                if (isset($saved_data->{'username'}) && isset($saved_data->{'password'})) {
-                    header("Location: /setup/success/");
-                    $_SESSION['setup-step-1-complete'] = true;
-                    set_audit_log('Account setup completed.', 'System');
-                } else {
-                    set_audit_log('Account setup failed.','System');
-                    echo '<span style="color:red;">8Error</span>';
-                    exit();
-                }
-            }
         } else {
             header("Location: /");
         }
