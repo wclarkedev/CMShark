@@ -7,7 +7,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     require '../vendor/autoload.php';
     require 'audit-logging.php';
     use eftec\bladeone\BladeOne;
-    $views = __DIR__ . '/views';
+    $views = __DIR__ . '/templates';
     $cache = __DIR__ . '/cache';
     $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
 
