@@ -7,3 +7,10 @@ php_value  upload_max_filesize 5M
 php_value  error_reporting     0
 php_flag   display_errors      off
 php_flag   log_errors          off
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+RewriteRule ^(.*)$ public/index.php?$1 [L,QSA]

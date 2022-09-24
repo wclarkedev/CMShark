@@ -1,5 +1,5 @@
 <?php
-$log_file = '../json/audit-logs.json';
+$log_file = '../core/json/audit-logs.json';
 $logs = file_get_contents($log_file);
 $logs = json_decode($logs);
 error_reporting(0);
