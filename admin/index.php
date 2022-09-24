@@ -37,7 +37,45 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex">
             <?php echo $blade->run("nav", array("page"=>"home"));?>
             <main class="p-4">
-                <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
+                <div class="bg-backgroundAccent p-5 rounded w-[600px]" id="home-audit-logs">
+                    <h2 class="text-xl text-primaryText text-center mb-4 mt-2">Actions performed recently</h2>
+                    <table class="min-w-[500px] text-center mx-auto">
+                        <thead class="border-b">
+                            <tr class="border-b bg-backgroundAccent border-codeColor">
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    Action
+                                </th>
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    User
+                                </th>
+                                <th scope="col" class="text-base text-primaryText font-light px-6 py-4 whitespace-nowrap">
+                                    Time
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $logs = get_audit_logs_by_amount(4);
+                            foreach ($logs as $row){
+                                ?>
+                                <tr class="border-b bg-backgroundAccent border-codeColor">
+                                    <td class="text-sm text-secondaryText font-semibold px-6 py-4 whitespace-nowrap">
+                                        <?= $row['action'] ?>
+                                    </td>
+                                    <td class="text-sm text-secondaryText font-medium px-6 py-4 whitespace-nowrap">
+                                        <?= $row['name'] ?>
+                                    </td>
+                                    <td class="text-sm text-secondaryText font-medium px-6 py-4 whitespace-nowrap">
+                                        <?= $row['time'] ?>
+                                    </td>
+                                </tr>   
+                                <?php
+                            } ?>
+
+                        </tbody>
+                    </table>
+                    <a class="" href="/admin/logs/">View more logs</a>
+                </div>
             </main>            
         </div>
         <?php
