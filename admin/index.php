@@ -37,7 +37,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <div class="flex">
             <?php echo $blade->run("nav", array("account"=>'NotAdmin'));?>
             <main class="p-4">
-                <div class="bg-backgroundAccent p-5 rounded w-[600px]" id="home-audit-logs">
+                <div class="bg-backgroundAccent p-5 rounded w-[600px] text-primaryText m-2 text-xl">
+                    <h1>CMShark is still in development.</h1>
+                    <span>Expect changes. This is an in-development project with changes everyday.</span>
+                </div>
+                <div class="bg-backgroundAccent p-5 rounded w-[600px] m-2" id="home-audit-logs">
                     <h2 class="text-xl text-primaryText text-center mb-4 mt-2">Actions performed recently</h2>
                     <table class="min-w-[500px] text-center mx-auto">
                         <thead class="border-b">
@@ -74,8 +78,9 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 
                         </tbody>
                     </table>
-                    <a class="" href="/admin/logs/">View more logs</a>
+                    <div class="mt-10 mb-2 text-center"><a class="text-accent hover:underline font-semibold" href="/admin/logs/">View more logs</a></div>
                 </div>
+
             </main>            
         </div>
         <?php
