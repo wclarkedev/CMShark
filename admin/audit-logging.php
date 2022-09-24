@@ -35,7 +35,25 @@ function get_audit_logs_by_amount($limit) {
     $page = 0;
     
     $log = $log[$page];
-    var_dump($log);
+    return $log;
+    //var_dump($log);
+}
+
+function get_audit_logs_by_page($limit_per_page, $page) {
+    global $logs; 
+    $count = count($logs);
+    $log = array();
+    for ($i = 0; $i < $count; $i++) {
+        $log[$i]['name'] = $logs[$i]->{'user'};
+        $log[$i]['action'] = $logs[$i]->{'action'};
+        $log[$i]['time'] = $logs[$i]->{'time'};
+    }
+
+    $log = array_chunk($log, $limit_per_page);
+    
+    $log = $log[$page];
+    //var_dump($log);
+    return $log;
 }
 //get_audit_logs_by_amount(2);
 function set_audit_log($action, $user) {
