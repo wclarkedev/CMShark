@@ -1,3 +1,6 @@
+@php
+    require '../audit-logging.php';
+@endphp
 @switch ($component) 
     @case('welcome')
         @php
@@ -22,7 +25,7 @@
         <div class="" id="latest-audit-logs-container">
             <h2>Actions performed recently</h2>
             <div class="" id="audit-logs-container">
-                
+
             </div>
         </div>
         @break
