@@ -35,7 +35,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("page"=>"home"));?>
+            <?php echo $blade->run("nav", array("account"=>'NotAdmin'));?>
             <main class="p-4">
                 <div class="bg-backgroundAccent p-5 rounded w-[600px]" id="home-audit-logs">
                     <h2 class="text-xl text-primaryText text-center mb-4 mt-2">Actions performed recently</h2>
@@ -84,7 +84,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("page"=>"edit-page"));?>
+            <?php echo $blade->run("nav", array("account"=>'Admin'));?>
             <main class="mx-auto mt-6 w-10/12">
                 <div class="flex flex-col">
                     <h1 class="text-primaryText text-3xl font-semibold text-center">Edit Page</h1>
@@ -118,7 +118,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("page"=>"page-settings"));?>
+            <?php echo $blade->run("nav", array("account"=>'Admin'));?>
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-4xl text-gray-400">Welcome {{user}}</h1>
             </main>            
@@ -129,7 +129,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("page"=>"account"));?>
+            <?php echo $blade->run("nav", array("account"=>'Admin'));?>
             <main class="mx-auto mt-6 w-10/12">
                 <h1 class="text-primaryText text-3xl font-semibold text-center">Edit Page</h1>
                 <div class="bg-backgroundAccent rounded w-4/12">
@@ -143,7 +143,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("page"=>"logs"));?>
+            <?php echo $blade->run("nav", array("account"=>'Admin'));?>
             <main class="mx-auto mt-6 w-10/12">
                 <?php echo $blade->run("logging", array("logs"=>get_audit_logs()));?>
             </main>            

@@ -1,7 +1,7 @@
 @php
 $username = 'admin';
 $username = ucfirst($username);
-$version = 0.1;
+$version = 0.1 . "-alpha";
 @endphp
 {{-- Admin UI template --}}
 {{-- TODO implement auto active nav item on page load (pass page name into blade template and apply relevent styles) 
@@ -28,7 +28,7 @@ TODO page content --}}
                         </path>
                     </g>
                 </svg>--}}
-                <span class="font-semibold text-lg mx-2" style="color:#fff">{{$username}}</span>
+                <span class="font-semibold text-lg mx-2" style="color:#fff">{{$account}}</span>
                 <div class="justify-self-end">
                     <div class="block md:hidden">
                         <button id="mobileNavOpenIcon" class="mt-1" onclick="toggleNav();"><svg
