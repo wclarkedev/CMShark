@@ -37,7 +37,7 @@ function get_audit_logs_by_amount($limit) {
     $log = $log[$page];
     var_dump($log);
 }
-get_audit_logs_by_amount(2);
+//get_audit_logs_by_amount(2);
 function set_audit_log($action, $user) {
     global $logs;
     global $log_file;
