@@ -3,7 +3,7 @@ function defaultContent ($requestedContent) {
     if (!isset($requestedContent) && empty(trim($requestedContent))) exit();
     $data = json_decode(
         file_get_contents(
-            './json/default.json'
+            '../json/default.json'
         )
     );
     $page = $data->{"page"};
@@ -35,8 +35,8 @@ function defaultContent ($requestedContent) {
 
 function getPageContent ($contentType) {
     if (!isset($contentType)) exit();
-    $data = json_decode(file_get_contents('./json/page.json'));
-    $config = json_decode(file_get_contents('./json/config.json'));
+    $data = json_decode(file_get_contents('../json/page.json'));
+    $config = json_decode(file_get_contents('../json/config.json'));
     switch ($contentType) {
         case 'page_header':
             $header_data = array();
@@ -71,7 +71,7 @@ function getPageContent ($contentType) {
 }
 
 function checkSocialIcons () {
-    $json = json_decode(file_get_contents('./json/page.json'));
+    $json = json_decode(file_get_contents('../json/page.json'));
     $social_icons = $json->{'social-icons'};
     $social_icons_list = [
         'bandcamp',

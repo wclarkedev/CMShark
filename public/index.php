@@ -1,5 +1,5 @@
 <?php
-        require 'json/functions.php';
+        require '../json/functions.php';
         $defaultHeader = defaultContent('page_header'); 
         $defaultMeta = defaultContent('page_meta');
         $defaultLinks = defaultContent('links');
@@ -11,7 +11,7 @@
         $links = getPageContent('links');
         $social_icons_list = checkSocialIcons ();
         error_reporting(0); 
-        require_once('vendor/autoload.php');
+        require_once('../vendor/autoload.php');
         use eftec\bladeone\BladeOne;
         $views = __DIR__ . '/views';
         $cache = __DIR__ . '/cache';
