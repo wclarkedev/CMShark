@@ -4,6 +4,7 @@ $logs = file_get_contents($log_file);
 $logs = json_decode($logs);
 error_reporting(0);
 
+
 function get_audit_logs(){
     global $logs;
     // Get all log data and return in nice format to loop through in blade template
@@ -18,6 +19,25 @@ function get_audit_logs(){
     }
     return $output;
 }
+//$audit_logs = get_audit_logs();
+function get_audit_logs_by_amount($limit) {
+    global $logs; 
+    $count = count($logs);
+    $log = array();
+    for ($i = 0; $i < $count; $i++) {
+        $log[$i]['name'] = $logs[$i]->{'user'};
+        $log[$i]['action'] = $logs[$i]->{'action'};
+        $log[$i]['time'] = $logs[$i]->{'time'};
+    }
+
+    $log = array_chunk($log, $limit);
+    
+    $page = 0;
+    
+    $log = $log[$page];
+    var_dump($log);
+}
+get_audit_logs_by_amount(2);
 function set_audit_log($action, $user) {
     global $logs;
     global $log_file;
@@ -47,3 +67,38 @@ $page = 0; // page 1
 $log = $log[$page];
 var_dump($log);
 */
+/*$log = [
+    [
+        'id' => 1
+    ],
+    [
+        'id' => 2
+    ],
+    [
+        'id' => 3
+    ],
+    [
+        'id' => 4
+    ],
+    [
+        'id' => 5
+    ],
+    [
+        'id' => 6
+    ],
+    [
+        'id' => 7
+    ],
+    [
+        'id' => 8
+    ],
+];
+
+$limit = 6;
+
+$log = array_chunk($log, $limit);
+
+$page = 0;
+
+$log = $log[$page];
+var_dump($log);*/
