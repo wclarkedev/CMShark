@@ -13,9 +13,9 @@
         error_reporting(0); 
         require_once('vendor/autoload.php');
         use eftec\bladeone\BladeOne;
-        $views = __DIR__ . '/views';
+        $template = __DIR__ . '/templates';
         $cache = __DIR__ . '/cache';
-        $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
+        $blade = new BladeOne ( $template , $cache , BladeOne::MODE_AUTO); 
 ?>
 <!doctype html><html lang="en">
     <head>
@@ -66,7 +66,7 @@
     </head>
 <?php
         if (getSettings('page_theme')->{'layout'} == 'boxed') {
-                echo $blade->run("boxed",
+                echo $blade->run("theme-boxed",
                         array(
                                 "pageHeader"=>$pageHeader,
                                 "defaultHeader"=>$defaultHeader,
@@ -81,7 +81,7 @@
                         )
                 );
         } elseif (getSettings('page_theme')->{'layout'} == 'rounded') {
-                echo $blade->run("rounded",
+                echo $blade->run("theme-rounded",
                         array(
                                 "pageHeader"=>$pageHeader,
                                 "defaultHeader"=>$defaultHeader,
@@ -97,7 +97,7 @@
                 );
         } else {
                 // default theme
-                echo $blade->run("rounded",
+                echo $blade->run("theme-rounded",
                         array(
                                 "pageHeader"=>$pageHeader,
                                 "defaultHeader"=>$defaultHeader,
