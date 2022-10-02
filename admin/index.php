@@ -7,8 +7,8 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
     require '../vendor/autoload.php';
     require 'audit-logging.php';
     use eftec\bladeone\BladeOne;
-    $views = __DIR__ . '/templates';
-    $cache = __DIR__ . '/cache';
+    $views = __DIR__ . './templates';
+    $cache = __DIR__ . '/templates/cache';
     $blade = new BladeOne ( $views , $cache , BladeOne::MODE_AUTO); 
 
     $router = new \Bramus\Router\Router();
@@ -22,12 +22,12 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="/tailwind.config.js"></script>
+        <script src="../tailwind.config.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
         <title>CMShark Admin</title>
         <meta name="title" content="CMShark Admin">
         <link rel="icon" type="image/x-icon" href="/uploads/cmsharklogoshark.png">
-        <script src="views/script.js"></script>
+        <script src="templates/script.js"></script>
     </head>
     <body class="bg-backgroundColor w-full h-full">
 <?php
@@ -35,7 +35,7 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("account"=>'NotAdmin'));?>
+            <?php echo $blade->run("admin-nav", array("account"=>'NotAdmin'));?>
             <main class="p-4">
                 <div class="bg-backgroundAccent p-5 rounded w-[600px] text-primaryText m-2 text-xl">
                     <h1>CMShark is still in development.</h1>
@@ -85,11 +85,11 @@ $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
         </div>
         <?php
     });
-    $router->match('GET|POST', '/page/edit', function () {
+    $router->match('GET|POST', 'page/edit', function () {
         global $blade;
         ?>
         <div class="flex">
-            <?php echo $blade->run("nav", array("account"=>'Admin'));?>
+            <?php echo $blade->run("admin-nav", array("account"=>'Admin'));?>
             <main class="mx-auto mt-6 w-10/12">
                 <div class="flex flex-col">
                     <h1 class="text-primaryText text-3xl font-semibold text-center">Edit Page</h1>
