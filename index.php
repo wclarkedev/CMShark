@@ -14,7 +14,7 @@
         require_once('vendor/autoload.php');
         use eftec\bladeone\BladeOne;
         $template = __DIR__ . '/templates';
-        $cache = __DIR__ . '/cache';
+        $cache = __DIR__ . '/templates/cache';
         $blade = new BladeOne ( $template , $cache , BladeOne::MODE_AUTO); 
 ?>
 <!doctype html><html lang="en">
