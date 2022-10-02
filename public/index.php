@@ -1,5 +1,5 @@
 <?php
-        require 'json/functions.php';
+        require '../src/json/functions.php';
         $defaultHeader = defaultContent('page_header'); 
         $defaultMeta = defaultContent('page_meta');
         $defaultLinks = defaultContent('links');
@@ -10,11 +10,11 @@
         $defaultImages = Images('default');
         $links = getPageContent('links');
         $social_icons_list = checkSocialIcons ();
-        error_reporting(0); 
-        require_once('vendor/autoload.php');
+        #error_reporting(0); 
+        require_once('../vendor/autoload.php');
         use eftec\bladeone\BladeOne;
-        $template = __DIR__ . '/templates';
-        $cache = __DIR__ . '/templates/cache';
+        $template = __DIR__ . '/public/templates/';
+        $cache = __DIR__ . '/public/templates/cache';
         $blade = new BladeOne ( $template , $cache , BladeOne::MODE_AUTO); 
 ?>
 <!doctype html><html lang="en">
