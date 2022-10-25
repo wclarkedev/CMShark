@@ -32,7 +32,7 @@ function defaultContent ($requestedContent) {
     }
     
 }
-
+#
 function getPageContent ($contentType) {
     if (!isset($contentType)) exit();
     $data = json_decode(file_get_contents('./json/page.json'));
@@ -69,7 +69,7 @@ function getPageContent ($contentType) {
         break;
     }
 }
-
+#
 function checkSocialIcons () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $social_icons = $json->{'social-icons'};
@@ -118,7 +118,7 @@ function checkSocialIcons () {
     }
     return $icons;
 }
-
+#
 function Images ($type,$link=null) {
     if (!isset($type) && empty(trim($type))) exit();
     switch ($type) {
@@ -144,7 +144,7 @@ function Images ($type,$link=null) {
         break;
     }
 }
-
+####
 function getIcon ($i) {
     $json = json_decode(file_get_contents('./json/page.json'));
     $icon = $json->{'social-icons'}->{$i};
@@ -155,7 +155,7 @@ function getIcon ($i) {
     return $return_array;
 
 }
-
+#
 function checkLinks () {
     $json = json_decode(file_get_contents('./json/page.json'));
     $link = $json->{'links'}[0]->{'link'};
@@ -179,3 +179,4 @@ function getSettings ($type, $setting_type = null) {
         break;
     }
 }
+#
