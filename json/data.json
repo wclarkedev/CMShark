@@ -1,0 +1,280 @@
+{
+    "default":{
+        "page": {
+            "name": "CMShark",
+            "bio": "CMShark is a flexible, customisable and, open source CMS for bio link lists.",
+            "location": "UK",
+            "social-icons": {
+              "Bandcamp": "",
+              "Behance": "",
+              "Bitbucket": "",
+              "Discord": "https://discord.gg/FMmJnz6rmD",
+              "Discourse": "",
+              "Email": "info@cmshark.com",
+              "Facebook": "",
+              "Github": "https://github.com/CMShark",
+              "Gitlab": "",
+              "Instagram": "",
+              "Linkedin": "",
+              "Medium": "",
+              "Patreon": "",
+              "Phone": "",
+              "Pinterest": "",
+              "Quora": "",
+              "Reddit": "",
+              "Snapchat": "",
+              "Stackoverflow": "",
+              "Telegram": "",
+              "Tiktok": "",
+              "Twitter": "",
+              "Whatsapp": "",
+              "Youtube": ""
+            },
+            "links": [
+              {
+                "link": "https://cmshark.com",
+                "title": "Website",
+                "description": "CMShark website."
+              },
+              {
+                "link": "https://github.com/wclarkey/cmshark",
+                "title": "Github",
+                "description": "CMShark Github repo."
+              },
+              {
+                "link": "https://docs.cmshark.com",
+                "title": "Documentation",
+                "description": "CMShark docs."
+              },
+              {
+                "link": "https://discord.gg/FMmJnz6rmD",
+                "title": "Discord",
+                "description": "CMShark Discord server."
+              }
+            ]
+          },
+          "meta": {
+            "title": "CMShark",
+            "description": "CMShark is a flexible, customisable and, open source CMS for bio link lists.",
+            "url": "https://cmshark.com",
+            "lang": "en_GB",
+            "owner": "William Clarke"
+          }
+    },
+    "page":{
+        "name": "",
+        "bio": "",
+        "location": "",
+        "social-icons": {
+            "bandcamp": {
+            "fa": "fa-brands fa-bandcamp",
+            "link": "https://bandcamp.com/",
+            "username": "",
+            "notes": ""
+            },
+            "behance": {
+            "fa": "fa-brands fa-behance",
+            "link": "https://www.behance.net/",
+            "username": "",
+            "notes": ""
+            },
+            "bitbucket": {
+            "fa": "fa-brands fa-bitbucket",
+            "link": "https://bitbucket.org/",
+            "username": "",
+            "notes": ""
+            },
+            "blogger": {
+            "fa": "fa-brands fa-blogger",
+            "link": "",
+            "username": "",
+            "notes": "domain/sub"
+            },
+            "discord": {
+            "fa": "fa-brands fa-discord",
+            "link": "https://discord.com/users/",
+            "username": "",
+            "notes": ""
+            },
+            "discourse": {
+            "fa": "fa-brands fa-discourse",
+            "link": "",
+            "username": "",
+            "notes": "domain/sub"
+            },
+            "email": {
+            "fa": "fa-solid fa-envelope",
+            "link": "mailto:",
+            "username": "",
+            "notes": ""
+            },
+            "facebook": {
+            "fa": "fa-brands fa-facebook",
+            "link": "https://www.facebook.com/",
+            "username": "",
+            "notes": ""
+            },
+            "github": {
+            "fa": "fa-brands fa-github",
+            "link": "https://github.com/",
+            "username": "",
+            "notes": ""
+            },
+            "gitlab": {
+            "fa": "fa-brands fa-gitlab",
+            "link": "https://gitlab.com/",
+            "username": "",
+            "notes": ""
+            },
+            "instagram": {
+            "fa": "fa-brands fa-instagram",
+            "link": "https://www.instagram.com/",
+            "username": "",
+            "notes": ""
+            },
+            "linkedin": {
+            "fa": "fa-brands fa-linkedin",
+            "link": "https://www.linkedin.com/in/",
+            "username": "",
+            "notes": ""
+            },
+            "medium": {
+            "fa": "fa-brands fa-medium",
+            "link": "",
+            "username": "",
+            "notes": "domain/sub"
+            },
+            "messenger": {
+            "fa": "fa-brands fa-facebook-messenger",
+            "link": "",
+            "username": "",
+            "notes": "Not done"
+            },
+            "patreon": {
+            "fa": "fa-brands fa-patreon",
+            "link": "https://www.patreon.com/",
+            "username": "",
+            "notes": ""
+            },
+            "phone": {
+            "fa": "fa-solid fa-phone",
+            "link": "tel:",
+            "username": "",
+            "notes": ""
+            },
+            "pinterest": {
+            "fa": "fa-brands fa-pinterest",
+            "link": "https://www.pinterest.com/",
+            "username": "",
+            "notes": ""
+            },
+            "quora": {
+            "fa": "fa-brands fa-quora",
+            "link": "https://www.quora.com/profile/",
+            "username": "",
+            "notes": ""
+            },
+            "reddit": {
+            "fa": "fa-brands fa-reddit",
+            "link": "https://www.reddit.com/user/",
+            "username": "",
+            "notes": ""
+            },
+            "snapchat": {
+            "fa": "fa-brands fa-snapchat",
+            "link": "https://www.snapchat.com/add/",
+            "username": "",
+            "notes": ""
+            },
+            "stackoverflow": {
+            "fa": "fa-brands fa-stack-overflow",
+            "link": "https://stackoverflow.com/users/",
+            "username": "",
+            "notes": "16269149/will-clarke -- username"
+            },
+            "telegram": {
+            "fa": "fa-brands fa-telegram",
+            "link": "https://telegram.me/joinchat/",
+            "username": "",
+            "notes": ""
+            },
+            "tiktok": {
+            "fa": "fa-brands fa-tiktok",
+            "link": "https://www.tiktok.com/@",
+            "username": "",
+            "notes": ""
+            },
+            "tumblr": {
+            "fa": "fa-brands fa-tumblr",
+            "link": "",
+            "username": "",
+            "notes": "domain/sub"
+            },
+            "twitch": {
+            "fa": "fa-brands fa-twitch",
+            "link": "https://www.twitch.tv/",
+            "username": "",
+            "notes": ""
+            },
+            "twitter": {
+            "fa": "fa-brands fa-twitter",
+            "link": "https://twitter.com/",
+            "username": "",
+            "notes": ""
+            },
+            "whatsapp": {
+            "fa": "fa-brands fa-whatsapp",
+            "link": "https://wa.me/",
+            "username": "",
+            "notes": "https://faq.whatsapp.com/563219570998715/?locale=en_US"
+            },
+            "youtube": {
+            "fa": "fa-brands fa-youtube",
+            "link": "https://www.youtube.com/",
+            "username": "",
+            "notes": ""
+            }
+        },
+        "links": [
+            {
+            "link": "",
+            "title": "",
+            "description": ""
+            }
+        ]
+    },
+    "acc":{
+        "username":"",
+        "email":"",
+        "password":"",
+        "security-question":"",
+        "security-answer":""
+    }, 
+    "config":{
+        "title":"",
+        "description":"",
+        "url":"",
+        "lang":"",
+        "owner":"",
+        "cmshark":{
+            "api-key":"",
+            "user-id":""
+            },
+        "key":"",
+        "setup":{
+            "setup-complete":false
+        },
+        "settings":{
+            "user":{},
+            "page":{
+                "theme":{
+                    "layout":""
+                    ,"colour":""
+                }
+            }
+        }
+    },
+    "logs":[
+        
+    ]
+}
